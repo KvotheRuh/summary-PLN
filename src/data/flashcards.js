@@ -1,15 +1,12 @@
 // Each flashcard belongs to a topic (topicoId)
 const flashcards = [
-  // Tópico 1 – O que é Inteligência?
-  { id: 1, topicoId: 1, provaId: 1, frente: "Como podemos definir Inteligência?", verso: "É a habilidade de adquirir e aplicar conhecimento para resolver problemas complexos." },
-  // Tópico 2 – Resolução Lógica
-
-  // Tópico 2 – Resolução Lógica (Definições de Termos)
-  { id: 2,  topicoId: 2, provaId: 1, frente: "Como o Raciocínio Dedutivo tira suas conclusões?", verso: "Tira conclusões a partir de premissas conhecidas. A sentença criada é necessariamente verdadeira." },
-  { id: 3, topicoId: 2, provaId: 1, frente: "Como o Raciocínio Indutivo tira suas conclusões?", verso: "Tira conclusões apenas analisando uma parte dos objetos ou eventos. As conclusões são prováveis, e logicamente não garantidas." },
-  { id: 4, topicoId: 2, provaId: 1, frente: "Como o Raciocínio Abdutivo tira suas conclusões?", verso: "A conclusões são tiradas a partir das informações disponíveis, mas que podem estar erradas." },
-  { id: 5, topicoId: 2, provaId: 1, frente: "O exemplo 'Se bancos pedem COBOL e Jailson trabalha em um banco, talvez ele programe em COBOL' ilustra qual raciocínio?", verso: "O Raciocínio Abdutivo." },
-  { id: 6, topicoId: 2, provaId: 1, frente: "O exemplo 'Robert é sociólogo -> Sociólogo é bacharel -> Logo, Robert é bacharel' ilustra qual raciocínio?", verso: "O Raciocínio Dedutivo." },
+  // Tópico 1 – Aula 1
+  { id: 1, topicoId: 1, provaId: 1, frente: "O dado textual também é conhecido como:", verso: "Dado não estruturado." },
+  { id: 2, topicoId: 2, provaId: 1, frente: "O código-fonte escrito em Python é um dado textual?", verso: "Verdadeiro." },
+  { id: 3, topicoId: 2, provaId: 1, frente: "O nome completo de uma pessoa, gravado em um banco de dados relacional, não é um dado textual?", verso: "Falso." },
+  { id: 4, topicoId: 2, provaId: 1, frente: "O campo “endereço” de um formulário de cadastro de um candidato ao vestibular, é um campo textual?", verso: "Verdadeiro." },
+  { id: 5, topicoId: 2, provaId: 1, frente: "A foto a seguir (foto de uma placa, que contém texto), pode ser considerada um dado textual?", verso: "Falso." },
+  { id: 6, topicoId: 2, provaId: 1, frente: "", verso: "" },
 
   // Tópico 3 – O que é IA?
   { id: 7, topicoId: 3, provaId: 1, frente: "Pelo critério comportamental, como sabemos se uma habilidade foi reproduzida na IA?", verso: "Quando a máquina consegue produzir e exibir um comportamento semelhante ao dos humanos na mesma tarefa." },
@@ -159,7 +156,7 @@ const flashcards = [
   { id: 123, topicoId: 16, provaId: 1, frente: "O que flexibiliza as regras diplomáticas nos General Games?", verso: "Que os agentes não têm utilidades presas. Eles podem trair (competir), unir-se temporariamente (cooperar) ou ignorar uns aos outros." },
   { id: 124, topicoId: 16, provaId: 1, frente: "A métrica avaliada pelos agentes no estado terminal dos jogos chama-se custo de ramificação ou função de utilidade?", verso: "Função de utilidade (pois buscam ativamente maximizar a pontuação no último estado, não minimizar trajetos de custo)." },
   { id: 125, topicoId: 16, provaId: 1, frente: "O que é a Busca Adversarial?", verso: "É a busca realizada em ambientes competitivos onde o agente deve considerar as jogadas de um oponente que quer atrapalhá-lo." },
-  
+
 
   // Tópico 17 – Algoritmo MINIMAX
   { id: 126, topicoId: 17, provaId: 1, frente: "Enquanto o agente principal do Minimax (o jogador MAX) foca em maximizar seus ganhos de utilidade, como ele aborda o adversário (MIN)?", verso: "Ele cria lógicas ativas para sufocar e minimizar completamente as opções de utilidade do inimigo no tabuleiro." },
@@ -177,7 +174,7 @@ const flashcards = [
   { id: 135, topicoId: 18, provaId: 1, frente: "Verdadeiro ou Falso: A poda Alfa-Beta altera o resultado final da busca em comparação ao Minimax puro.", verso: "<b>Falso.</b> A poda não afeta o resultado final da busca; ela apenas economiza tempo computacional." },
   { id: 136, topicoId: 18, provaId: 1, frente: "Como a <b>ordem de busca</b> dos nós afeta o algoritmo?", verso: "A quantidade de podas depende da ordem. Uma boa ordenação pode <b>dobrar a profundidade</b> da pesquisa, reduzindo a complexidade de tempo para <b>O(b<sup>m/2</sup>)</b>." },
   { id: 137, topicoId: 18, provaId: 1, frente: "Por que a utilidade dos estados é calculada <b>dinamicamente</b> e não pré-armazenada?", verso: "Porque o número de combinações cresce exponencialmente, tornando <b>inviável</b> armazenar a utilidade de todos os estados possíveis na memória." },
-  
+
   /* ── DECISÕES IMPERFEITAS ── */
   { id: 138, topicoId: 20, provaId: 1, frente: "Qual a principal limitação do algoritmo <b>MINIMAX puro</b> em jogos reais?", verso: "A necessidade de expandir a árvore até os <b>estados terminais</b>, o que consome tempo excessivo em jogos complexos (como o Xadrez)." },
   { id: 139, topicoId: 20, provaId: 1, frente: "O que caracteriza uma <b>Decisão Imperfeita</b> na busca competitiva?", verso: "A interrupção da pesquisa em uma <b>profundidade limitada (d)</b>, sem atingir obrigatoriamente os nós folha terminais." },

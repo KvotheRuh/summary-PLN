@@ -1,5 +1,5 @@
 import pln_1 from "../images/pln_1.png";
-import ucs from "../images/ucs.gif";
+import pln_2 from "../images/pln_2.png";
 import ASTAR from "../images/ASTAR.gif"
 import DLS from "../images/DLS.gif"
 import download from "../images/download.gif"
@@ -94,19 +94,6 @@ Há muita informação textual (dado não estruturado) acumulada na Web, nas emp
   {
     id: 6,
     provaId: 1,
-    titulo: "Conceitos Básicos",
-    conteudo: `- Linguagem Natural: linguagens que são utilizadas para a comunicação do dia a dia por humanos
-- Processamento de Linguagem Natural(PLN): qualquer manipulação computacional de linguagens naturais. De contagem de palavras a compreensão semântica.
-- Linguagem Computacional: associada a PLN, estuda os fenômenos linguísticos para apoiar o computador na interpretação e geração da linguagem natural.
-- Corpus: conjuntos de textos, normalmente normalizados e rotulados
-- Corpora: conjunto de Corpus
-- Entidade Nomeada: são expressões que nomeiam pessoas, organizações, locais, tempos e quantidades.
-  - Exemplo: São Paulo, Brasil, Pedro Alvares Cabral, Onu, etc.
-  - Dificuldades, SP, S.P., S. Paulo, São Paulo, etc.`,
-  },
-  {
-    id: 7,
-    provaId: 1,
     titulo: "Léxico",
     conteudo: `Definição: onjunto de palavras de um dado idioma
     - O léxico de uma lingua nao e fechado ou fixo
@@ -116,7 +103,7 @@ Podem influenciar no léxico:
     - Girias, etc.`,
   },
     {
-    id: 8,
+    id: 7,
     provaId: 1,
     titulo: "Similaridade Sintática",
     conteudo: `Para medir a similaridade entre strings podemos utilizar uma função de distância. As mais comuns são: a de Hamming e a de Levenshtein(Edit Distance)
@@ -128,7 +115,7 @@ Exemplos:
 `,
   },
   {
-    id: 9,
+    id: 8,
     provaId: 1,
     titulo: "Cálculo do N-Gram ",
     conteudo: `Um n-gram pode ser definido como um conjunto de “gramas” consecutivos, cada letra ou palavra é uma “grama”.
@@ -139,92 +126,76 @@ Exemplos:
 
     Para efetuar o cálculo da similaridade utilizando o n-gram, podemos usar a fórmula do <strong>Coeficiende de Dice</strong>
     <img src="${pln_1}" alt="Exemplo DFS" class="resumo__gif" />
-<p class="resumo__gif-label">Coeficiente de Dice</p>
+    <p class="resumo__gif-label">Coeficiente de Dice</p>
 
-<strong>Exemplos:</strong>
-- P1 = parana, P2 = paranaense
-  - P1:
-    - Digramas = {pa, ar, ra, an, na}
-    - Únicos = {pa, ar, ra, an, na}
-  - P2:
-    - Digramas = {pa, ar, ra, an, na, ae, en, ns, se}
-    - Únicos = {pa, ar, ra, an, na, ae, en, ns, se}
-  - Compartilhados: {pa, ar, ra, an, na}
-  - S = 2 * 5 (5 + 9) = 0,71
+    <strong>Exemplos:</strong>
+    - P1 = parana, P2 = paranaense
+      - P1:
+        - Digramas = {pa, ar, ra, an, na}
+        - Únicos = {pa, ar, ra, an, na}
+      - P2:
+        - Digramas = {pa, ar, ra, an, na, ae, en, ns, se}
+        - Únicos = {pa, ar, ra, an, na, ae, en, ns, se}
+      - Compartilhados: {pa, ar, ra, an, na}
+      - S = 2 * 5 (5 + 9) = 0,71
 
-<hr>
-- P1 = carro, P2 = avião
-  - P1:
-    - Digramas: {ca, ar, rr, ro}
-    - Únicos: {ca, ar, rr, ro}
-  - P2:
-    - Digramas: {av, vi, ia, ao}
-    - Únicos: {av, vi, ia, ao}
-  - Compartilhados: {}
-  - S = 2 * 0 (4 + 4) = 0`,
+    <hr>
+    - P1 = carro, P2 = avião
+      - P1:
+        - Digramas: {ca, ar, rr, ro}
+        - Únicos: {ca, ar, rr, ro}
+      - P2:
+        - Digramas: {av, vi, ia, ao}
+        - Únicos: {av, vi, ia, ao}
+      - Compartilhados: {}
+      - S = 2 * 0 (4 + 4) = 0
+
+       Leia mais sobre outras aplicações do n-gram no PLN:
+       <a href="http://text-analytics101.rxnlp.com/2014/11/what-are-n-grams.html?m=1" target="_blank" rel="noopener noreferrer">What Are N-Grams? - Text Analytics 101</a>`,
+  },
+  {
+    id: 9,
+    provaId: 1,
+    titulo: "Conceitos Básicos",
+    conteudo: `• <strong>Linguagem natural:</strong> linguagens que são utilizadas para comunicação
+    do dia a dia por humanos (português brasileiro, português europeu,
+    inglês, …).
+    • <strong>Processamento de Linguagem Natural (PLN):</strong> qualquer manipulação
+    computacional de linguagens naturais. De contagem de palavras à
+    compreensão semântica.
+    • <strong>Linguística Computacional:</strong> associada à PLN, estuda os fenômenos
+    linguísticos para apoiar o computador na interpretação e geração da
+    linguagem natural.
+    • <strong>Corpus:</strong> conjunto de textos, normalmente normalizados e
+    rotulados.
+    • <strong>Corpora:</strong> conjunto de Corpus.
+    • <strong>Entidade Nomeada:</strong> são expressões que nomeiam pessoas,
+    organizações, locais, tempos e quantidades.
+      • Exemplo: “São Paulo”, “Brasil”, “Pedro Alvares Cabral”, “ONU”, etc.
+      • Dificuldades: “SP”, “S.P.”, “S. Paulo”, “São Paulo”, ...
+    • <strong>Léxico:</strong> conjunto de palavras de um dado idioma.
+      • O léxico de uma língua não é “fechado” ou fixo.
+      • Podem influenciar no léxico:
+        • Nomes próprios;
+        • Abreviações e siglas;
+        • Gírias, etc`,
   },
   {
     id: 10,
     provaId: 1,
-    titulo: "DFS e BFS",
-    conteudo: `<strong>Busca em Profundidade (DFS):</strong>
+    titulo: "Exercício 1",
+    conteudo: `Implemente um algoritmo em Python para resolver o
+    seguinte problema:
+    • Dado o seguinte léxico:
+    • [abacate, abacaxi, abobora, abobrinha, ananás, maça, mamão,
+    manga, melancia, melão, mexerica, morango]
+    • Indicar a palavra mais “próxima”:
+    <img src="${pln_2}" alt="Exemplo DFS" class="resumo__gif" />
 
-Explora o caminho todo até chegar ao final, depois volta explorando os vértices não visitados, até encontrar o objetivo.Utiliza estrutura de pilha (LIFO).
-— Completo: Apenas se houver prevenção de ciclos, senão o valor de m será infinito.
-— Ótimo:Não, ele encontra a solução mais a esquerda, independente da profundidade e do custo.
-— Complexidade de Tempo: O(b<sup>m</sup>)
-— Complexidade de Espaço: O(bm)
-
-<strong>Busca em Largura (BFS):</strong>
-
-Explora todos os vértices adjacentes ao estado inicial  e, em seguida, expande os vértices do próximo nível, até encontrar o objetivo. Pode encontrar o caminho mais curto em termos de ações, mas sem considerar os pesos das arestas. Utiliza estrutura de fila (FIFO).
-— Completo: Sim, se s for finito.
-— Ótimo: Apenas se os custos forem iguais.
-— Complexidade de Tempo: O(b<sup>s</sup>)
-— Complexidade de Espaço: O(b<sup>s</sup>)`,
-
+    Avaliar diferentes thresolds de distância.`,
   },
   {
     id: 11,
-    provaId: 1,
-    titulo: "UCS, DLS e IDS",
-    conteudo: `<strong>Busca de Custo Uniforme (UCS):</strong>
-É inspirada na busca em largura, contudo ela irá expandir o vértice de menor custo. Esse tipo de busca garante o caminho mais barato. Utiliza estrutura de fila de prioridades.
-— Completo: Sim, mas deve-se assumir que os custos são positivos, e a solução tem um custo finito. E o valor de ε deve ser maior que zero..
-— Ótimo: Sim.
-— Complexidade de Tempo: O(b<sup>C*/ε</sup>)
-— Complexidade de Espaço: O(b<sup>C*/ε</sup>)
-
-<img src="${ucs}" alt="Exemplo DFS" class="resumo__gif" />
-<p class="resumo__gif-label">Busca de Custo Uniforme (UCS)</p>
-
-<strong>Busca em Profundidade com Limite (DLS):</strong>
-
-Nesse tipo de busca é imposto um limite máximo de profundidade. Para essa busca pode-se implementar um tipo especial de algoritmo de profundidade com limite, mas também é possível usar algoritmos de busca gerais com controle de profundidade.
-— Completo: Não, se a solução estiver em profundidade > d.
-— Ótimo: Não (igual à DFS).
-— Complexidade de Tempo: O(b<sup>d</sup>)
-— Complexidade de Espaço: O(bd)
-— Observações sobre a DLS:
-\t• Todos os nós mais profundos que d não são explorados
-\t• Evita ciclos e reduz a complexidade, pois evita caminhos longos uma vez que d < m.
-
-<img src="${DLS}" alt="Exemplo DFS" class="resumo__gif" />
-<p class="resumo__gif-label">Profundidade com Limite (DLS)</p>
-
-<strong>Busca com Aprofundamento Iterativo (IDS):</strong>
-
-Faz buscas em profundidade limitadas, as buscas são feitas aumentando o limite de profundidade a cada iteração. Ele combina vantagens da busca em largura(garantia que será encontrada uma solução ótima) e da busca em profundidade(uso eficiente da memória).
-— Completo: Sim.
-— Ótimo: Sim.
-— Complexidade de Tempo: O(b<sup>d</sup>)
-— Complexidade de Espaço: O(bd)
-
-<img src="${IDS}" alt="Exemplo DFS" class="resumo__gif"/>
-<p class="resumo__gif-label">Busca com Aprofundamento Iterativo (IDS)</p>`,
-  },
-  {
-    id: 12,
     provaId: 1,
     titulo: "Busca Informada",
     conteudo: `A busca informada (ou heurística) é um tipo de busca que usa informações adicionais sobre o problema para encontrar a solução de forma mais eficiente.
