@@ -1,12 +1,15 @@
 import pln_1 from "../images/pln_1.png";
 import pln_2 from "../images/pln_2.png";
-import ASTAR from "../images/ASTAR.gif"
-import DLS from "../images/DLS.gif"
-import download from "../images/download.gif"
-import IDS from "../images/IDS.gif"
-import image from "../images/image.png"
-import image1 from "../images/image1.png"
-import minimax from "../images/minimax.gif"
+import pln_3 from "../images/pln_3.png"
+import pln_4 from "../images/pln_4.png"
+import pln_5 from "../images/pln_5.png"
+import pln_6 from "../images/pln_6.png"
+import pln_7 from "../images/pln_7.png"
+import pln_8 from "../images/pln_8.png"
+import pln_9 from "../images/pln_9.png"
+import pln_10 from "../images/pln_10.png"
+import pln_11 from "../images/pln_11.png"
+import pln_12 from "../images/pln_12.png"
 import passo1 from "../images/1.png"
 import passo2 from "../images/2.png"
 import passo3 from "../images/3.png"
@@ -18,8 +21,8 @@ import passo8 from "../images/8.png"
 import passo9 from "../images/9.png"
 import passo10 from "../images/10.png"
 import passo11 from "../images/11.png"
-import ticTac from "../images/tic-tac.png"
-import Cordilheira from "../images/Cordilheira.png"
+
+
 import ShouldersPlato from "../images/Shoulders e Plato.png"
 import BackwardSelection from "../images/backward.png"
 import definicoesAG from "../images/definicoesAG.png"
@@ -35,7 +38,7 @@ const topicos = [
   {
     id: 1,
     provaId: 1,
-    titulo: "O que é uma máquina inteligente?",
+    titulo: "[Aula 1] O que é uma máquina inteligente?",
     conteudo: `Um computador pode ser considerado inteligente se conseguir enganar um humano, levando-o a acreditar que ele era humano`
   },
   {
@@ -48,51 +51,44 @@ Há muita informação textual (dado não estruturado) acumulada na Web, nas emp
 
 <strong>Aplicações</strong>
 - Simples:
-  - Busca por palavra-chave
-  - Identificação de sinônimos
-  - Verificação da escrita (ortografia)
-  - Extração da Informação
+    - Busca por palavra-chave
+    - Identificação de sinônimos
+    - Verificação da escrita (ortografia)
+    - Extração da Informação
 
 - As mais sofisticadas:
-  - Tradução automática
-  - Reconhecimento e geração da fala
-  - Sistema de diálogo e Chatbots`,
+    - Tradução automática
+    - Reconhecimento e geração da fala
+    - Sistema de diálogo e Chatbots
+
+  Recurso mais limitados para o português:
+- Parser, part-of-speech, …
+- Ontologias, dicionários:
+    - Português Brasileiro
+    - Português Europeu
+- Reconhecimento de fala
+- Corpora
+- Modelos Pré-treinados`,
   },
   {
     id: 3,
-    provaId: 1,
-    titulo: "Desafios para o processamento do Português",
-    conteudo: `Recurso mais limitados:
-- Parser, part-of-speech, …
-- Ontologias, dicionários:
-  - Brasileiro
-  - Europeu
-- Reconhecimento de fala
-- Corpora
-- Modelos Pré-treinados
-`,
-  },
-  {
-    id: 4,
     provaId: 1,
     titulo: "Identificando o Dado Textual",
     conteudo: `- Dado textual = não estruturado
 - Características do dado textual;
   - Não tem tipo
-  - Disponível em texto-puro (ASCII ou UNICODE`
-  },
-  {
-    id: 5,
-    provaId: 1,
-    titulo: "Extração do Dado Textual",
-    conteudo: `- Origem distintas
+  - Disponível em texto-puro (ASCII ou UNICODE
+
+  Extração do Dado Textual
+  - Origem distintas
   - Web(Html), Redes Sociais(Posts), Sistemas de Informação(nome de pessoas, endereço eletrônico, …)
+
 - Exemplo para arquivo .html:
   - Texto espalhado ao longo do arquivo .html e suas tags
   - Conjunto de funções para extração(parser)`,
   },
   {
-    id: 6,
+    id: 4,
     provaId: 1,
     titulo: "Léxico",
     conteudo: `Definição: onjunto de palavras de um dado idioma
@@ -103,7 +99,7 @@ Podem influenciar no léxico:
     - Girias, etc.`,
   },
     {
-    id: 7,
+    id: 5,
     provaId: 1,
     titulo: "Similaridade Sintática",
     conteudo: `Para medir a similaridade entre strings podemos utilizar uma função de distância. As mais comuns são: a de Hamming e a de Levenshtein(Edit Distance)
@@ -111,11 +107,10 @@ A distância de edição é definida pelo número de inserções, exclusões e s
 
 Exemplos:
     - color → colour: ED = 1
-    - survey → surgery: ED = 2
-`,
+    - survey → surgery: ED = 2`,
   },
   {
-    id: 8,
+    id: 6,
     provaId: 1,
     titulo: "Cálculo do N-Gram ",
     conteudo: `Um n-gram pode ser definido como um conjunto de “gramas” consecutivos, cada letra ou palavra é uma “grama”.
@@ -154,14 +149,12 @@ Exemplos:
        <a href="http://text-analytics101.rxnlp.com/2014/11/what-are-n-grams.html?m=1" target="_blank" rel="noopener noreferrer">What Are N-Grams? - Text Analytics 101</a>`,
   },
   {
-    id: 9,
+    id: 7,
     provaId: 1,
     titulo: "Conceitos Básicos",
-    conteudo: `• <strong>Linguagem natural:</strong> linguagens que são utilizadas para comunicação
-    do dia a dia por humanos (português brasileiro, português europeu,
+    conteudo: `   • <strong>Linguagem natural:</strong> linguagens que são utilizadas para comunicação do dia a dia por humanos (português brasileiro, português europeu,
     inglês, …).
-    • <strong>Processamento de Linguagem Natural (PLN):</strong> qualquer manipulação
-    computacional de linguagens naturais. De contagem de palavras à
+    • <strong>Processamento de Linguagem Natural (PLN):</strong> qualquer manipulação computacional de linguagens naturais. De contagem de palavras à
     compreensão semântica.
     • <strong>Linguística Computacional:</strong> associada à PLN, estuda os fenômenos
     linguísticos para apoiar o computador na interpretação e geração da
@@ -171,17 +164,17 @@ Exemplos:
     • <strong>Corpora:</strong> conjunto de Corpus.
     • <strong>Entidade Nomeada:</strong> são expressões que nomeiam pessoas,
     organizações, locais, tempos e quantidades.
-      • Exemplo: “São Paulo”, “Brasil”, “Pedro Alvares Cabral”, “ONU”, etc.
-      • Dificuldades: “SP”, “S.P.”, “S. Paulo”, “São Paulo”, ...
+        • Exemplo: “São Paulo”, “Brasil”, “Pedro Alvares Cabral”, “ONU”, etc.
+        • Dificuldades: “SP”, “S.P.”, “S. Paulo”, “São Paulo”, ...
     • <strong>Léxico:</strong> conjunto de palavras de um dado idioma.
-      • O léxico de uma língua não é “fechado” ou fixo.
-      • Podem influenciar no léxico:
-        • Nomes próprios;
-        • Abreviações e siglas;
-        • Gírias, etc`,
+        • O léxico de uma língua não é “fechado” ou fixo.
+        • Podem influenciar no léxico:
+            • Nomes próprios;
+            • Abreviações e siglas;
+            • Gírias, etc`,
   },
   {
-    id: 10,
+    id: 8,
     provaId: 1,
     titulo: "Exercício 1",
     conteudo: `Implemente um algoritmo em Python para resolver o
@@ -195,179 +188,312 @@ Exemplos:
     Avaliar diferentes thresolds de distância.`,
   },
   {
+    id: 9,
+    provaId: 1,
+    titulo: "[Aula 2] Operações Básicas de PLN",
+    conteudo: `Existem algumas operações básicas de processamento de um
+texto que são bastante comuns.
+São elas:
+  • Tokenização
+  • Normalização
+  • Stemming
+  • Lematização`,
+  },
+  {
+    id: 10,
+    provaId: 1,
+    titulo: "Token",
+    conteudo: ` Token: sequência de caracteres com algum significado semântico.
+
+    Os tokens podem ter tipos, que são classes de tokens que tem os mesmos caracteres.
+
+<strong>Exemplo:</strong>
+  • “Entre a direita para pegar a rua XV de Novembro”
+    Tokens: 10
+    Tipos: 9 (duas ocorrências de ‘a’)
+  • O número de tokens é maior que o número de tipos:
+  • Exemplo: Google n-gram: 1 Tri de tokens (mas apenas 13 milhões de tipos)
+  <a href=" https://books.google.com/ngrams" target="_blank" rel="noopener noreferrer">Google Ngram Viewer</a>`,
+  },
+  {
     id: 11,
     provaId: 1,
-    titulo: "Busca Informada",
-    conteudo: `A busca informada (ou heurística) é um tipo de busca que usa informações adicionais sobre o problema para encontrar a solução de forma mais eficiente.
-Diferente da busca não informada (cega), ela não explora tudo aleatoriamente — ela usa uma heurística (estimativa) para guiar o caminho.
+    titulo: "Tokezinação",
+    conteudo: `Objetivo: separar o texto em tokens.
 
-<strong style="color: red;">Heurística:</strong> Funções ou estratégias que utilizam conhecimento específico do problema para guiar algoritmos de busca, com o objetivo de reduzir o custo computacional e acelerar a obtenção de soluções.
+• Normalmente esta operação é realizada sobre textos no qual temos o interesse de manipular apenas palavras (deixamos caracteres de pontuação fora, por exemplo).
 
-— Buscas Heurísticas utilizam uma função heurística(n) para estimar o quão perto do objetivo o estado n está do objetivo.
-— É possível formular várias heurísticas para um problema específico.
-— A orientação fornecida por uma heurística é apenas para decisões locais. Ela refere-se a uma estimativa que é usada para escolher uma ação sucessora a partir do estado atual que o agente se encontra.`,
+• A tokenização pode ter o objetivo de separar um texto em frases ou uma frase em tokens.
+
+• Dificuldades:
+  • “São Paulo”: uma ou duas palavras?
+  • São Paulo é uma entidade nomeada (EN): são expressões que nomeiam pessoas, organizações, locais, tempos e quantidades.
+  • “Estou indo para os E.U.A. passear.”: ponto não pode indicar final de frase.
+
+  Problemas comuns:
+  • O que fazer com:
+    • Copo d’água: copo de água
+    • São João da Boa Vista: quantos tokens?
+    • Humano-computador: humano computador?
+    • Em chinês pode não existir espaços entre palavras (Dan Jurafski):
+    <img src="${pln_5}"/>`,
+  },
+  {
+    id: 12,
+    provaId: 1,
+    titulo: "Normalização",
+    conteudo: `Objetivo: transformar um texto bruto em uma forma canônica.
+• É muito utilizado com datas, números, abreviações, …
+• Necessário no processo de:
+    • Recuperação da Informação:
+        • Texto indexado: “São Paulo”
+        • Texto bruto: “SP”
+        • Texto bruto: “12/jul”
+        • Texto normalizado: “12/07”
+        • Texto bruto: “hoje”
+        • Texto normalizado: “12/07/2018”
+    • Tradução automática
+    • Correção da escrita
+    • Geração da fala
+        • Texto bruto: R$ 100,00
+        • Texto gerado: “cem reais”`,
   },
   {
     id: 13,
     provaId: 1,
-    titulo: "Greedy Search",
-    conteudo: `Greedy Search(Best First):
+    titulo: "Stemming",
+    conteudo: `Objetivo: retirar o sufixo que “flexiona” palavras. Foi criado por Martin Porter em 1980. Baseado em regras.
+• Esta operação é dependente da língua.
+• O processo de stemming leva uma palavra para seu stem (ou tronco).
 
-É uma estratégia de busca que expande os nos vizinhos(fringe) que o algoritmo estima ser o mais próximo do estado objetivo, baseia-se exclusivamente na função heurística.
-Para muitos problemas, o custo para alcançar o objetivo a partir de um estado específico pode ser estimado, mas não pode ser determinado com precisão.
+<strong>Exemplos:</strong>
+  • copiar, copiando, copiado: copi
+  • abóbora: abób
+  • Maça: maç
+  • Curitiba: curitib
 
-h(n): Estima o custo do caminho mais barato a partir do estado do nó n até o estado objetivo. Se o n for o objetivo então h(n) = 0.
-
-Semelhante a busca em profundidade a Greedy Search segue um caminho do início ao fim. Por isso, ela não é ótima e nem completa, pois pode seguir um caminho infinito e não testar outras possibilidades.
-Com uma boa heurística, a complexidade de tempo e espaço podem ser reduzidas substancialmente. O valor da redução dependerá do problema e da qualidade da função h.
-
-— Completo: Não, porque pode nunca encontrar uma solução. Se não lidar com estados repetidos, o sistema pode ficar preso.
-— Ótimo: Não, pois nem sempre irá encontrar o melhor caminho.
-— Complexidade de Tempo:  O(b<sup>m</sup>)
-— Complexidade de Espaço: O(b<sup>m</sup>)`,
-    gif: download,
-    gifLabel: "Exemplo: Greedy Search",
+• Alguns pacotes disponíveis
+    <a href="Snowball (https://textprocessing.org/open-source-text-processing-project-snowball)" target="_blank" rel="noopener noreferrer">Snowball</a>
+    <a href="PyStemmer (https://textprocessing.org/open-source-text-processing-project-pystemmer)" target="_blank" rel="noopener noreferrer">PyStemmer</a>`,
   },
-
   {
     id: 14,
     provaId: 1,
-    titulo: "A* Search",
-    conteudo: `A* Search:
+    titulo: "Lematização (lemmatizing)",
+    conteudo: `Objetivo: levar uma palavra ao seu infinitivo, para verbos, ou na sua forma masculino singular ser for substantivo ou adjetivo.
 
-É a combinação da UCS e da Greedy Search. Ela utiliza a heurística da Greedy e o custo acumulado da UCS.
-O A* irá utilizar a seguinte fórmula para escolher qual nó será expandido:
+<strong>Exemplos:</strong>
+• pato, pata, patos, patas,...: pato
+• livro, livros, livrinho, ...: livro
 
-f(n) = g(n) + h(n)
-
-g(n): Custo acumulado até o estado atual
-h(n): Estimativa(heurística) até o objetivo
-f(n): Valor usado para escolher o próximo nó.
-
-O A* é o algoritmo que expande o menor número de caminhos se comparado a algoritmos de busca ótimos que partem do mesmo início e usam uma heurística admissível.
-O A* adiciona contornos gradualmente aos nos.
-<img src="${image1}" alt="Exemplo dos cotornos que o A* adiciona durante a realização da busca" class="resumo__gif"/>
-<p class="resumo__gif-label">Exemplo dos cotornos que o A* adiciona durante a realização da busca</p>
-
-— Completo:  Sim
-— Ótimo: Sim, mas a heurística tem que ser aceitável e consistente
-— Complexidade de Tempo: Depende da heurística. No pior caso é O(b<sup>s</sup>)
-— Complexidade de Espaço: O(b<sup>s</sup>)`,
-    gif: ASTAR,
-    gifLabel: "Exemplo: A* Search",
+• Assim como a operação de stemming, pode ser útil na redução de
+dimensionalidade.
+• Voltaremos a esta questão no futuro.`,
   },
-
   {
     id: 15,
     provaId: 1,
-    titulo: "Admissibilidade",
-    conteudo: `Superestima o custo: Heurísticas inadmissíveis(pessimistas) superestimam o custo, isso acarreta em soluções não ótimas. Por exemplo: Considerando que o custo real para alcançar o objetivo é 15 e a heurística é 20, o algoritmo entenderá que não é um bom caminho, mesmo que ao seguir expandir esse nó a solução obtida seja ótima.
-
-Subestima o custo: Heurística admissível(otimista) não superestima o custo, levando o algoritmo a encontrar o melhor caminho. Exemplo: Considerando que o custo real é 10 e a heurística é 7, o algoritmo irá entender que este pode ser um caminho que o levará a uma solução ótima.
-OBS: Também pode levar a caminhos ruins.
-Uma heurística pode ser considerada admissível se, para cada nó:
-
-0 ≤ h(n) ≤ h * (n)
-
-onde h * (n) é o verdadeiro custo para o objetivo mais próximo.
-Problema relaxado: É um problema com menos restrições que o problema original. Exemplo: No jogo 8-puzzle, considerando-se que é possível realizar qualquer movimento para resolver o quebra-cabeça, ou seja não temos restrições de movimentos, chegamos a um problema relaxado.
-<p class="resumo__gif-label">Exemplo de possibilidades que pode mover uma peça no 8-puzzle quando assume-se um problema relaxado</p>
-<img src="${image}" alt="Exemplo de possibilidades que pode mover uma peça no 8-puzzle quando assume-se um problema relaxado" class="resumo__gif"/>
-
-Uma heurística admissível é uma solução para um problema relaxado. Para criá-la é necessário resolver o problema relaxado sem utilizar busca.
-O custo obtido é uma solução ótima, isso é a heurística admissível para o problema original.
-É preferível heurísticas que forneçam diferentes valores para diferentes estados.
-Quando existir múltiplas heurísticas admissíveis para um problema, deve-se escolher a que possua o maior valor e que seja menor ou igual que  h * (n).
-
-Heurística Admissível: heurística estimada custo atual.
-
-Heurística Consistente(monotonicidade): A heurística estimada é menor ou igual ao custo real de alcançar o próximo estado + a estimativa desse sucessor(heurística estimada do vizinho). Esse tipo de heurística faz com que o valor f(n) nunca diminua,
-
-OBS: Toda heurística consistente é admissível, mas nem toda heurística admissível é consistente. `,
+    titulo: "Lista de Palavras Frequentes (stopwords)",
+    conteudo: ` As stopwords são palavras que normalmente são retiradas
+do texto em processamento pois pouco contribuem para o
+processo de identificação/classificação.
+• O objetivo é reduzir a dimensionalidade.
+• Normalmente incluem artigos, preposições, dentre outros.
+• Existem diferentes listas disponíveis: <a href="Stopwords português (https://www.linguateca.pt/chave/stopwords)" target="_blank" rel="noopener noreferrer">Stopwords português</a>`,
   },
   {
     id: 16,
     provaId: 1,
-    titulo: "Game Theory e Adversarial Search",
-    conteudo: `Para representar jogos é necessário definir claramente as regras, ter um conjunto finito de ações, ter decisões racionais e resultados bem definidos.
-Em um jogo competitivo cada jogador realiza a sua jogada sem saber o que o outro fará.
-Os jogos possuem definições determinísticas:
-
-— Espaço de estados: Todos os espaços possíveis que o jogo pode assumir
-— Espaço Inicial: O estado em que o jogo começa, e a identificação de qual jogador irá começar o jogo.
-— Função sucessora: O estado atual é o fim do jogo?
-— Função de utilidade: O valor numérico do estado terminal. Não minimize o custo mais. Agora o agente busca maximizar a sua pontuação/utilidade.
-
-Zero-Sum Games:
-
-Os agentes têm funções de utilidade opostas. Por exemplo: Enquanto um agente busca maximizar um valor, o outro irá tentar minimizar.
-Adversarial, competição pura.
-
-General Games:
-
-Os agentes possuem funções de utilidades independentes. Eles podem cooperar entre si para alcançar o estado terminal, eles também podem competir e pode ocorrer indiferença entre eles.
-
-Adversarial Search:
-
-Ambientes competitivos onde o objetivo de múltiplos agentes são conflitantes deram origem a busca adversarial, ou como é conhecida a busca competitiva ou só jogos.
-Curiosidade: A Deep Blue foi a primeira máquina a ganhar um jogo de xadrez contra um campeão mundial. Ela utilizava Adversarial Search.
-`,
+    titulo: "Exercício 2",
+    conteudo: `Avaliar o algoritmo de Tokenização para os seguintes textos:
+• "São Paulo, SP, S.P., S. Paulo“
+• nome@pucpr.br
+• "CPF: 001.002.003-04“`,
   },
   {
     id: 17,
     provaId: 1,
-    titulo: "Algoritmo MINIMAX",
-    conteudo: `Assume dois ótimos jogadores: MIN e MAX. A estratégia é maximizar a função de utilidade de um player(MAX), enquanto minimiza a utilidade do oponente(MIN).
-Por exemplo: O bot de um jogo de xadrez busca as melhores ações para obter o rei do adversário e evitar que suas peças sejam comidas.
-Em relação ao funcionamento do algoritmo, o algoritmo Minimax utiliza uma árvore de jogo, onde os nós representam os possíveis estados do jogo e as arestas representam as jogadas possíveis. As folhas são valores utilidade dos estados finais, esses valores podem ser obtidos por meio dos resultados dos jogos ou por funções heurísticas quando o estado não é terminal.
-O algoritmo utiliza uma abordagem de recursividade, contudo ele também utiliza um método bottom-up(de baixo para cima) que consiste em buscar as nossas folhas e retornar seus valores até a raiz.
-Na árvore, os níveis se alternam entre MIN e MAX, o primeiro nível(raiz) sempre será MAX, os nos subsequentes irão se alternarem. Nos níveis representados por MIN o algoritmo irá escolher o menor valor entre os filhos, por sua vez em níveis MAX será escolhido o maior valor, de modo  a determinar a melhor decisão para MAX.
-É possível descrever o valor MINIMAX como o menor valor que o jogador consegue ceder ao adversário sem saber sua próxima.
-O jogador MAX irá deduzir que o MIN escolherá o pior cenário para ele.
-Se acontecer do MIN cometer um erro, ou seja, não ser ótimo, então o MAX receberá uma “pontuação” maior. Contudo, o MINIMAX não comete erros, pois ele assume o adversário perfeito.
+    titulo: "Expressões Regulares (REGEX) (ER)",
+    conteudo: `Linguagem formal para especificar cadeias de caracteres (strings).
+• É uma das formas mais básicas de processar um texto.
+• Permite a especificação de padrões utilizados na busca de strings (ou substrings) em textos.
+• Após a construção do padrão, um motor faz a análise léxica e sintática do texto-alvo e indica as ocorrências das strings encontradas a partir do padrão indicado.
+• Trata-se de ferramenta muito utilizada na recuperação da informação.
+• Aplicações comuns: validação email, URL, CPF, ...
 
-Se for implementado um agente MINIMAX para jogar contra um humano, faz sentido retornar, além do valor MINIMAX, o caminho encontrado?
+<strong>Exemplo:</strong>
+Um sistema registra, em uma lista, os acessos diários (login) de usuários em
+um sistema: cada linha representa um acesso (horário e o login do usuário)
+(“Expressões Regulares: Uma Abordagem Divertida”, Aurelio Marinho Jargas) :
+    05:15 ernesto
+    08:39 ricardo
+    10:32 patricia
+    14:59 gabriel
+    16:27 carla
+    22:23 marcelo
+Como fazer para localizar automaticamente aqueles usuários que acessaram o
+sistema no período da tarde (meio-dia às dezoito)?
+R (retirado do livro): ^1[2-8]
 
-Resposta 1: Sim, se o humano jogar de forma ótimo(ou seja, previsível). O caminho mostra a sequência de movimentos que leva ao melhor resultado.
+<strong>Conceitos Básicos</strong>
+Normalmente utilizamos três operações básicas na
+construção de uma ER:
+  • Listas (metacaractere [ ])
+  • Agrupamento (grouping)
+  • Quantificação
 
-Resposta 2: Não, se o humano jogar de forma subótima, o resultado será imprevisível. O caminho previsto pode não ocorrer.
-O valor permanece válido como a melhor utilidade garantida, mas os movimentos reais podem ser diferentes.`,
-  gif: minimax,
-  gifLabel: "Exemplo: Algoritmo MINIMAX",
+• Site para avaliar uma ER: <a href="Regex101 (https://regex101.com/)" target="_blank" rel="noopener noreferrer">Regex101</a>
+
+• Dado o seguinte texto:
+    PUCPR/PPGIA
+    Bloco 8 – Parque Tecnológico – 2º andar
+    Rua Imaculada Conceição, 1155 - Prado Velho
+    CEP 80215-901 - Curitiba - PR
+• Testar (após o /):
+    .
+    a
+    [0-9]
+    [a-z]
+    [pP]arque
+
+<strong>Listas</strong>
+• Barra vertical (ou, pipe, ...): |
+• Conjunto de colchetes: []
+  • Os elementos dentro dos colchetes formam uma expressão disjuntiva.
+  <img src="${pln_7}"/>
+
+<strong>Agrupamento e Negação</strong>
+• Precedência dos operadores: ()
+• Grupo:
+    {min,max}
+• Negação de um conjunto:
+    [^…] (apenas quando o ^ vem imediatamente após o [
+    <img src="${pln_8}"/>
+• Avalie este exemplo: a{1,2}.
+• Uso dos metacaracteres de conjunto ‘{’ e ‘}’: {min, max}.
+• Em conjunto, os {} representam também repetição.
+• Por exemplo:
+    “[0-9]{4}” faz o matching de uma série de quatro dígitos consecutivos (como o
+    ano de nascimento de alguém).
+
+<strong>Quantificação</strong>
+• Quantificadores
+    ?: caractere precedente é opcional
+    *: 0 ou mais ocorrências do caractere precedente
+    +: 1 ou mais ocorrências do caractere precedente
+    .: qualquer caractere
+    <img src="${pln_9}"/>
+
+<strong>Operadores Âncoras</strong>
+    ^: começo da cadeia de caracteres (fora dos colchetes)
+    $: final da cadeia de caracteres
+    <img src="${pln_10}"/>
+
+<strong>Erros no Processo</strong>
+Avaliemos a seguinte situação:
+<img src="${pln_11}"/>
+Avaliar [^a-zA-Z][pP]ara[^a-zA-Z]
+
+• No exemplo, dois tipos de erros surgiram:
+    1) retornar strings indesejadas (“parado”): falso positivo
+    2) não retornar strings desejadas (“Para”): falso negativo
+• Redução da taxa de erro gera um conflito:
+    • Incremento da acurácia/precisão (precision): diminuir falsos
+    positivos
+    • Incremento da cobertura (recall): diminuir falsos negativos
+
+<strong>Usos Gerais</strong>
+• Verificação de entradas do usuário (ex.: URL, email, ...).
+• Útil no pré-processamento de textos antes da aplicação de
+classificadores.
+• Extração da informação em diferentes contextos.
+
+Links interessantes:
+<a href="Aurelio Regex (http://aurelio.net/regex/)" target="_blank" rel="noopener noreferrer">Aurelio Regex</a>
+<a href="Stanford (http://web.stanford.edu/~jurafsky/slp3/2.pdf)" target="_blank" rel="noopener noreferrer">Stanford</a>
+
+<strong>Exemplos de ERs</strong>
+• Verificar a presença do http:// ou https://
+^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$
+<strong>Exemplo em Python</strong>
+<img src="${pln_12}"/>
+
+<strong>Exercícios</strong>
+1) Escreva uma RegEx para identificar as ocorrências de letras minúsculas em início de linha.
+2) Dado o texto a seguir, identifique todas as ocorrências derivadas de “gol”:
+    Olha o gol!
+    Goooooool, do Brasil!
+    E que belo gol.
+3) Dado o trecho de código html a seguir, crie uma expressão regular para identificar a presença dos
+marcadores da linguagem, <></>
+    Bom dia! <a href="/sol">Sol</a>
+    <a>Vamos estudar as RegEx?</a>
+4) Escreva uma RegEx para validar um horário no formato hh:mm, onde
+a hora pode variar de 0 a 23. Veja alguns exemplos para você avaliar:
+    10:10
+    02:35
+    25:20
+    20:60
+    2:10
+    24:00
+    23:59
+5) Crie uma RegEx para validar uma data no formato DD/MM/AAAA.
+Você pode utilizar o seguinte texto de teste:
+    Data de Nascimento: 10/03/1980
+    Dica: para que o caractere ‘/’ utilizado para separar dia de mês e mês de ano
+    seja identificado, acrescente o metacaractere ‘\’ imediatamente antes. Assim, a
+    RegEx final terá como parte de sua forma a sequência “\/” (aparecerá duas
+    vezes).
+
+• Número telefone celular com código de área:
+(0?[1-9]{2})*\D*(9?)\D?(\d{4})+\D?(\d{4})\b
+• Data:
+((0[1-9])|(1[0-9])|(2[0-9])|(3[0-1]))\/((0[1-9])|(1[0-2]))\/[0-9]{4}
+• CEP:
+• Email:`,
   },
-
   {
     id: 18,
     provaId: 1,
-    titulo: "Poda Alfa-beta",
-    conteudo: `Devido ao grande número de estados, a árvore construída pelo algoritmo MINIMAX pode ser muito extensa.  Para evitar que todos os nós da árvore sejam expandidos, é feito uma poda em nós que não afetarão a decisão final do algoritmo. Um tipo de poda é a Alfa-Beta, ela consiste em utilizar dois tipos de valores para decidir quais nos serão podados, o alfa e o beta.
-
-<strong>- Valor Alfa(𝛼)</strong>: É o melhor valor encontrado pelo MAX (maior valor) até o momento em que a busca se encontra. Esse nunca irá diminuir. Inicialmente o alfa possui o valor de -<span style='font-size: 1.3em; font-weight: bold; vertical-align: middle;'>∞</span>.
-<strong>- Valor Beta(𝛽)</strong>: É o melhor valor encontrado pelo MIN (menor valor) até o momento em que a busca se encontra. Esse valor nunca irá aumentar. Inicialmente o beta possui o valor de +<span style='font-size: 1.3em; font-weight: bold; vertical-align: middle;'>∞</span>.
-
-Existem dois tipos de poda alfa-beta:
-
-<strong>- Poda Alfa(𝛼): Dado um nó MIN n, efetue a poda se 𝛽(n) ⩽ 𝛼(i) para algum nó ancestral i do nó n.</strong>
-<strong>- Poda Beta(𝛽): Dado um nó MAX n, efetue a poda se 𝛼(n) ⩾  𝛽(i) para algum nó ancestral i do nó n.</strong>
-
-<span style="color: red;">Importante: Ao ocorrer uma poda, observe em qual tipo de nó ela aconteceu.
-- Se a poda ocorrer em um nó <strong>MIN</strong>, ela é chamada de <strong>Poda Alfa</strong>.
-- Se ocorrer em um nó <strong>MAX</strong>, ela é chamada de <strong>Poda Beta</strong>.
-</span>
-
-Propriedades:
-- A poda não afeta o resultado final da busca
-- A quantidade de podas depende da ordem dos nodes terminais
-- Uma boa ordem de busca pode dobrar a profundidade da pesquisa, ou seja, permite uma busca mais profunda dentro de um limite de tempo.
-    - A complexidade de tempo cai de O(bm) para O(b<sup>m/2</sup>).
-    - Uma possível estratégia é ordenar a ordem de visita aos nodes.
-
-Não é viável armazenar a utilidade de todos os estados possíveis, pois a quantidade de combinações cresce rapidamente. Por isso, a utilidade normalmente é calculada dinamicamente durante a execução do algoritmo, a cada interação ou expansão da árvore.
-
-<span style="color:red;">Existe um passo-a-passo da execução da Poda Alfa-beta no tópico 19.</span>
-<span style="color:red;">No módulo questões(está no tópico 18 das questões) tem exercicios práticos, em que vocês terão que executar a poda alfa-beta em uma árvore MiniMax. Todavia, se quiserem criar a sua própria árvore e executarem a poda alfa-beta nela, podem utilizar esse site https://raphsilva.github.io/utilities/minimax_simulator/#</span>`,
+    titulo: "[Aula 3] Representação Vetorial de Textos:",
+    conteudo: ` As stopwords são palavras que normalmente são retiradas
+do texto em processamento pois pouco contribuem para o
+processo de identificação/classificação.
+• O objetivo é reduzir a dimensionalidade.
+• Normalmente incluem artigos, preposições, dentre outros.
+• Existem diferentes listas disponíveis: <a href="Stopwords português (https://www.linguateca.pt/chave/stopwords)" target="_blank" rel="noopener noreferrer">Stopwords português</a>`,
   },
+  {
+    id: 19,
+    provaId: 1,
+    titulo: "Python para PLN",
+    conteudo: `• Principais pacotes:
+  • NLTK: nltk.org
+  • spaCy: spacy.io
 
+  <strong>Exemplos:</strong>
+  • Contar palavras
+    <img src="${pln_3}"/>
+  <hr>
+  • Contar Tokens
+  <img src="${pln_4}"/>
+  <hr>
+  Stemming:
+      <a href="Snowball (https://textprocessing.org/open-source-text-processing-project-snowball)" target="_blank" rel="noopener noreferrer">Snowball</a>
+      <a href="PyStemmer (https://textprocessing.org/open-source-text-processing-project-pystemmer)" target="_blank" rel="noopener noreferrer">PyStemmer</a>
+
+  • Stemmer: O NLTK inclui o stemmer RSLP Portuguese
+  <img src="${pln_6}"/>
+  <hr>
+  • Separação em sentenças:
+  <a href="punkt (https://www.nltk.org/_modules/nltk/tokenize/punkt.html)" target="_blank" rel="noopener noreferrer">Punkt</a>
+  <hr>
+  • Stopwords português :
+  <a href="Stopwords português (https://www.linguateca.pt/chave/stopwords)" target="_blank" rel="noopener noreferrer">Stopwords português</a>
+  <hr>
+  • Regex
+  <img src="${pln_12}"/>`,
+  },
   {
     id: 19,
     provaId: 1,
@@ -408,58 +534,6 @@ Não é viável armazenar a utilidade de todos os estados possíveis, pois a qua
         ,
     ],
   },
-  {
-    id: 20,
-    provaId: 1,
-    titulo: "Decisões Imperfeitas e Função de Avaliação",
-    conteudo: `<strong>Decisões imperfeitas</strong>
-Limitações do MINIMAX:
-- O algoritmo requer que a árvore seja expandida até os estados terminais(nós folhas com utilidades).
-- Consome muito tempo para jogos que demandam de muitos “passos” para chegar aos estados terminais (mesmo com poda).
-    - No geral, nós temos uma limitação de tempo para tomar as decisões.
-    - Impraticável em jogos reais que requerem interações em tempo real.
-
-A solução para essas limitações é: Decisões Imperfeitas
-- Em vez de pesquisar até os nós terminais, pesquisamos apenas até uma profundidade limitada(ou seja, olhamos para frente apenas d movimentos)
-- Para isso, é necessário trocar a função de utilidade por uma função de evolução (heurística), que estima a utilidade esperada do nó não terminal
-- A garantia de jogo ótimo desaparece.
-- Mecanismo de parada: Podemos usar IDS limitada pelo tempo disponível para uma movimentação ou considerar uma profundidade máxima
-
-<strong>Função de Avaliação</strong>
-Mesmo princípio das heurísticas usadas pelos algoritmos de busca informada
-Estima a pontuação para nós não terminais
-São sempre imperfeitas, e designar boas funções é a chave.
-
-Trade-off:
-- Funções precisas podem ser computacionalmente caras. Menos tempo para realizar a busca
-- Funções imprecisas podem ser computacionalmente rápidas - mais tempo para realizar a busca.
-
-A função de avaliação é uma fórmula usada para estimar quão vantajoso um estado do jogo é para um jogador, sem precisar explorar toda a árvore de possibilidades até o final da partida.
-Mas como isso funciona na prática?
-No jogo da velha, por exemplo, uma heurística simples pode contar quantas possibilidades de vitória ainda existem para cada jogador. Assim, a função de avaliação pode ser definida como:
-
-Eval(s) = possibilidades do jogador X ganhar - possibilidades do jogador O ganhar
-
-Olhe o exemplo:
-
-<img src="${ticTac}" alt="Exemplo da aplicação da função de avaliação no jogo Tic-Tac Toe" class="resumo__gif"/>
-
-O jogador X só conseguirá vencer pelas seguintes linhas: 1ª linha, 3ª linha, 1ª coluna e 3ª coluna. Por sua vez, o jogador O poderá vencer pela 1ª linha, 3ª linha, 2ª coluna, 3ª coluna, diagonal principal e diagonal secundária.
-O resultado da função pode ser interpretado da seguinte maneira: se o valor for negativo, significa que o jogador O possui mais possibilidades de vitória do que X. Contudo, se o valor for positivo, significa que X possui mais chances de vencer. Já se o valor for 0, significa que ambos possuem a mesma quantidade de possibilidades de vitória.
-
-Propriedades:
-- Estados Terminais: Possui apenas valores representando vitória/empate/derrota.
-- Estados Intermediários:
-    - Podem ter qualquer valor (2,5,100)
-    - A escala precisa preservar a lógica
-    - valores maiores -> melhores para o MAX
-    - valores menores -> melhores para o MIN
-- Teste de objetivo:
-    - Deve sempre ser baseado nas regras do jogo, não
-    na função de avaliação.
-    - Exemplo (jogo da velha): "3 em linha" encerra o jogo
-    independentemente da pontuação heurística`,
-  },
 
   // ── PROVA 2 ────────────────────────────────────────────────
   {
@@ -495,7 +569,6 @@ Apesar de ser simples e eficiente, o algoritmo pode ficar preso em máximos ou m
 <strong>Conceitos:</strong>
 — Cordilheiras: são extensas sequências de máximos locais. A existência de cordilheiras pode fazer com que o algoritmo pare precocemente em um máximo local, encontrando apenas uma solução ótima local em vez do máximo global.
 
-<img src="${Cordilheira}" alt="Exemplo de uma cordilheira em um espaço de busca" class="resumo__gif"/>
 <p class="resumo__gif-label">Exemplo de uma cordilheira em um espaço de busca</p>
 
 — Platôs: são regiões em que os estados vizinhos possuem o mesmo valor da função objetivo. Isso pode fazer com que o algoritmo gaste muito tempo explorando lateralmente ou até pare prematuramente, sem conseguir avançar para estados melhores.
@@ -693,13 +766,13 @@ export const provas = [
   {
     id: 1,
     titulo: "Prova 1",
-    descricao: "Fundamentos de IA, agentes, algoritmos de busca e teoria dos jogos.",
+    descricao: "lalala",
     emoji: "📘",
   },
   {
     id: 2,
     titulo: "Prova 2",
-    descricao: "Busca Local e Algoritmos Genéticos.",
+    descricao: "lelele",
     emoji: "📗",
   },
 ];
