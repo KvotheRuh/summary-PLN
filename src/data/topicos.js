@@ -1,5 +1,5 @@
-import pln_1 from "../images/pln_1.png";
-import pln_2 from "../images/pln_2.png";
+import pln_1 from "../images/pln_1.png"
+import pln_2 from "../images/pln_2.png"
 import pln_3 from "../images/pln_3.png"
 import pln_4 from "../images/pln_4.png"
 import pln_5 from "../images/pln_5.png"
@@ -10,6 +10,15 @@ import pln_9 from "../images/pln_9.png"
 import pln_10 from "../images/pln_10.png"
 import pln_11 from "../images/pln_11.png"
 import pln_12 from "../images/pln_12.png"
+import pln_13 from "../images/pln_13.png"
+import pln_14 from "../images/pln_14.png"
+import pln_15 from "../images/pln_15.png"
+import pln_16 from "../images/pln_16.png"
+import pln_17 from "../images/pln_17.png"
+import pln_18 from "../images/pln_18.png"
+import pln_19 from "../images/pln_19.png"
+import pln_20 from "../images/pln_20.png"
+import pln_21 from "../images/pln_21.png"
 import passo1 from "../images/1.png"
 import passo2 from "../images/2.png"
 import passo3 from "../images/3.png"
@@ -21,18 +30,6 @@ import passo8 from "../images/8.png"
 import passo9 from "../images/9.png"
 import passo10 from "../images/10.png"
 import passo11 from "../images/11.png"
-
-
-import ShouldersPlato from "../images/Shoulders e Plato.png"
-import BackwardSelection from "../images/backward.png"
-import definicoesAG from "../images/definicoesAG.png"
-import crossover1 from "../images/crossover1.png"
-import crossover2 from "../images/crossover2.png"
-import crossover3 from "../images/crossover3.png"
-import mutacao from "../images/mutacao.png"
-import fitness from "../images/fitness.png"
-import ForwardSelection from "../images/forward.png"
-
 
 const topicos = [
   {
@@ -455,16 +452,201 @@ Você pode utilizar o seguinte texto de teste:
   {
     id: 18,
     provaId: 1,
-    titulo: "[Aula 3] Representação Vetorial de Textos:",
-    conteudo: ` As stopwords são palavras que normalmente são retiradas
-do texto em processamento pois pouco contribuem para o
-processo de identificação/classificação.
-• O objetivo é reduzir a dimensionalidade.
-• Normalmente incluem artigos, preposições, dentre outros.
-• Existem diferentes listas disponíveis: <a href="Stopwords português (https://www.linguateca.pt/chave/stopwords)" target="_blank" rel="noopener noreferrer">Stopwords português</a>`,
+    titulo: "[Aula 3] Representação Vetorial de Textos",
+    conteudo: `Definição: trata-se de conversão da representação textual (strings) de um corpus para uma representação numérica
+(vetor).
+• Esta operação é necessária como etapa inicial ao processo de classificação ou recuperação da informação, por exemplo.
+• Em outras palavras, trata-se de um processo equivalente a “obtenção de características” do texto/corpus.
+• Um dos primeiros métodos conhecidos para realizar esta tarefa é o bag-of-words.`,
   },
   {
     id: 19,
+    provaId: 1,
+    titulo: "Bag-of-Words (BoW)",
+    conteudo: `• Propõe uma maneira de representar as características textuais de documentos em vetores numéricos.
+• Baseado na frequência de palavras nos textos(histograma de palavras).
+• A ideia da “sacola” de palavras vem do fato de que a ordem das palavras ou a estrutura do texto não é levado em consideração no processo.
+• Todo o corpus pode ser chamado de “lista de BoW”.
+• Primeira etapa: encontrar todas as ocorrências de uma palavra (ou termo), o que
+chamaremos de definição do vocabulário.
+• Dado o seguinte corpus extraído de <a href="gentle-introduction-bag-words-model (https://machinelearningmastery.com/gentle-introduction-bag-words-model/)" target="_blank" rel="noopener noreferrer">gentle-introduction-bag-words-model</a>:
+    “It was the best of times,”
+    “it was the worst of times,”
+    “it was the age of wisdom,”
+    “it was the age of foolishness.”
+• Cada linha é tratada como um documento. O vocabulário seria então formado por 10 palavras:
+    “it”, “was”, “the”, “best”, “of”, “times”, “worst”, “age”, “wisdom”, “foolishness”
+• Perceba que nenhuma operação básica de modificação no texto foi realizada (por exemplo, extração de stopwords).
+• Segunda etapa: criação dos vetores de documentos. Os vetores terão comprimento de 10 posições, visto que o vocabulário tem comprimento C = 10. Para cada texto, indicar a ocorrência (e a quantidade) para cada termo.
+• Dado o vocabulário, cada palavra representa uma posição no vetor:
+    {“it”, “was”, “the”, “best”, “of”, “times”, “worst”, “age”, “wisdom”, “foolishness”}
+• Vetores:
+    v1 = [1, 1, 1, 1, 1, 1, 0, 0, 0, 0]
+    v2 = [1, 1, 1, 0, 1, 1, 1, 0, 0, 0]
+    v3 = [1, 1, 1, 0, 1, 0, 0, 1, 1, 0]
+    v4 = [1, 1, 1, 0, 1, 0, 0, 1, 0, 1]
+
+Outro exemplo:
+• Corpus:
+    d1 = “John likes to watch movies. Mary likes movies too.”
+    d2 = “John also likes to watch football games.”
+• Vocabulário após a extração de stopwords {“also”, “to”, “too”}: {“John”, “likes”, “watch”, “movies”, “Mary”, “football”, “games”}
+• Vetores:
+    v1 = [1, 2, 1, 2, 1, 0, 0]
+    v2 = [1, 1, 1, 0, 0, 1, 1]
+<strong>O comprimento do vetor tem relação direta à extensão do vocabulário. Se reduzirmos o tamanho do vocabulário, consequentemente teremos vetores menores.</strong>
+
+<strong>Matriz Termo-Documento</strong>
+• O conjunto de todos os vetores forma a matriz Termo-Documento.
+• Para a coleção de documentos a seguir:
+    d1 = “O carro branco é bonito. O carro é novo.”
+    d2 = “Comprei um carro branco bonito.”
+    d3 = “Comprei um novo carro.”
+    d4 = “Todos precisamos de um carro.”
+• A matriz equivalente é construída (sem stopwords):
+    <img src="${pln_13}"/>
+
+<strong>Detalhes da Utilização do BoW</strong>
+• A matriz gerada pelos N documentos (textos) é geralmente esparsa (vários 0s ao longo das colunas - Lei de Zipf) e de alta dimensionalidade.
+• Formas de reduzir a dimensão:
+    • Retirada de stopwords;
+    • Lematização;
+    • Uso do n-gram (múltiplas palavras por token).
+• O fato de uma palavra ter alta frequência não necessariamente significa que trata-se de um termo importante. Por exemplo: artigos (‘o’, ‘a’, ...) tem a tendência de ocorrer com frequência em textos.
+
+<strong>Distribuição dos Termos</strong>
+• A distribuição dos termos em uma coleção de documentos segue a lei de Zipf e a distribuição de cauda longa (long-tail):
+    • A maior parte do vocabulário tem baixa frequência.
+    <img src="${pln_14}"/>
+`,
+  },
+  {
+    id: 20,
+    provaId: 1,
+    titulo: "TF-IDF",
+    conteudo: `• A evolução do BoW pode ser obtida utilizado o TF-IDF. O TF-IDF (term frequency–inverse document frequency) é usado para medir a importância de um termo em um documento presente em uma coleção de documentos. (JONES, 1972) (SALTON; BUCKLEY, 1988)
+• O valor TF-IDF de uma palavra aumenta proporcionalmente à medida que aumenta o número de ocorrências dela em um documento. Porém, este valor é relativizado pela frequência da palavra no corpus. Resumindo:
+    • 1) quanto mais frequentemente um termo ocorre em um documento, mais representativo ele é para o conteúdo, e;
+    • 2) quanto mais documentos o termo ocorre, menos discriminativo ele é.
+    • “TF-IDF é comumente usado em Recuperação de Informação para comparar um vetor de consulta com um vetor de um documento de texto, usando uma função de similaridade ou distância, como a função cosseno (SOUCY; MINEAU, 2005).”
+    • Para computar o TF-IDF vamos trabalhar com o seguinte corpus:
+        d1 = “O carro branco está na rodovia.”
+        d2 = “O caminhão branco parou na garagem.”
+        <img src="${pln_15}"/>
+    • Matematicamente, TF-IDF (term frequency–inverse document frequency) pode ser computado como:
+        • termo-frequência (tf): nos fornece a frequência de cada termo em um documento do corpus.
+        <img src="${pln_16}"/>
+    • Para o corpus:
+          tf(“carro”, d1) = 1/6 = 0.167
+          tf(“carro”, d2) = 0/6 = 0
+          tf(“branco”, d1) = 1/6 = 0.167
+          tf(“branco”, d2) = 1/6 = 0.167
+    • Cálculo do IDF (inverse data frequency): permite computar o peso de cada palavra na coleção de documentos. Palavras que ocorrem mais raramente tem maior IDF.
+        <img src="${pln_17}"/>
+    • Para o corpus:
+        idf (“carro”) = log(2/1) = 0.3
+        idf (“branco”) = log(2/2) = 0
+     • O cálculo do TD-IDF seria então o produto de ambas equações:
+        <img src="${pln_18}"/>
+
+    <strong>Exemplo:</strong>
+    • Para o corpus:
+        tf-idf (“carro”, d1) = 0.167 x 0.3 = 0.0501
+        tf-idf (“carro”, d2) = 0 x 0.3 = 0
+        tf-idf (“branco”, d1) = 0.167 x 0 = 0
+        tf-idf (“branco”, d2) = 0.167 x 0 = 0
+    • Conclusões:
+        • tf-idf de palavras em comum nos documentos é zero, ou seja, não são palavras significantes na discriminação dos textos;
+        • tf-idf de “carro” é diferente de zero, o que significa que esta palavra tem mais importância na coleção de documentos.
+
+    <strong>Exercício</strong>
+      • Dado o corpus 2000_textos.txt disponível no Canvas, plote o histograma dos tokens presentes no arquivo.
+      • Avalie o resultado comparando-o com a Lei de Zipf.`,
+
+  },
+  {
+    id: 21,
+    provaId: 1,
+    titulo: "Similaridade entre Documentos",
+    conteudo: `• Dada a introdução ao trabalho com o modelo de espaço vetorial (vector space model), onde documentos são representados como coleções (vetores) de valores (índices, frequência, etc.), podemos utilizá-los em diferentes aplicações.
+• Vamos utilizar o espaço vetorial para identificar qual documento D está mais “próximo” de um vetor de consulta Q (a query Q será então considerada como um documento).
+• Neste caso uma medida de similaridade pode ser usada para calcular a distância entre os vetores (documentos).
+• Uma forma tradicional de medir a distância entre dois vetores é por meio da medida do ângulo entre ambos.
+• O ângulo é computado pelo produto interno entre os vetores.
+
+<strong>Exemplo</strong>
+• Vamos analisar um exemplo, onde cada documento é composto por apenas dois termos: “Inteligência” e “Artificial”.
+• Dados os seguintes documentos:
+    d1 = “Inteligência Artificial”
+    d2 = “Artificial”
+    d3 = “Inteligência”
+• e a query:
+    q = “Inteligência Artificial”
+    <img src="${pln_19}"/>
+
+• Vetor de documentos:
+    d1 = [1, 1]
+    d2 = [0, 1]
+    d3 = [1, 0]
+    q = [1, 1]`,
+  },
+  {
+    id: 22,
+    provaId: 1,
+    titulo: "Coeficiente de Similaridade (SC)",
+    conteudo: `• Para o cálculo da similaridade entre os documentos temos diferentes abordagens. Uma das mais simples é calcular o produto dos vetores.
+Assume-se que o comprimento do vetor que representa a query Q é igual ao comprimento dos vetores dos documentos da coleção.
+<img src="${pln_20}"/>
+
+<strong>Exemplo</strong>
+• Assumindo o seguinte corpus de documentos (Grossman and Frieder, 2004):
+    d1 = “Shipment of gold damaged in a fire.”
+    d2 = “Delivery of silver arrived in a silver truck.”
+    d3 = “Shipment of gold arrived in a truck.”
+• e a query:
+    q = “gold silver truck.”
+
+    TF-IDF da Query
+    tf(“gold”, q) = 1/3 = 0.333
+    tf(“silver”, q) = 1/3 = 0.333
+    tf(“truck”, q) = 1/3 = 0.333
+
+    N agora tem 4 documentos:
+    idf (“gold”) = log(4/3) = 0.1249
+    idf (“silver”) = log(4/2) = 0.3010
+    idf (“truck”) = log(4/3) = 0.1249
+
+    tf-idf (“gold”) = 0.333 * 0.1249 = 0.0416
+    tf-idf (“silver”) = 0.333 * 0.3010 = 0.1000
+    tf-idf (“truck”) = 0.333 * 0.1249 = 0.0416
+
+    Matriz de Documentos
+    • Corpus:
+        d1 = “Shipment of gold damaged in a fire.”
+        d2 = “Delivery of silver arrived in a silver truck.”
+        d3 = “Shipment of gold arrived in a truck.”
+    • Query:
+        • q = “gold silver truck.”
+        • Temos então 3 documentos e 11 termos na coleção.
+        <img src="${pln_21}"/>
+
+<strong>Exemplo</strong>
+• Após o cálculo dos pesos para cada documento, computamos a similaridade SC da query Q em relação à cada documento Di.
+    SC(q, d1) = (0*0) + (0*0) + (0*0.068) + … (0.042*0.025) + ...+ (0. 1* 0) +
+    (0.042*0) = 0.0010
+    SC(q, d2) = (0.1*0.119) + (0.042*0.022) = 0.0128
+    SC(q, d3) = (0.042*0.025 ) + (0.042*0.025) = 0.0020
+• Assim, o documento mais próximo à query q seria d2, depois d3 e d1.
+
+<strong>Exercício para Entrega</strong>
+• Dado o corpus:
+    d1 = “O rato roeu a roupa do rei de Roma.”
+    d2 = “Nenhum rato rói a roupa do rei de Roma sem punição.”
+    d3 = “A rota de fuga do rato foi rápida.”
+• Implementar um programa em Python para computar o TF-IDF de cada termo.`,
+  },
+  {
+    id: 23,
     provaId: 1,
     titulo: "Python para PLN",
     conteudo: `• Principais pacotes:
@@ -494,9 +676,10 @@ processo de identificação/classificação.
   • Regex
   <img src="${pln_12}"/>`,
   },
+  // ── PROVA 2 ────────────────────────────────────────────────
   {
-    id: 19,
-    provaId: 1,
+    id: 40,
+    provaId: 2,
     titulo: "Passo-a-Passo Poda Alfa-beta",
     slides: [
       {legenda:"Inicializar a raiz com valores de [-INF, +INF], alfa e beta, respectivamente",
@@ -534,232 +717,6 @@ processo de identificação/classificação.
         ,
     ],
   },
-
-  // ── PROVA 2 ────────────────────────────────────────────────
-  {
-    id: 21,
-    provaId: 2,
-    titulo: "Busca Local",
-    conteudo: `A busca local é uma técnica utilizada para encontrar soluções em espaços de estados muito grandes ou até infinitos utilizando pouca memória. Diferente de outros métodos de busca, ela não armazena todos os estados nem utiliza uma árvore de busca, trabalhando apenas com o estado atual e buscando melhorá-lo de forma iterativa. Nesse tipo de abordagem, o espaço de estados corresponde ao conjunto completo das soluções possíveis, chamadas de configurações.
-Na busca local, o algoritmo utiliza apenas decisões locais para tentar melhorar o estado atual. A partir de um estado específico, ele busca estados vizinhos que maximizem ou minimizem a função objetivo, dependendo do problema. Entretanto, pode acontecer de o algoritmo encontrar um máximo local e considerá-lo uma solução adequada, mesmo que ele não seja o máximo global. Além disso, a busca local não é recomendada para todos os problemas, principalmente quando é necessário garantir a solução ótima.
-No problema das 8 rainhas, por exemplo, cada configuração representa todas as rainhas posicionadas no tabuleiro, mesmo que existam conflitos entre elas. Apesar de ser eficiente em termos de memória, a busca local possui a desvantagem de poder nunca explorar o estado em que a solução correta realmente se encontra. Além disso, os estados já visitados normalmente não são armazenados. A busca local é utilizada preferencialmente em problemas em que há limitação de memória ou espaços de busca muito grandes.
-
-<strong>Espaço de estado paisagem(topologia)</strong>
-O espaço de estados em busca local pode ser representado como uma paisagem(topologia), em que cada estado possui um valor definido pela função objetivo. Essa função mede a qualidade de uma possível solução, permitindo que o algoritmo explore os vizinhos do estado atual em busca de estados melhores.
-Na maioria dos casos, o objetivo é encontrar o melhor valor possível para a função objetivo. Contudo, durante a busca, o algoritmo pode encontrar soluções locais e não alcançar a solução ideal.
-
-<strong>Conceitos:</strong>
-— Máximo global: maior valor encontrado para a função objetivo, representando o pico mais alto da paisagem.
-— Mínimo global: menor valor encontrado para a função objetivo, representando o ponto mais baixo da paisagem.
-— Máximo local: estado que possui valor maior que os estados vizinhos, mas que não é necessariamente o maior valor de toda a paisagem.
-— Mínimo local: estado que possui valor menor que os estados vizinhos, mas que não é necessariamente o menor valor de toda a paisagem.
-— Subida de encosta (Hill Climbing): método utilizado para encontrar o máximo global. O algoritmo vai “subindo” para estados cada vez melhores, porém pode parar em um máximo local sem alcançar o melhor valor possível.
-— Descida de gradiente (Gradient Descent): método utilizado para encontrar o mínimo global. O algoritmo segue na direção de maior diminuição da função objetivo, mas pode ficar preso em um mínimo local sem atingir o mínimo global.`,
-  },
-
-
-  {
-    id: 22,
-    provaId: 2,
-    titulo: "Hill Climbing",
-    conteudo: `O Hill Climbing é um algoritmo de busca local utilizado para encontrar soluções melhores de forma iterativa. Em cada etapa, o algoritmo analisa apenas os vizinhos do estado atual e escolhe aquele que possui o valor mais alto da função objetivo, ou seja, o vizinho que representa a encosta mais alta.
-O processo continua enquanto existirem vizinhos com valores superiores ao estado atual. Quando nenhum vizinho apresenta um valor mais alto, o algoritmo encerra a execução. Por considerar apenas a melhor escolha imediata, sem analisar os possíveis caminhos futuros, o Hill Climbing também é conhecido como busca local gulosa.
-Apesar de ser simples e eficiente, o algoritmo pode ficar preso em máximos ou mínimos locais. Isso ocorre porque o algoritmo interrompe a execução no momento em que não encontra mais vizinhos com valores melhores que o estado atual, mesmo que ainda exista uma solução superior em outra região do espaço de estados. Entretanto, em alguns problemas, esses máximos e mínimos locais podem ser considerados soluções aceitáveis.
-
-<strong>Conceitos:</strong>
-— Cordilheiras: são extensas sequências de máximos locais. A existência de cordilheiras pode fazer com que o algoritmo pare precocemente em um máximo local, encontrando apenas uma solução ótima local em vez do máximo global.
-
-<p class="resumo__gif-label">Exemplo de uma cordilheira em um espaço de busca</p>
-
-— Platôs: são regiões em que os estados vizinhos possuem o mesmo valor da função objetivo. Isso pode fazer com que o algoritmo gaste muito tempo explorando lateralmente ou até pare prematuramente, sem conseguir avançar para estados melhores.
-— Shoulders: são regiões semelhantes aos platôs, porém existe uma saída para estados melhores. O problema é que o algoritmo pode ter dificuldade em encontrar a direção correta para continuar a busca.
-
-<img src="${ShouldersPlato}" alt="Exemplo de um espaço de busca que contém um Shoulder e um Platô" class="resumo__gif"  style="max-width: 100%; max-height: 400px;"/>
-<p class="resumo__gif-label">Exemplo de um espaço de busca que contém um Shoulder e um Platô</p>
-
-<strong>Propriedades:</strong>
-— Completo: Não. O algoritmo pode ficar preso em máximos locais, parar em platôs ou entrar em loops, não garantindo que encontrará uma solução mesmo que ela exista.
-— Ótimo: O algoritmo do Hill Climbing não consegue garantir que uma solução ótima seja encontrada. Contudo, alguns pontos devem ser considerados:
-    — Em problemas convexos (onde existe apenas um pico principal e não há máximos locais), o algoritmo pode encontrar a solução ótima.
-    — Mesmo variantes como o Random-Restart Hill Climbing não conseguem garantir uma solução ótima em problemas normais (não convexos).
-    — Em alguns casos, uma solução subótima já é suficiente.
-    — Encontrar a solução ótima pode possuir um alto custo computacional.
-
-<strong>Random-restart Hill Climbing:</strong>
-O Random-Restart Hill Climbing consiste em executar o algoritmo Hill Climbing múltiplas vezes a partir de estados iniciais aleatórios, escolhendo ao final a melhor solução encontrada.
-Essa abordagem ajuda a evitar que o algoritmo fique preso em máximos locais. Contudo, não há garantia de que o máximo global será encontrado, embora as chances de alcançá-lo sejam aumentadas.
-Além disso, o Random-Restart Hill Climbing consegue escapar de regiões conhecidas como shoulders. Porém, em regiões de platô, o algoritmo ainda pode apresentar pouco ou nenhum progresso significativo.`,
-  },
-
-  {
-    id: 23,
-    provaId: 2,
-    titulo: "Simulated Annealing (Têmpera Simulada)",
-    conteudo:`O Simulated Annealing combina a subida de encosta com um processo aleatório.
-O algoritmo utiliza uma variável chamada temperatura, que é decrementada ao longo da execução. Essa temperatura é utilizada para medir a probabilidade de o algoritmo aceitar um estado pior que o atual.
-À medida que a temperatura diminui, a probabilidade de aceitar estados piores também diminui. Por outro lado, quanto maior a temperatura, maior será a possibilidade de o algoritmo selecionar um estado considerado “ruim”.
-Esse mecanismo é utilizado para “chacoalhar” a busca, permitindo que o algoritmo explore outras regiões do espaço de estados e evitando que ele fique preso em máximos locais.
-
-— Temperatura alta: mais movimentos ruins são permitidos, aumentando a flexibilidade de escolha do algoritmo.
-— Temperatura baixa: menos movimentos ruins são permitidos, reduzindo a flexibilidade de escolha.
-
-O algoritmo de têmpera simulada pode ser utilizado tanto para encontrar o mínimo global quanto o máximo global. Em muitos casos, os problemas são tratados como maximização; porém, problemas de minimização podem ser resolvidos invertendo o sinal da função objetivo.
-
-<strong>Propriedades:</strong>
-— Completo: Não. Pode demorar muito para encontrar uma solução ou até mesmo parar a execução antes de encontrar a solução.
-— Ótimo: Teoricamente, o algoritmo de Têmpera Simulada pode ser considerado ótimo. Isso ocorre porque, em situações onde a temperatura diminui de forma extremamente lenta e o algoritmo pode executar sem limite de tempo, ele consegue convergir para a solução ótima global. Contudo, na prática, o algoritmo normalmente é considerado não ótimo, pois alcançar essa solução exigiria um custo computacional muito elevado e um tempo de execução excessivamente grande.`,
-  },
-
-  {
-    id: 24,
-    provaId: 2,
-    titulo: "Local Beam Search (Busca em feixe local)",
-    conteudo: ` Diferente do Hill Climbing e do Simulated Annealing, que armazenam apenas o estado atual, o Local Beam Search mantém simultaneamente um conjunto de (k) estados.
-O algoritmo inicia com estados aleatórios, cuja quantidade é definida pelo valor de (k). Por exemplo, se (k = 4), a busca começará com 4 estados aleatórios.
-Em seguida, são gerados todos os vizinhos desses estados. Após a geração, os (k) melhores vizinhos são selecionados, e o processo se repete continuamente.
-O algoritmo encerra sua execução quando encontra o estado objetivo entre os estados gerados.
-
-<strong>Propriedades:</strong>
-Ótimo: Não. O Local Beam Search não garante encontrar a solução ótima global, pois pode convergir para máximos locais e descartar estados que poderiam levar à melhor solução.
-Completo: Não. O algoritmo não garante encontrar uma solução mesmo que ela exista, pois mantém apenas (k) estados simultaneamente e pode eliminar caminhos importantes durante a busca.
-
-<strong>Busca em feixe local estocástica</strong>
-A busca em feixe local pode sofrer com a falta de diversidade, ou seja, os estados podem acabar concentrados em uma pequena região do espaço de estados.
-Uma solução para esse problema é combinar a função objetivo com probabilidade para selecionar os sucessores.
-Nessa abordagem, os estados mais promissores possuem maior chance de serem escolhidos, mas estados menos promissores ainda podem ser selecionados em menores proporções.
-Isso aumenta a diversidade da busca e reduz as chances de o algoritmo ficar preso em uma única região do espaço de estados.`,
-  },
-
-  {
-    id: 25,
-    provaId: 2,
-    titulo: "Algoritmos Genéticos",
-    conteudo: `Os Algoritmos Genéticos são métodos de resolução de problemas de otimização inspirados no processo de seleção natural. Nesse método, existe uma população de indivíduos, também chamados de estados ou cromossomos, em que cada indivíduo representa uma possível solução para o problema.
-Durante a execução, os indivíduos mais aptos, ou seja, aqueles que possuem melhores valores para a função objetivo, possuem maior chance de gerar descendentes. Esses novos indivíduos formam a próxima geração, permitindo que o algoritmo evolua gradualmente em busca da melhor solução possível.
-O funcionamento do algoritmo simula mecanismos da evolução biológica para encontrar o cromossomo mais adaptável, correspondente à solução mais adequada do problema.
-
-<strong>Propriedades:</strong>
-— Completo: Não são completos porque não garantem encontrar uma solução, mesmo que ela exista. O algoritmo pode convergir prematuramente para mínimos ou máximos locais ou encerrar a execução antes de explorar regiões importantes do espaço de busca.
-— Ótimo: Não são ótimos porque não garantem encontrar o máximo ou mínimo global. Apesar de frequentemente produzirem boas soluções, o resultado encontrado pode ser apenas uma solução ótima local.
-
-<strong>Geração:</strong>
-Uma geração corresponde ao conjunto de indivíduos(população) existente em um determinado momento da execução do algoritmo.
-A cada geração, os indivíduos passam pelas etapas de seleção, crossover e mutação, gerando novos descendentes que formarão a próxima geração. Com isso, o algoritmo busca produzir populações cada vez mais adaptadas ao problema.
-
-<strong>Algoritmo da formiga:</strong>
-É um método de otimização inspirado no comportamento das formigas na busca por alimento. As formigas deixam rastros de feromônio no caminho percorrido, e caminhos com maior quantidade de feromônio possuem maior probabilidade de serem escolhidos pelas outras formigas.
-Com o tempo, os caminhos mais curtos e eficientes acumulam mais feromônios, permitindo que o algoritmo encontre boas soluções para problemas de otimização e busca de caminhos.
-O algoritmo da formiga é utilizado em sistemas de GPS para encontrar rotas mais eficientes entre diferentes pontos.`,
-  },
-
-  {
-    id: 26,
-    provaId: 2,
-    titulo: "Representação de um problema com Algoritmos Genéticos",
-    conteudo: `Nos Algoritmos Genéticos, o problema é representado por um espaço de busca formado por uma população de indivíduos. Cada indivíduo corresponde a uma possível solução para o problema e é representado por um cromossomo.
-O cromossomo é composto por um vetor de tamanho finito, cujos componentes podem assumir diferentes valores. Cada posição desse vetor é chamada de gene, e cada gene representa uma característica específica da solução individual.
-A forma mais comum de representar cromossomos é utilizando representação binária, com valores 0 e 1. Isso ocorre porque a representação binária é simples de implementar e facilita operações importantes do algoritmo, como crossover e mutação. Além disso, os valores binários permitem indicar facilmente a presença ou ausência de determinadas características em uma solução.
-Outra forma de representação é utilizar valores decimais, principalmente em problemas que envolvem valores contínuos.
-
-<img src="${definicoesAG}" alt="Representação das principais definições de um algoritmo genético" class="resumo__gif" style="max-width: 100%; max-height: 100px;"/>
-<p class="resumo__gif-label">Representação das principais definições de um algoritmo genético</p>
-
-
-<strong>Fitness Score</strong>
-A aptidão(Fitness) representa a capacidade de um indivíduo “competir” dentro da população dos Algoritmos Genéticos. Para isso, é calculado um fitness score para cada indivíduo, indicando a qualidade da solução que ele representa.
-Os indivíduos que possuem melhores valores de fitness possuem maior probabilidade de serem selecionados para a reprodução e, consequentemente, gerar melhores descendentes durante a fase de crossover.
-A função de fitness corresponde à função objetivo do problema, sendo responsável por avaliar o quão boa é cada solução encontrada pelo algoritmo.
-
-<img src="${fitness}" alt="Exemplo de como funciona o algoritmo." class="resumo__gif"  style="max-width: 100%; max-height: 400px;"/>
-<p class="resumo__gif-label">Exemplo de como funciona o algoritmo realiza a busca</p>
-
-<strong>Roulette Wheel Selection</strong>
-É um método de seleção utilizado nos Algoritmos Genéticos em que a probabilidade de um indivíduo ser escolhido é proporcional ao seu fitness. Dessa forma, quanto maior for o fitness de um cromossomo, maior será sua chance de ser selecionado para reprodução.
-O funcionamento pode ser comparado a uma roleta com várias posições. Considerando uma roleta com 100 posições, cada cromossomo ocupa uma quantidade de espaços proporcional ao seu valor de fitness. Durante a seleção, são gerados números aleatórios entre 1 e 100, e o indivíduo correspondente à posição sorteada é escolhido.
-Em implementações simples, um mesmo cromossomo pode ser selecionado várias vezes. Quando isso acontece e o indivíduo reproduz com ele mesmo, os descendentes tendem a ser idênticos ao pai, reduzindo a diversidade genética da população.
-Para evitar esse problema, utiliza-se a seleção sem reposição. Nesse método, após um cromossomo ser selecionado como pai, ele não pode ser escolhido novamente na mesma etapa de seleção, aumentando a diversidade genética dos descendentes.
-
-<strong>Crossover</strong>
-O Crossover é a principal etapa dos Algoritmos Genéticos. Nessa fase, dois indivíduos selecionados anteriormente são utilizados para gerar um novo descendente. O filho é criado combinando características dos dois pais, formando uma nova possível solução para o problema.
-A escolha das características herdadas de cada pai ocorre de forma aleatória, permitindo que diferentes combinações sejam geradas ao longo das gerações.
-Existem diferentes operadores de crossover utilizados nos Algoritmos Genéticos para combinar características dos pais e gerar novos descendentes.
-Principais tipos:
-— One-point crossover: utiliza um único ponto de corte no cromossomo. Após esse ponto, as partes finais dos pais são trocadas para gerar os filhos.
-— Two-point crossover: utiliza dois pontos de corte. A região entre esses pontos é trocada entre os pais, permitindo combinações mais variadas.
-— Uniform crossover: cada gene do descendente é escolhido aleatoriamente entre os genes dos dois pais, aumentando a diversidade genética.
-
-<img src="${crossover2}" alt="Representação de um One-point crossover" class="resumo__gif"/>
-<p class="resumo__gif-label">Representação de um One-point crossover</p>
-<img src="${crossover3}" alt="Representação de um Two-point crossover" class="resumo__gif"/>
-<p class="resumo__gif-label">Representação de um Two-point crossover</p>
-<img src="${crossover1}" alt="Representação de um Uniform crossover" class="resumo__gif"/>
-<p class="resumo__gif-label">Representação de um Uniform crossover</p>
-
-<strong>Mutação</strong>
-A mutação é uma etapa utilizada nos Algoritmos Genéticos para aumentar a diversidade genética da população. Quando os pais possuem cromossomos muito parecidos, ou até mesmo iguais, os descendentes gerados também tendem a ser semelhantes. Isso reduz a diversidade da população e pode fazer o algoritmo ficar preso em mínimos ou máximos locais.
-Para evitar esse problema, são realizadas alterações aleatórias nos genes dos cromossomos, permitindo o surgimento de novas características e aumentando a variedade de soluções possíveis.
-A frequência com que essas alterações ocorrem é definida pela taxa de mutação.
-A taxa de mutação é o valor que define a frequência com que alterações aleatórias irão ocorrer nos genes dos cromossomos durante a etapa de mutação dos Algoritmos Genéticos.
-Ela funciona como uma probabilidade. Por exemplo, uma taxa de mutação de 5% indica que cada gene possui 5% de chance de sofrer uma alteração aleatória.
-O objetivo da taxa de mutação é aumentar a diversidade genética da população, evitando que todos os indivíduos fiquem muito parecidos e que o algoritmo fique preso em mínimos ou máximos locais.
-
-
-<img src="${mutacao}" alt="Representação da realização de uma possível mutação no filho" class="resumo__gif"/>
-<p class="resumo__gif-label">Representação da realização de uma possível mutação no filho</p>
-
-<strong>Critério de parada</strong>
-Os critérios de parada definem quando a execução de um Algoritmo Genético deve ser encerrada.
-O cenário ideal é encontrar o máximo global, ou seja, a melhor solução possível para o problema. Contudo, nem sempre isso é possível, principalmente em espaços de busca muito grandes.
-Por isso, outros critérios de parada podem ser utilizados durante a execução do algoritmo.
-Principais critérios de parada:
-— Encontrar o máximo global: situação ideal em que o algoritmo encontra a melhor solução possível
-— Limite de tempo de execução: o algoritmo é encerrado após determinado tempo
-— Limite do número de iterações(gerações): a execução para após atingir uma quantidade máxima de gerações
-— Sucessivas populações com baixa diversidade: indica que os indivíduos estão muito parecidos e que o algoritmo pode ter convergido para uma solução local.
-
-<strong>Elitismo</strong>
-O elitismo é uma estratégia utilizada nos Algoritmos Genéticos para preservar os melhores indivíduos da população ao longo das gerações.
-Após a geração de novos descendentes, é necessário decidir se os pais permanecerão ou serão removidos da população. Remover os pais pode causar a perda de características importantes de indivíduos bem adaptados. Por outro lado, manter muitos indivíduos antigos pode reduzir a diversidade genética da população.
-O elitismo busca equilibrar esse processo, garantindo que os indivíduos mais aptos sejam preservados para a próxima geração.`,
-  },
-
-  {
-    id: 27,
-    provaId: 2,
-    titulo: "Aplicações do Algoritmo Genético",
-    conteudo:`Os Algoritmos Genéticos possuem aplicações em diversas áreas, principalmente em problemas de otimização e busca por melhores soluções.
-Principais aplicações:
-—  Processamento de Imagens: utilizados em tarefas como segmentação de imagens, auxiliando na identificação e separação de regiões importantes.
-— Ciência Médica: ajudam na determinação da estrutura do DNA utilizando informações espectrométricas.
-— Mercado Financeiro: utilizados para encontrar a melhor alocação de ativos em uma carteira de investimentos, buscando equilibrar risco e retorno.
-— Machine Learning:
-    • Ajuste de hiperparâmetros(tuning)
-    • Definição da melhor arquitetura para redes neurais, como quantidade de neurônios, camadas ocultas, filtros e pooling
-    • Seleção de atributos(feature selection)`,
-  },
-
-  {
-    id: 28,
-    provaId: 2,
-    titulo: "Seleção de atributos(feature selection)",
-    conteudo:` A seleção de atributos é utilizada para escolher as características mais relevantes de um conjunto de dados, reduzindo informações desnecessárias e melhorando o desempenho dos modelos de aprendizado de máquina.
-Principais métodos:
-— Filter: avalia estatisticamente cada atributo de forma independente do modelo de aprendizado. Utiliza métricas como correlação de Pearson e informação mútua para identificar os atributos mais relevantes.
-— Embedded: a seleção de atributos ocorre durante o treinamento do próprio algoritmo de aprendizado. Alguns modelos, como Árvores de Decisão, conseguem identificar automaticamente quais atributos são mais importantes.
-— Wrapper: realiza o treinamento do modelo várias vezes utilizando diferentes combinações de atributos e compara o desempenho obtido em cada caso para encontrar a melhor seleção.
-
-<strong>Métodos de wrapper populares</strong>
-O Forward Selection inicia com um modelo sem atributos. A cada etapa, o algoritmo adiciona a característica que proporciona a maior melhoria no desempenho do modelo. O processo continua até que não existam melhorias significativas ou até atingir um critério de parada.
-
-<img src="${ForwardSelection}" alt="Exemplo da execução do  Forward Selection" class="resumo__gif"/>
-<p class="resumo__gif-label">Exemplo da execução do  Forward Selection</p>
-
-Já o Backward Selection funciona de forma oposta. Nesse método, o modelo começa utilizando todos os atributos disponíveis e, em cada etapa, remove a característica menos relevante. Após cada remoção, o modelo é treinado novamente para verificar se o desempenho continua adequado.
-Em ambos os métodos, é necessário definir critérios de parada para evitar excesso de processamento e complexidade desnecessária.
-
-<img src="${BackwardSelection}" alt="Exemplo da execução do algoritmo Backward Selection" class="resumo__gif"/>
-<p class="resumo__gif-label">Exemplo da execução do algoritmo Backward Selection</p>`,
-  }
 ];
 
 export const provas = [
