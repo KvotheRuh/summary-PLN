@@ -2,20 +2,20 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --rosa:          #fa6d93;
-  --rosa-claro:    #fcbccd;
-  --rosa-fundo:    #FDF0F2;
-  --beige:         #F5EFE6;
-  --beige-escuro:  #E8DDD0;
-  --beige-texto:   #C4A882;
-  --texto:         #4A3728;
-  --texto-medio:   #7A5C4A;
-  --texto-fraco:   #A08070;
-  --branco:        #FDFAF7;
-  --sucesso:       #6BAF8B;
-  --sucesso-fundo: #EDF7F1;
-  --erro:          #D47A7A;
-  --erro-fundo:    #FAF0F0;
+  --rosa:          #b82e56;
+  --rosa-claro:    #f5b8c9;
+  --rosa-fundo:    #fdf0f2;
+  --beige:         #f5efe6;
+  --beige-escuro:  #d6c7b2;
+  --beige-texto:   #5e4930;
+  --texto:         #302217;
+  --texto-medio:   #543d2c;
+  --texto-fraco:   #6e503b;
+  --branco:        #fdfaf7;
+  --sucesso:       #1b6b43;
+  --sucesso-fundo: #edf7f1;
+  --erro:          #a33b3b;
+  --erro-fundo:    #faf0f0;
 
   --font-serif: 'DM Serif Display', Georgia, serif;
   --font-sans:  'DM Sans', 'Nunito', sans-serif;

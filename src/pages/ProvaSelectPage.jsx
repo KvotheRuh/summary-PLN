@@ -7,7 +7,7 @@ export default function ProvaSelectPage({ onSelectProva }) {
       <div className="prova-select__inner">
         <div className="prova-select__header">
           <div className="prova-select__dot" />
-          <p className="prova-select__eyebrow">Inteligência Artificial</p>
+          <p className="prova-select__eyebrow">Processamento de Linguagem Natural</p>
           <h1 className="prova-select__title">Por onde quer começar?</h1>
           <p className="prova-select__subtitle">
             Selecione a prova que deseja estudar. Cada uma contém resumos, flashcards e questões organizados por tópico.
