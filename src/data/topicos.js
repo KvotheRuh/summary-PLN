@@ -19,6 +19,18 @@ import pln_18 from "../images/pln_18.png"
 import pln_19 from "../images/pln_19.png"
 import pln_20 from "../images/pln_20.png"
 import pln_21 from "../images/pln_21.png"
+import pln_22 from "../images/pln_22.png"
+import pln_23 from "../images/pln_23.png"
+import pln_24 from "../images/pln_24.png"
+import pln_25 from "../images/pln_25.png"
+import pln_26 from "../images/pln_26.png"
+import pln_27 from "../images/pln_27.png"
+import pln_28 from "../images/pln_28.png"
+import pln_29 from "../images/pln_29.png"
+import pln_30 from "../images/pln_30.png"
+import pln_31 from "../images/pln_31.png"
+import pln_32 from "../images/pln_32.png"
+import pln_33 from "../images/pln_33.png"
 import passo1 from "../images/1.png"
 import passo2 from "../images/2.png"
 import passo3 from "../images/3.png"
@@ -648,6 +660,281 @@ Assume-se que o comprimento do vetor que representa a query Q é igual ao compri
   {
     id: 23,
     provaId: 1,
+    titulo: "[Aula 4] Próximo Passo",
+    conteudo: `•Após as etapas iniciais de manipulação do dado textual, nos interessamos agora pela semântica.
+•Identificar o significado de um texto é a tarefa mais complexa de todo processo.
+•As abordagens conhecidas partem do uso de Ontologias Léxicas ou de Embeddings.`,
+  },
+  {
+    id: 24,
+    provaId: 1,
+    titulo: "Ontologia Léxica",
+    conteudo: `Definição:
+• Uma ontologia é, em geral, uma representação formal do conhecimento consensual de um determinado domínio, útil para permitir o compartilhamento deste conhecimento entre diferentes sistemas.
+• Em uma ontologia léxica (as vezes chamada de ontologia linguística), as entradas (ou conceitos) são interligadas através de ligações semânticas, úteis para processar textos em linguagem natural.
+• A WordNet deve ser a mais conhecida e utilizada ontologia léxica.`,
+  },
+  {
+    id: 25,
+    provaId: 1,
+    titulo: "Significado das Palavras",
+    conteudo: `• Uma das operações básicas de processamento de textos refere-se a obtenção dos lemas das palavras encontradas em um texto.
+• O lema é o resultado do processo de lematização, que consiste em levar uma palavra ao seu infinitivo, para verbos, ou na sua forma masculino singular ser for substantivo ou adjetivo.
+• Lemas podem ter vários significados.
+
+<strong>Exemplo:</strong>
+    • casado, casando, casados, ...: casar
+• No exemplo, o verbo “casar” pode ter múltiplos sentidos (significados) (dicionário online Google):
+    • unir(-se) por matrimônio.
+        • "foi o padre que casou Maria (com João)“
+    • juntar, agrupar por determinadas afinidades, ger. aos pares.
+        • "c. pés de meia"`,
+  },
+  {
+    id: 26,
+    provaId: 1,
+    titulo: "Homonímia",
+    conteudo: `Definição:
+• Relação entre dois ou mais lemas que, com significados diferentes, têm a mesma forma gráfica e fônica ou apenas fônica.
+
+<strong>Exemplo:</strong>
+    • casar:
+        • S1: Casar-se com alguém
+        • S2: Encontrar pares
+
+    • cesta:
+        • Utensílio de vime;
+    • sexta;
+        • Ordinal referente a seis (posição).`,
+  },
+  {
+    id: 27,
+    provaId: 1,
+    titulo: "Homofonia",
+    conteudo: `Definição:
+• Relação entre duas ou mais palavras que, sendo diversas no significado e na grafia, se pronunciam de modo idêntico.
+
+<strong>Exemplo:</strong>
+    • “passo”: deslocamento/andar.
+    • “paço”: palácio.`,
+  },
+  {
+    id: 28,
+    provaId: 1,
+    titulo: "Polissemia",
+    conteudo: `Definição:
+• Multiplicidade de significados de uma palavra (na maior parte das vezes na mesma classe gramatical).
+<strong>Exemplo:</strong>
+    • “prato”: “vasilha”, “comida”, “receptáculo de balança”, “instrumento musical”;
+    • “pé de moleque”: “doce”, “pé de uma pessoa”.`,
+  },
+  {
+    id: 29,
+    provaId: 1,
+    titulo: "Sinonímia",
+    conteudo: `Definição:
+    • Palavras diferentes tem o mesmo significado.
+    • Dois lemas são sinônimos se:
+        • Podem ser substituídos mutuamente em qualquer situação.
+<strong>Exemplo:</strong>
+    • “carro” e “automóvel”
+    • “preto” e “negro`,
+  },
+  {
+    id: 30,
+    provaId: 1,
+    titulo: "Antonímia",
+    conteudo: `Definição:
+• Relação entre palavras de significado oposto. Estão em lados opostos de uma escala.
+<strong>Exemplo:</strong>
+    • “frio” e “quente”
+    • “bem” e “mal”
+    • “bonito” e “feio”`,
+  },
+  {
+    id: 31,
+    provaId: 1,
+    titulo: "Wordnet",
+    conteudo: `“WordNet® is a large lexical database of English. Nouns, verbs, adjectives and adverbs are grouped into sets of cognitive synonyms (synsets), each expressing a distinct concept. Synsets are interlinked
+by means of conceptual-semantic and lexical relations.” https://wordnet.princeton.edu/
+    • A Wordnet tem uma versão online para consulta:
+• http://wordnetweb.princeton.edu/perl/webwn
+• Alguns números:
+    +155k palavras
+    +117k synsets
+    +207k pares palavra-sentido
+• Além dos conceitos e suas relações, a ontologia léxica pode
+ter instâncias.
+• Por exemplo:
+    • “Compositor” (conceito): “Bach” (instância)
+• Python: WordNet do NLTK
+    • http://www.nltk.org/howto/wordnet.html
+
+    <img src="${pln_22}"/>
+    <img src="${pln_23}"/>
+
+<strong>Versões para o Português</strong>
+• OpenWordnet-PT:
+    • Pode ser acessada em: https://github.com/own-pt/openWordnet-PT
+    • Versão online:
+    • https://www.openwordnet-pt.org/
+• Onto.PT:
+    • Pode ser acessada em: http://ontopt.dei.uc.pt/`,
+  },
+  {
+    id: 32,
+    provaId: 1,
+    titulo: "Similaridade Semântica",
+    conteudo: `Definição: a tarefa de Similaridade Semântica Textual visa medir o grau de equivalência semântica entre dois textos, capturando a noção de que alguns textos são mais similares que outros. Esta tarefa tem
+diferentes aplicações como por exemplo a sumarização. (Agirre et al., 2013) (Freire et al., 2016)
+
+<strong>Exemplo:</strong>
+• “A organização criminosa é formada por diversos empresários e por um deputado estadual” e “Segundo a investigação, diversos empresários e um deputado estadual integram o grupo.” (alto grau de similaridade)
+• “Mas esta é a primeira vez que um chefe da Igreja Católica usa a palavra em público.” e “A Alemanha reconheceu ontem pela primeira vez o genocídio armênio”. (baixo grau de similaridade)
+• Avaliar em: https://dandelion.eu/semantic-text/text-similarity-demo/
+
+<strong>Similaridade Baseada em Grafos</strong>
+<img src="${pln_24}"/>
+
+<strong>Similaridade Semântica Usando a Wordnet</strong>
+    • Podemos usar a ideia da distância hierárquica.
+    • Vamos usar a fórmula de similaridade de Wu-Palmer:
+    <img src="${pln_25}"/>
+        • onde:
+            • 𝑐1 e 𝑐2 são os dois conceitos (palavras/sentidos) que estamos comparando;
+            • LCS (Least Common Subsumer): é o ancestral comum mais específico dos dois conceitos, dentro da hierarquia do WordNet;
+            • profundidade: é a distância da raiz até o conceito (em número de níveis).
+    • A similaridade será maior quando os dois conceitos:
+        • Estão mais próximos do mesmo ancestral.
+        • Estão mais abaixo na árvore (mais específicos).
+
+    <strong>Exemplos:</strong>
+        • “cat” e “feline”
+            • Compartilham um ancestral próximo (como "carnivore")
+            • profundidade alta do LCS
+            • resultado: perto de 1
+        • “cat” e “car”
+            • LCS é muito genérico ("entity")
+            • profundidade baixa
+            • resultado: perto de 0
+    <img src="${pln_26}"/>
+
+<strong>Exercício de Similaridade Semântica</strong>
+• Peça ao usuário para digitar duas frases em inglês.
+• Extraia as palavras principais (retirar stopwords, como "the", "is", etc).
+• Calcule a similaridade semântica média entre as palavras das duas
+frases usando wup_similarity.
+• Mostre a similaridade final e destaque os pares de palavras mais
+semelhantes.
+O que já vimos que pode ajudar:
+• Use nltk.word_tokenize para separar as palavras.
+• Filtre palavras usando a lista stopwords do NLTK.
+• Use o código já visto para calcular similaridades com WordNet.
+• Mostre também os pares de palavras com a maior similaridade.
+
+• Avalie o notebook similaridade_semantica_wordnet_PT.ipynb`,
+  },
+  {
+    id: 33,
+    provaId: 1,
+    titulo: "[Aula 5] Vetores Numéricos (Word Embedding)",
+    conteudo: `Word Embeddings são vetores de números do tipo real que representam palavras em um espaço de n-dimensões. Estes vetores são aprendidos (construídos) a partir de corpora não rotulado.
+• Para entender o contexto do uso destes vetores precisamos de dois conceitos de base:
+    • Representação vetorial de um texto;
+    • Significado de palavras.
+
+<strong>Princípios Básicos</strong>
+• Textos são coleções de tokens (por exemplo, palavras).
+• Os tokens precisam ser “digitalizados” para serem processados por diferentes algoritmos.
+• Uma das tarefas iniciais então é transformar um texto em um vetor numérico.
+• Os métodos mais simples e tradicionais são baseados em frequência de palavras. Eles propõem contagem de tokens (one-hot representation) ou a contagem relativa de tokens em função de sua importância (TF-IDF).
+
+<strong>Criação de um Embedding</strong>
+•Como aprimorar a representação vetorial, aproximando-se dos aspectos semânticos dos textos?
+
+<strong>Hipótese Distribucional</strong>
+• Definição: o significado de uma palavra pode ser dado pelas palavras que frequentemente aparecem próximas em frases. Artigo de Z. Harris
+(https://www.tandfonline.com/doi/pdf/10.1080/00437956.1954.11659520)
+• “You shall know a word by the company it keeps” (J. R. Firth 1957: 11 - https://annabellelukin.edublogs.org/files/2013/08/Firth-JR-1962-A-Synopsis-of- Linguistic-Theory-wfihi5.pdf)
+
+<strong>Representando Palavras</strong>
+• Textos são compostos por tipos discretos, como as palavras.
+• Representar estes elementos discretos (palavras ou words) por meio de vetores (word embedding) é um passo importante na resolução de muitas aplicações de PLN.
+• Word Embeddings são vetores de números do tipo real que representam palavras em um espaço de n-dimensões. Estes vetores são aprendidos (construídos) a partir de corpora não rotulado. Capturam conhecimento sintático, semântico e morfológico (https://arxiv.org/pdf/1708.06025.pdf).
+• Os Word Embeddings são aprendidos ao apresentar para um modelo um grande volume de dados textuais. O modelo ajusta os vetores com base no contexto em que as palavras aparecem, garantindo que palavras usadas em situações semelhantes tenham representações vetoriais semelhantes.
+• Resumindo: vetores de palavras com significado similar, terão representação similar.
+• Vantagem: em termos computacionais, os vetores gerados são menores (n <= 100) e não esparsos.`,
+
+  },
+  {
+    id: 34,
+    provaId: 1,
+    titulo: "Algoritmos de Word Embeddings",
+    conteudo: `Os algoritmos constroem vetores com valores numéricos a partir de um corpus com um vocabulário de tamanho fixo.
+    • Algoritmos mais conhecidos:
+        • Word2Vec - Proposto por Tomas Mikolov et al.: https://arxiv.org/abs/1301.3781
+        • Glove - Proposto por Pennington et al.: https://nlp.stanford.edu/pubs/glove.pdf
+    • Problema: normalmente o treinamento, para ser eficiente, exige um grande volume de dados (da ordem de bilhões de tokens).
+
+    <strong>Prncípio básico</strong>
+    <img src="${pln_27}"/>
+    <img src="${pln_28}"/>
+    <img src="${pln_29}"/>
+    <img src="${pln_30}"/>
+    <img src="${pln_31}"/>`,
+  },
+    {
+    id: 35,
+    provaId: 1,
+    titulo: "Continuous Bag of Words (CBOW)",
+    conteudo: `• O Continuous Bag of Words (CBOW) é um modelo de rede neural para o aprendizado de embeddings de palavras. O CBOW prevê uma palavra-alvo considerando as palavras do
+contexto em uma frase.
+• A rede neural do CBOW contém três camadas:
+    • camada de entrada: representa as palavras contextuais em uma frase;
+    • camada oculta: aprende os embeddings das palavras;
+    • camada de saída: prevê a palavra-alvo.
+    <img src="${pln_32}"/>
+
+<strong>Treinamento do CBOW</strong>
+• O treinamento consiste em apresentar ao modelo pares de entrada-saída e ajustar os parâmetros do modelo para minimizar o erro de predição.
+• Algoritmos de otimização como Stochastic Gradient Descent (SGD) ou Adam, atualizam os pesos do modelo (camada escondida).
+• O processo de otimização visa encontrar os embeddings de palavras que melhor capturam as relações semânticas entre as palavras no corpus.
+• A camada de saída normalmente emprega a função de ativação softmax, ou seja, converte a saída em uma distribuição de probabilidade, permitindo que o modelo preveja a palavra mais provável para um determinado contexto.
+
+<strong>CBOW em termos simples</strong>
+• Cada palavra do vocabulário é associada a um vetor numérico com valores aleatórios.
+• Por exemplo:
+    • “O gato bebe leite todos os dias”
+• O modelo pode usar “gato”, “bebe”, “todos”, “os” para prever “leite”.
+• Os vetores dessas palavras são combinados, normalmente pela média, formando uma representação do contexto.
+• No exemplo, o modelo calcula o erro da previsão e aplica backpropagation. Esse erro é propagado de volta aos pesos associados às palavras de entrada.
+• Em cada exemplo de treinamento, vários vetores podem ser ajustados simultaneamente.
+O NILC da USP-São Carlos mantém um repositório de vetores pré-treinados: http://nilc.icmc.usp.br
+• A biblioteca Python Gensim é pode ser utilizada para o treinamento e utilização de word embeddings: https://radimrehurek.com/gensim/
+• Trata-se de uma biblioteca para a modelagem de tópicos, com uma série de funções úteis.
+
+<strong>Exemplo Utilizando um Modelo Pré-Treinado</strong>
+• Vamos começar usando um modelo pré-treinado:
+• CBOW 50 dimensões: https://huggingface.co/collections/nilc-nlp/nilc-embeddings
+• Notebook:
+    • exemploW2Vec.ipynb
+<img src="${pln_33}"/>
+`,
+  },
+  {
+    id: 36,
+    provaId: 1,
+    titulo: "Sentence Embedding",
+    conteudo: `• A biblioteca Python SentenceTransformers (SBERT - https://www.sbert.net/) permite a criação de embeddings de sentenças, textos e imagens. A biblioteca é uma adaptação do BERT (Bidirectional Encoder Representations from Transformers) pré-treinado que gera embeddings de sentenças que podem ser comparadas usando a similaridade
+de cosseno.
+• Detalhes sobre o funcionamento podem ser obtidos neste artigo: https://arxiv.org/abs/1908.10084.
+
+<strong>Exemplos Sentence Transformer (SBERT)</strong>
+• Avaliar notebook: exemplosSBERT.ipynb`,
+  },
+  {
+    id: 37,
+    provaId: 1,
     titulo: "Python para PLN",
     conteudo: `• Principais pacotes:
   • NLTK: nltk.org
@@ -674,7 +961,24 @@ Assume-se que o comprimento do vetor que representa a query Q é igual ao compri
   <a href="Stopwords português (https://www.linguateca.pt/chave/stopwords)" target="_blank" rel="noopener noreferrer">Stopwords português</a>
   <hr>
   • Regex
-  <img src="${pln_12}"/>`,
+  <img src="${pln_12}"/>
+  <hr>
+  • Python: WordNet do NLTK
+    • http://www.nltk.org/howto/wordnet.html
+  <hr>
+  • Similaridade semântica
+   <img src="${pln_26}"/>
+   <hr>
+   Repositório de Word Embeddings em PT-BR
+   • O NILC da USP-São Carlos mantém um repositório de vetores pré-treinados: http://nilc.icmc.usp.br/
+• A biblioteca Python Gensim é pode ser utilizada para o treinamento e utilização de word embeddings: https://radimrehurek.com/gensim/
+• Trata-se de uma biblioteca para a modelagem de tópicos, com uma série de funções úteis.
+<img src="${pln_33}"/>
+<hr>
+Sentence Embedding
+• A biblioteca Python SentenceTransformers (SBERT - https://www.sbert.net/) permite a criação de embeddings de sentenças, textos e imagens. A biblioteca é uma adaptação do BERT (Bidirectional Encoder Representations from Transformers) pré-treinado que gera embeddings de sentenças que podem ser comparadas usando a similaridade
+de cosseno.
+`,
   },
   // ── PROVA 2 ────────────────────────────────────────────────
   {
