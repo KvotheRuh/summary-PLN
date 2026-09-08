@@ -51,11 +51,61 @@ const topicos = [
   {
     id: 1,
     provaId: 1,
+    titulo: "Conceitos Básicos",
+    conteudo: `   • <strong>Linguagem natural:</strong> linguagens que são utilizadas para comunicação do dia a dia por humanos (português brasileiro, português europeu,
+    inglês, …).
+    • <strong>Processamento de Linguagem Natural (PLN):</strong> qualquer manipulação computacional de linguagens naturais. De contagem de palavras à
+    compreensão semântica.
+    • <strong>Linguística Computacional:</strong> associada à PLN, estuda os fenômenos
+    linguísticos para apoiar o computador na interpretação e geração da
+    linguagem natural.
+    • <strong>Corpus:</strong> conjunto de textos, normalmente normalizados e
+    rotulados.
+    • <strong>Corpora:</strong> conjunto de Corpus.
+    • <strong>Entidade Nomeada:</strong> são expressões que nomeiam pessoas,
+    organizações, locais, tempos e quantidades.
+        • Exemplo: “São Paulo”, “Brasil”, “Pedro Alvares Cabral”, “ONU”, etc.
+        • Dificuldades: “SP”, “S.P.”, “S. Paulo”, “São Paulo”, ...
+    • <strong>Léxico:</strong> conjunto de palavras de um dado idioma.
+        • O léxico de uma língua não é “fechado” ou fixo.
+        • Podem influenciar no léxico:
+            • Nomes próprios;
+            • Abreviações e siglas;
+            • Gírias, etc
+    • <strong>N-grama: </strong>Um n-gram pode ser definido como um conjunto de “gramas” consecutivos, cada letra ou palavra é uma “grama”.
+    • <strong>Tokenização: </strong>separar o texto em tokens. A tokenização pode ter o objetivo de separar um texto em frases ou uma frase em tokens.
+    • <strong>Normalização: </strong>transformar um texto bruto em uma forma canônica.
+    • <strong>Stemming: </strong>etirar o sufixo que “flexiona” palavras. Foi criado por Martin Porter em 1980. Baseado em regras.
+    • <strong>Lematização: </strong>levar uma palavra ao seu infinitivo, para verbos, ou na sua forma masculino singular ser for substantivo ou adjetivo.
+    • <strong>Token: </strong>com algum significado semântico. Os tokens podem ter tipos, que são classes de tokens que tem os mesmos caracteres
+    • <strong>Stopwords: </strong>ão palavras que normalmente são retiradas do texto em processamento pois pouco contribuem para o processo de identificação/classificação.
+    • <strong>Expressões regulares: </strong>Linguagem formal para especificar cadeias de caracteres (strings). É uma das formas mais básicas de processar um texto.
+    • <strong>Representação Vetorial de Textos: </strong>trata-se de conversão da representação textual (strings) de um corpus para uma representação numérica
+    • <strong>Bag-of-Words (BoW): </strong>Propõe uma maneira de representar as características textuais de documentos em vetores numéricos.
+    • <strong>TF-IDF: </strong>A evolução do BoW pode ser obtida utilizado o TF-IDF. O TF-IDF (term frequency–inverse document frequency) é usado para medir a importância de um termo em um documento presente em uma coleção de documentos. O valor TF-IDF de uma palavra aumenta proporcionalmente à medida que aumenta o número de ocorrências dela em um documento. Porém, este valor é relativizado pela frequência da palavra no corpus.
+    • <strong>Ontologia Léxica: </strong>• Uma ontologia é, em geral, uma representação formal do conhecimento consensual de um determinado domínio, útil para permitir o compartilhamento deste conhecimento entre diferentes sistemas. Em uma ontologia léxica (as vezes chamada de ontologia linguística), as entradas (ou conceitos) são interligadas através de ligações semânticas, úteis para processar textos em linguagem natural. A WordNet deve ser a mais conhecida e utilizada ontologia léxica.
+    • <strong>Lema: </strong>é o resultado do processo de lematização, que consiste em levar uma palavra ao seu infinitivo, para verbos, ou na sua forma masculino singular ser for substantivo ou adjetivo. Lemas podem ter vários significados. Exemplo: casado, casando, casados, ...: casar
+    • <strong>Homonímia: </strong>Relação entre dois ou mais lemas que, com significados diferentes, têm a mesma forma gráfica e fônica ou apenas fônica.
+    • <strong>Homofonia: </strong>Relação entre duas ou mais palavras que, sendo diversas no significado e na grafia, se pronunciam de modo idêntico.
+    • <strong>Polissemia: </strong>Multiplicidade de significados de uma palavra (na maior parte das vezes na mesma classe gramatical).
+    • <strong>Sinonímia: </strong>Palavras diferentes tem o mesmo significado.
+    • <strong>Antonímia: </strong>Relação entre palavras de significado oposto. Estão em lados opostos de uma escala.
+    • <strong>Wordnet: </strong>“WordNet® is a large lexical database of English. Nouns, verbs, adjectives and adverbs are grouped into sets of cognitive synonyms (synsets), each expressing a distinct concept. Synsets are interlinked by means of conceptual-semantic and lexical relations.”
+    • <strong>Similaridade Semântica: </strong>a tarefa de Similaridade Semântica Textual visa medir o grau de equivalência semântica entre dois textos, capturando a noção de que alguns textos são mais similares que outros. Esta tarefa tem
+diferentes aplicações como por exemplo a sumarização.
+    • <strong>Vetores Numéricos (Word Embedding): </strong>Word Embeddings são vetores de números do tipo real que representam palavras em um espaço de n-dimensões. Estes vetores são aprendidos (construídos) a partir de corpora não rotulado.
+    • <strong>Algoritmos de Word Embeddings: </strong>Word2Vec e Glove
+    • <strong>Continuous Bag of Words (CBOW): </strong>O Continuous Bag of Words (CBOW) é um modelo de rede neural para o aprendizado de embeddings de palavras. O CBOW prevê uma palavra-alvo considerando as palavras do contexto em uma frase.
+    `,
+  },
+  {
+    id: 2,
+    provaId: 1,
     titulo: "[Aula 1] O que é uma máquina inteligente?",
     conteudo: `Um computador pode ser considerado inteligente se conseguir enganar um humano, levando-o a acreditar que ele era humano`
   },
   {
-    id: 2,
+    id: 3,
     provaId: 1,
     titulo: "Processamento de Linguagem Natural",
     conteudo: `Textos em linguagem natural podem ser ambíguos, subjetivos, conter erros.
@@ -84,7 +134,7 @@ Há muita informação textual (dado não estruturado) acumulada na Web, nas emp
 - Modelos Pré-treinados`,
   },
   {
-    id: 3,
+    id: 4,
     provaId: 1,
     titulo: "Identificando o Dado Textual",
     conteudo: `- Dado textual = não estruturado
@@ -101,7 +151,7 @@ Há muita informação textual (dado não estruturado) acumulada na Web, nas emp
   - Conjunto de funções para extração(parser)`,
   },
   {
-    id: 4,
+    id: 5,
     provaId: 1,
     titulo: "Léxico",
     conteudo: `Definição: onjunto de palavras de um dado idioma
@@ -112,7 +162,7 @@ Podem influenciar no léxico:
     - Girias, etc.`,
   },
     {
-    id: 5,
+    id: 6,
     provaId: 1,
     titulo: "Similaridade Sintática",
     conteudo: `Para medir a similaridade entre strings podemos utilizar uma função de distância. As mais comuns são: a de Hamming e a de Levenshtein(Edit Distance)
@@ -123,7 +173,7 @@ Exemplos:
     - survey → surgery: ED = 2`,
   },
   {
-    id: 6,
+    id: 7,
     provaId: 1,
     titulo: "Cálculo do N-Gram ",
     conteudo: `Um n-gram pode ser definido como um conjunto de “gramas” consecutivos, cada letra ou palavra é uma “grama”.
@@ -160,31 +210,6 @@ Exemplos:
 
        Leia mais sobre outras aplicações do n-gram no PLN:
        <a href="http://text-analytics101.rxnlp.com/2014/11/what-are-n-grams.html?m=1" target="_blank" rel="noopener noreferrer">What Are N-Grams? - Text Analytics 101</a>`,
-  },
-  {
-    id: 7,
-    provaId: 1,
-    titulo: "Conceitos Básicos",
-    conteudo: `   • <strong>Linguagem natural:</strong> linguagens que são utilizadas para comunicação do dia a dia por humanos (português brasileiro, português europeu,
-    inglês, …).
-    • <strong>Processamento de Linguagem Natural (PLN):</strong> qualquer manipulação computacional de linguagens naturais. De contagem de palavras à
-    compreensão semântica.
-    • <strong>Linguística Computacional:</strong> associada à PLN, estuda os fenômenos
-    linguísticos para apoiar o computador na interpretação e geração da
-    linguagem natural.
-    • <strong>Corpus:</strong> conjunto de textos, normalmente normalizados e
-    rotulados.
-    • <strong>Corpora:</strong> conjunto de Corpus.
-    • <strong>Entidade Nomeada:</strong> são expressões que nomeiam pessoas,
-    organizações, locais, tempos e quantidades.
-        • Exemplo: “São Paulo”, “Brasil”, “Pedro Alvares Cabral”, “ONU”, etc.
-        • Dificuldades: “SP”, “S.P.”, “S. Paulo”, “São Paulo”, ...
-    • <strong>Léxico:</strong> conjunto de palavras de um dado idioma.
-        • O léxico de uma língua não é “fechado” ou fixo.
-        • Podem influenciar no léxico:
-            • Nomes próprios;
-            • Abreviações e siglas;
-            • Gírias, etc`,
   },
   {
     id: 8,
