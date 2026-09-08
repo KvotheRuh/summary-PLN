@@ -1,7 +1,7 @@
-import PruningQuestion1 from "../images/PruningQuestion1.png"
-import PruningQuestionrResult from "../images/PruningQuestionrResult.png"
-import PruningQuestion2 from "../images/PruningQuestion2.png"
-import PruningQuestionrResult2 from "../images/PruningQuestionrResult2.png"
+import PruningQuestion1 from "../images/pln_1.png"
+import PruningQuestionrResult from "../images/pln_1.png"
+import PruningQuestion2 from "../images/pln_1.png"
+import PruningQuestionrResult2 from "../images/pln_1.png"
 
 
 // topicoId links each question to a topic in topicos.js
@@ -246,7 +246,7 @@ const questoes = [
     correct: 0,
     explanation: "PEAS traduz-se para Performance, Environment (Ambiente), Actuators (Atuadores) e Sensors (Sensores)."
   },
-  
+
   {
   id: 16,
   topicoId: 4,
@@ -2459,7 +2459,7 @@ const questoes = [
     topicoId: 18,
     provaId: 1,
     question: "Observe a árvore abaixo e execute o algoritmo Minimax com Poda Alfa-Beta. Ao final da execução, determine quantas podas ocorrerão e classifique cada uma delas como Poda Alfa ou Poda Beta.",
-    
+
     image: PruningQuestion1,
     explanationImage: PruningQuestionrResult ,
 

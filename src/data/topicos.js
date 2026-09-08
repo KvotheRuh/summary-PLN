@@ -31,6 +31,10 @@ import pln_30 from "../images/pln_30.png"
 import pln_31 from "../images/pln_31.png"
 import pln_32 from "../images/pln_32.png"
 import pln_33 from "../images/pln_33.png"
+import pln_34 from "../images/pln_34.png"
+import pln_35 from "../images/pln_35.png"
+import pln_36 from "../images/pln_36.png"
+import pln_37 from "../images/pln_37.png"
 import passo1 from "../images/1.png"
 import passo2 from "../images/2.png"
 import passo3 from "../images/3.png"
@@ -930,7 +934,46 @@ de cosseno.
 • Detalhes sobre o funcionamento podem ser obtidos neste artigo: https://arxiv.org/abs/1908.10084.
 
 <strong>Exemplos Sentence Transformer (SBERT)</strong>
-• Avaliar notebook: exemplosSBERT.ipynb`,
+• Avaliar notebook: exemplosSBERT.ipynb
+
+<strong>Matriz de Documentos</strong>
+• Corpus:
+    d1 = “Shipment of gold damaged in a fire.”
+    d2 = “Delivery of silver arrived in a silver truck.”
+    d3 = “Shipment of gold arrived in a truck.”
+• Query:
+    q = “gold silver truck.”
+• Temos então 3 documentos e 11 termos na coleção
+<img src="${pln_34}"/>
+
+<strong>Exemplo</strong>
+• Após o cálculo dos pesos para cada documento, computamos a
+similaridade SC da query Q em relação à cada documento Di.
+    SC(q, d1) = (0*0) + (0*0) + (0*0.068) + … (0.042*0.025) + ...+ (0. 1* 0) + (0.042*0) = 0.0010
+    SC(q, d2) = (0.1*0.119) + (0.042*0.022) = 0.0128
+    SC(q, d3) = (0.042*0.025 ) + (0.042*0.025) = 0.0020
+• Assim, o documento mais próximo à query q seria d2, depois d3 e d1.
+
+<strong>Modelos Pré-Treinados</strong>
+<img src="${pln_35}"/>
+
+<strong>Usando Sentence Embedding</strong>
+<img src="${pln_36}"/>
+    Query: ‘gold silver truck’
+    - D1: “Shipment of gold damaged in a fire”
+        - Score: 0.4145
+    - D2: “Delivery of silver arrived in a silver truck”
+        - Score: 0.7187
+    - D3: “Shipment of gold arrived in a truck”
+        - Score: 0.6851
+<img src="${pln_37}"/>
+
+<strong>Exercício</strong>
+• Modificar o notebook “criandoModelo.ipynb” para treinar o modelo usando o corpus “g1_ml.csv”.
+• Realizar experimentos para avaliar a qualidade do modelo:
+    • Cálculo de similaridade entre tokens.
+• Varie os parâmetros do algoritmo conforme avaliar conveniente. Lista de parâmetros:
+    • https://radimrehurek.com/gensim/models/word2vec.html`,
   },
   {
     id: 37,
@@ -978,7 +1021,13 @@ de cosseno.
 Sentence Embedding
 • A biblioteca Python SentenceTransformers (SBERT - https://www.sbert.net/) permite a criação de embeddings de sentenças, textos e imagens. A biblioteca é uma adaptação do BERT (Bidirectional Encoder Representations from Transformers) pré-treinado que gera embeddings de sentenças que podem ser comparadas usando a similaridade
 de cosseno.
-`,
+<strong>Modelos Pré-Treinados</strong>
+<img src="${pln_35}"/>
+
+<strong>Usando Sentence Embedding</strong>
+<img src="${pln_36}"/>
+
+<img src="${pln_37}"/>`,
   },
   // ── PROVA 2 ────────────────────────────────────────────────
   {
