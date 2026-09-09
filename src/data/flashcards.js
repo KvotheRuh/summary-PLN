@@ -14,7 +14,7 @@ const flashcards = [
   { id: 11, topicoId: 2, provaId: 1, frente: "O que são Stopwords?", verso: "Palavras que normalmente são retiradas do texto em processamento pois pouco contribuem para a identificação e classificação." },
   { id: 12, topicoId: 2, provaId: 1, frente: "O que mede o TF-IDF (Term Frequency–Inverse Document Frequency)?", verso: "A importância de um termo em um documento presente em uma coleção, ponderando a frequência da palavra no documento em relação à sua frequência no corpus." },
   { id: 13, topicoId: 2, provaId: 1, frente: "O que é Polissemia?", verso: "A multiplicidade de significados de uma palavra, na maior parte das vezes dentro da mesma classe gramatical." },
-  { id: 14, topicoId: 2, provaId: 1, frente: "Quais são os principais algoritmos utilizados para gerar Word Embeddings?", verso: "Word2Vec e GloVe." }
+  { id: 14, topicoId: 2, provaId: 1, frente: "Quais são os principais algoritmos utilizados para gerar Word Embeddings?", verso: "Word2Vec e GloVe." },
   { id: 15, topicoId: 2, provaId: 1, frente: "O que é Linguagem natural?", verso: "Linguagens utilizadas para comunicação do dia a dia por humanos (ex: português brasileiro, inglês)." },
   { id: 16, topicoId: 2, provaId: 1, frente: "O que estuda a Linguística Computacional?", verso: "Associada à PLN, estuda os fenômenos linguísticos para apoiar o computador na interpretação e geração da linguagem natural." },
   { id: 17, topicoId: 2, provaId: 1, frente: "O que é o Léxico e quais fatores podem influenciá-lo?", verso: "É o conjunto de palavras de um idioma (que não é fixo/fechado). Pode ser influenciado por nomes próprios, abreviações, siglas e gírias." },

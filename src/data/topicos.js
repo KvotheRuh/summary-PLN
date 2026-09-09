@@ -1101,7 +1101,7 @@ export const provas = [
   {
     id: 1,
     titulo: "Prova 1",
-    descricao: "lalala",
+    descricao: "Processamento de linguagem natural",
     emoji: "📘",
   },
   {

@@ -12,7 +12,7 @@ export default function Header({ activeTab, onTabChange, provaAtiva, onTrocarPro
       <header className="header">
         <div className="header__brand">
           <div className="header__dot" />
-          <span className="header__title">Inteligência Artificial</span>
+          <span className="header__title">Processamento de Linguagem Natural</span>
         </div>
         {provaAtiva && (
           <button className="header__prova-btn" onClick={onTrocarProva}>
