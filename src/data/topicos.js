@@ -108,9 +108,7 @@ diferentes aplicações como por exemplo a sumarização.
     id: 3,
     provaId: 1,
     titulo: "Processamento de Linguagem Natural",
-    conteudo: `Textos em linguagem natural podem ser ambíguos, subjetivos, conter erros.
-Na PLN, a primeira tarefa a chamar atenção foi a tradução automática (Russo <—> Inglês)
-Há muita informação textual (dado não estruturado) acumulada na Web, nas empresas, nos computadores das pessoas.
+    conteudo: `Textos em linguagem natural podem ser ambíguos, subjetivos, conter erros. Na PLN, a primeira tarefa a chamar atenção foi a tradução automática (Russo <—> Inglês). Há muita informação textual (dado não estruturado) acumulada na Web, nas empresas, nos computadores das pessoas.
 
 <strong>Aplicações</strong>
 - Simples:
@@ -165,8 +163,7 @@ Podem influenciar no léxico:
     id: 6,
     provaId: 1,
     titulo: "Similaridade Sintática",
-    conteudo: `Para medir a similaridade entre strings podemos utilizar uma função de distância. As mais comuns são: a de Hamming e a de Levenshtein(Edit Distance)
-A distância de edição é definida pelo número de inserções, exclusões e substituições realizadas na comparação entre as strings envolvidas
+    conteudo: `Para medir a similaridade entre strings podemos utilizar uma função de distância. As mais comuns são: a de Hamming e a de Levenshtein(Edit Distance). A distância de edição é definida pelo número de inserções, exclusões e substituições realizadas na comparação entre as strings envolvidas
 
 Exemplos:
     - color → colour: ED = 1
@@ -215,13 +212,11 @@ Exemplos:
     id: 8,
     provaId: 1,
     titulo: "Exercício 1",
-    conteudo: `Implemente um algoritmo em Python para resolver o
-    seguinte problema:
+    conteudo: `Implemente um algoritmo em Python para resolver o seguinte problema:
     • Dado o seguinte léxico:
-    • [abacate, abacaxi, abobora, abobrinha, ananás, maça, mamão,
-    manga, melancia, melão, mexerica, morango]
+    • [abacate, abacaxi, abobora, abobrinha, ananás, maça, mamão, manga, melancia, melão, mexerica, morango]
     • Indicar a palavra mais “próxima”:
-    <img src="${pln_2}" alt="Exemplo DFS" class="resumo__gif" />
+    <img src="${pln_2}"/>
 
     Avaliar diferentes thresolds de distância.`,
   },
@@ -229,8 +224,7 @@ Exemplos:
     id: 9,
     provaId: 1,
     titulo: "[Aula 2] Operações Básicas de PLN",
-    conteudo: `Existem algumas operações básicas de processamento de um
-texto que são bastante comuns.
+    conteudo: `Existem algumas operações básicas de processamento de um texto que são bastante comuns.
 São elas:
   • Tokenização
   • Normalização
@@ -332,9 +326,7 @@ dimensionalidade.
     id: 15,
     provaId: 1,
     titulo: "Lista de Palavras Frequentes (stopwords)",
-    conteudo: ` As stopwords são palavras que normalmente são retiradas
-do texto em processamento pois pouco contribuem para o
-processo de identificação/classificação.
+    conteudo: ` As stopwords são palavras que normalmente são retiradas do texto em processamento pois pouco contribuem para o processo de identificação/classificação.
 • O objetivo é reduzir a dimensionalidade.
 • Normalmente incluem artigos, preposições, dentre outros.
 • Existem diferentes listas disponíveis: <a href="Stopwords português (https://www.linguateca.pt/chave/stopwords)" target="_blank" rel="noopener noreferrer">Stopwords português</a>`,
@@ -360,22 +352,18 @@ processo de identificação/classificação.
 • Aplicações comuns: validação email, URL, CPF, ...
 
 <strong>Exemplo:</strong>
-Um sistema registra, em uma lista, os acessos diários (login) de usuários em
-um sistema: cada linha representa um acesso (horário e o login do usuário)
-(“Expressões Regulares: Uma Abordagem Divertida”, Aurelio Marinho Jargas) :
+Um sistema registra, em uma lista, os acessos diários (login) de usuários em um sistema: cada linha representa um acesso (horário e o login do usuário)(“Expressões Regulares: Uma Abordagem Divertida”, Aurelio Marinho Jargas):
     05:15 ernesto
     08:39 ricardo
     10:32 patricia
     14:59 gabriel
     16:27 carla
     22:23 marcelo
-Como fazer para localizar automaticamente aqueles usuários que acessaram o
-sistema no período da tarde (meio-dia às dezoito)?
+Como fazer para localizar automaticamente aqueles usuários que acessaram o sistema no período da tarde (meio-dia às dezoito)?
 R (retirado do livro): ^1[2-8]
 
 <strong>Conceitos Básicos</strong>
-Normalmente utilizamos três operações básicas na
-construção de uma ER:
+Normalmente utilizamos três operações básicas na construção de uma ER:
   • Listas (metacaractere [ ])
   • Agrupamento (grouping)
   • Quantificação
@@ -411,8 +399,7 @@ construção de uma ER:
 • Uso dos metacaracteres de conjunto ‘{’ e ‘}’: {min, max}.
 • Em conjunto, os {} representam também repetição.
 • Por exemplo:
-    “[0-9]{4}” faz o matching de uma série de quatro dígitos consecutivos (como o
-    ano de nascimento de alguém).
+    “[0-9]{4}” faz o matching de uma série de quatro dígitos consecutivos (como o     ano de nascimento de alguém).
 
 <strong>Quantificação</strong>
 • Quantificadores
@@ -436,14 +423,12 @@ Avaliar [^a-zA-Z][pP]ara[^a-zA-Z]
     1) retornar strings indesejadas (“parado”): falso positivo
     2) não retornar strings desejadas (“Para”): falso negativo
 • Redução da taxa de erro gera um conflito:
-    • Incremento da acurácia/precisão (precision): diminuir falsos
-    positivos
+    • Incremento da acurácia/precisão (precision): diminuir falsos positivos
     • Incremento da cobertura (recall): diminuir falsos negativos
 
 <strong>Usos Gerais</strong>
 • Verificação de entradas do usuário (ex.: URL, email, ...).
-• Útil no pré-processamento de textos antes da aplicação de
-classificadores.
+• Útil no pré-processamento de textos antes da aplicação de classificadores.
 • Extração da informação em diferentes contextos.
 
 Links interessantes:
@@ -462,12 +447,10 @@ Links interessantes:
     Olha o gol!
     Goooooool, do Brasil!
     E que belo gol.
-3) Dado o trecho de código html a seguir, crie uma expressão regular para identificar a presença dos
-marcadores da linguagem, <></>
+3) Dado o trecho de código html a seguir, crie uma expressão regular para identificar a presença dos marcadores da linguagem, <></>
     Bom dia! <a href="/sol">Sol</a>
     <a>Vamos estudar as RegEx?</a>
-4) Escreva uma RegEx para validar um horário no formato hh:mm, onde
-a hora pode variar de 0 a 23. Veja alguns exemplos para você avaliar:
+4) Escreva uma RegEx para validar um horário no formato hh:mm, onde a hora pode variar de 0 a 23. Veja alguns exemplos para você avaliar:
     10:10
     02:35
     25:20
@@ -478,10 +461,8 @@ a hora pode variar de 0 a 23. Veja alguns exemplos para você avaliar:
 5) Crie uma RegEx para validar uma data no formato DD/MM/AAAA.
 Você pode utilizar o seguinte texto de teste:
     Data de Nascimento: 10/03/1980
-    Dica: para que o caractere ‘/’ utilizado para separar dia de mês e mês de ano
-    seja identificado, acrescente o metacaractere ‘\’ imediatamente antes. Assim, a
-    RegEx final terá como parte de sua forma a sequência “\/” (aparecerá duas
-    vezes).
+    Dica: para que o caractere ‘/’ utilizado para separar dia de mês e mês de ano seja identificado, acrescente o metacaractere ‘\’ imediatamente antes. Assim, a
+    RegEx final terá como parte de sua forma a sequência “\/” (aparecerá duas vezes).
 
 • Número telefone celular com código de área:
 (0?[1-9]{2})*\D*(9?)\D?(\d{4})+\D?(\d{4})\b
@@ -603,7 +584,6 @@ Outro exemplo:
     <strong>Exercício</strong>
       • Dado o corpus 2000_textos.txt disponível no Canvas, plote o histograma dos tokens presentes no arquivo.
       • Avalie o resultado comparando-o com a Lei de Zipf.`,
-
   },
   {
     id: 21,
@@ -893,7 +873,6 @@ O que já vimos que pode ajudar:
 • Os Word Embeddings são aprendidos ao apresentar para um modelo um grande volume de dados textuais. O modelo ajusta os vetores com base no contexto em que as palavras aparecem, garantindo que palavras usadas em situações semelhantes tenham representações vetoriais semelhantes.
 • Resumindo: vetores de palavras com significado similar, terão representação similar.
 • Vantagem: em termos computacionais, os vetores gerados são menores (n <= 100) e não esparsos.`,
-
   },
   {
     id: 34,
@@ -972,8 +951,7 @@ de cosseno.
 <img src="${pln_34}"/>
 
 <strong>Exemplo</strong>
-• Após o cálculo dos pesos para cada documento, computamos a
-similaridade SC da query Q em relação à cada documento Di.
+• Após o cálculo dos pesos para cada documento, computamos a similaridade SC da query Q em relação à cada documento Di.
     SC(q, d1) = (0*0) + (0*0) + (0*0.068) + … (0.042*0.025) + ...+ (0. 1* 0) + (0.042*0) = 0.0010
     SC(q, d2) = (0.1*0.119) + (0.042*0.022) = 0.0128
     SC(q, d3) = (0.042*0.025 ) + (0.042*0.025) = 0.0020
