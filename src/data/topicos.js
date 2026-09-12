@@ -35,17 +35,6 @@ import pln_34 from "../images/pln_34.png"
 import pln_35 from "../images/pln_35.png"
 import pln_36 from "../images/pln_36.png"
 import pln_37 from "../images/pln_37.png"
-import passo1 from "../images/1.png"
-import passo2 from "../images/2.png"
-import passo3 from "../images/3.png"
-import passo4 from "../images/4.png"
-import passo5 from "../images/5.png"
-import passo6 from "../images/6.png"
-import passo7 from "../images/7.png"
-import passo8 from "../images/8.png"
-import passo9 from "../images/9.png"
-import passo10 from "../images/10.png"
-import passo11 from "../images/11.png"
 
 const topicos = [
   {
@@ -1025,48 +1014,8 @@ de cosseno.
 <img src="${pln_36}"/>
 
 <img src="${pln_37}"/>`,
-  },
-  // ── PROVA 2 ────────────────────────────────────────────────
-  {
-    id: 40,
-    provaId: 2,
-    titulo: "Passo-a-Passo Poda Alfa-beta",
-    slides: [
-      {legenda:"Inicializar a raiz com valores de [-INF, +INF], alfa e beta, respectivamente",
-        img: passo1},
-
-      {legenda:"Ir para os nós folhas. Coloque Alfa e Beta do nó que está sendo visitadas.",
-        img: passo2},
-
-      {legenda:"Como o nivel é MAX só será atualizado o Alfa com o maior valor que ele encontrou até agora. Nesse caso é o 8",
-        img: passo3},
-
-      {legenda:"Devido a recursão, volte um nível. Ele será atualizado com o valor conhecido até agora. Mas lembre-se de sempre verificar se o nível é MIN ou MAX. Nesse caso, é MIN então é o Beta que será atualizado. OBS: Ainda NÃO volta o valor conhecido até a RAIZ.",
-        img: passo4},
-
-      {legenda:"Agora vá novamente para as folhas. Como voltamos ao nível MAX o Alfa que será atualizado. Contudo, como o beta já possui um valor ele continuará armazenado",
-        img: passo5},
-
-      {legenda:"O lgoritmo irá verificar o 10 e atualizar o Alfa com esse valor. Antes de expandir o 5, será verificado a seguinte condição: Alfa ⩾ Beta, nesse caso é verdadeiro, logo os nós 5, 110 e 300 serão podados. A poda será caracterizada como Poda Beta, por estar em um nível Max e cumprir com os requisitos da Poda Beta.",
-        img: passo6},
-
-      {legenda:"Voltando um nível o Beta e nem o Alfa serão atualizados, pois o valor do nó não é o menor conhecido e o nível é MIN. Em seguida, o algoritmo irá para a raiz e atualizará o Alfa na propria raiz, com o maior valor que ele conhece, nesse caso o 8.",
-        img: passo7},
-
-      {legenda:"Como agora o algoritmo já conhece o Alfa ele levará ele para o próximo nível, mas não até as folhas.",
-        img: passo8},
-
-      {legenda:"Repete-se a comparação, agora como estamos no MAX o alfa que será atualizado com o maior valor, nesse caso é o 3.",
-        img: passo9},
-
-      {legenda:"Voltando um nível o valor de Beta será atualizado, pois estamos no MIN. Antes de seguir até as folhas, o algoritmo irá verificar os valores do alfa e do beta. Nesse caso, ele concluirá que beta =< alfa e haverá uma poda. Essa poda ocorre pois cumpre com o requisito da Poda Alfa. Dessa forma, os outros nós e suas folhas não serão expandidos, mesmo que tenha um valor maior nas folhas.",
-        img: passo10}
-        ,
-      {legenda:"Por fim, o algoritmo irá fazer uma ultima verificação para ver qual é o maior valor que ele conhece, nesse caso é o 8. Vale ressaltar que se não houvesse nenhuma poda o resultado ainda seria o 8.",
-        img: passo11}
-        ,
-    ],
-  },
+  }
+  // ── PROVA 2 ───────────────────────────────────────────────
 ];
 
 export const provas = [
