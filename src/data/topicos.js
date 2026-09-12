@@ -67,6 +67,7 @@ const topicos = [
             • Nomes próprios;
             • Abreviações e siglas;
             • Gírias, etc
+    • <strong>Similaridade sintática: </strong>similaridade entre strings. Pode-se utilizar uma função de distância. As mais comuns são: a de Hamming e a de Levenshtein(Edit Distance).
     • <strong>N-grama: </strong>Um n-gram pode ser definido como um conjunto de “gramas” consecutivos, cada letra ou palavra é uma “grama”.
     • <strong>Tokenização: </strong>separar o texto em tokens. A tokenização pode ter o objetivo de separar um texto em frases ou uma frase em tokens.
     • <strong>Normalização: </strong>transformar um texto bruto em uma forma canônica.
@@ -132,7 +133,7 @@ const topicos = [
     conteudo: `- Dado textual = não estruturado
 - Características do dado textual;
   - Não tem tipo
-  - Disponível em texto-puro (ASCII ou UNICODE
+  - Disponível em texto-puro (ASCII ou UNICODE)
 
   Extração do Dado Textual
   - Origem distintas
@@ -146,7 +147,7 @@ const topicos = [
     id: 5,
     provaId: 1,
     titulo: "Léxico",
-    conteudo: `Definição: onjunto de palavras de um dado idioma
+    conteudo: `Definição: conjunto de palavras de um dado idioma
     - O léxico de uma lingua nao e fechado ou fixo
 Podem influenciar no léxico:
     - Nomes proprios
@@ -173,7 +174,7 @@ Exemplos:
         - Parar = {pa, ar, ra, ar} → 4 digramas, 2 únicos (pa, ra)
         - Parado = {pa, ar, ra, ad, do} → 5 digramas, 5 únicos (pa, ar, ra, ad, do)
 
-    Para efetuar o cálculo da similaridade utilizando o n-gram, podemos usar a fórmula do <strong>Coeficiende de Dice</strong>
+  Para efetuar o cálculo da similaridade utilizando o n-gram, podemos usar a fórmula do <strong>Coeficiende de Dice</strong>
     <img src="${pln_1}" alt="Exemplo DFS" class="resumo__gif" />
     <p class="resumo__gif-label">Coeficiente de Dice</p>
 
