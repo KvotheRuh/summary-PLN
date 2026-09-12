@@ -54,16 +54,11 @@ const topicos = [
     titulo: "Conceitos Básicos",
     conteudo: `   • <strong>Linguagem natural:</strong> linguagens que são utilizadas para comunicação do dia a dia por humanos (português brasileiro, português europeu,
     inglês, …).
-    • <strong>Processamento de Linguagem Natural (PLN):</strong> qualquer manipulação computacional de linguagens naturais. De contagem de palavras à
-    compreensão semântica.
-    • <strong>Linguística Computacional:</strong> associada à PLN, estuda os fenômenos
-    linguísticos para apoiar o computador na interpretação e geração da
-    linguagem natural.
-    • <strong>Corpus:</strong> conjunto de textos, normalmente normalizados e
-    rotulados.
+    • <strong>Processamento de Linguagem Natural (PLN):</strong> qualquer manipulação computacional de linguagens naturais. De contagem de palavras à compreensão semântica.
+    • <strong>Linguística Computacional:</strong> associada à PLN, estuda os fenômenos linguísticos para apoiar o computador na interpretação e geração da linguagem natural.
+    • <strong>Corpus:</strong> conjunto de textos, normalmente normalizados e rotulados.
     • <strong>Corpora:</strong> conjunto de Corpus.
-    • <strong>Entidade Nomeada:</strong> são expressões que nomeiam pessoas,
-    organizações, locais, tempos e quantidades.
+    • <strong>Entidade Nomeada:</strong> são expressões que nomeiam pessoas, organizações, locais, tempos e quantidades.
         • Exemplo: “São Paulo”, “Brasil”, “Pedro Alvares Cabral”, “ONU”, etc.
         • Dificuldades: “SP”, “S.P.”, “S. Paulo”, “São Paulo”, ...
     • <strong>Léxico:</strong> conjunto de palavras de um dado idioma.
@@ -91,8 +86,7 @@ const topicos = [
     • <strong>Sinonímia: </strong>Palavras diferentes tem o mesmo significado.
     • <strong>Antonímia: </strong>Relação entre palavras de significado oposto. Estão em lados opostos de uma escala.
     • <strong>Wordnet: </strong>“WordNet® is a large lexical database of English. Nouns, verbs, adjectives and adverbs are grouped into sets of cognitive synonyms (synsets), each expressing a distinct concept. Synsets are interlinked by means of conceptual-semantic and lexical relations.”
-    • <strong>Similaridade Semântica: </strong>a tarefa de Similaridade Semântica Textual visa medir o grau de equivalência semântica entre dois textos, capturando a noção de que alguns textos são mais similares que outros. Esta tarefa tem
-diferentes aplicações como por exemplo a sumarização.
+    • <strong>Similaridade Semântica: </strong>a tarefa de Similaridade Semântica Textual visa medir o grau de equivalência semântica entre dois textos, capturando a noção de que alguns textos são mais similares que outros. Esta tarefa tem diferentes aplicações como por exemplo a sumarização.
     • <strong>Vetores Numéricos (Word Embedding): </strong>Word Embeddings são vetores de números do tipo real que representam palavras em um espaço de n-dimensões. Estes vetores são aprendidos (construídos) a partir de corpora não rotulado.
     • <strong>Algoritmos de Word Embeddings: </strong>Word2Vec e Glove
     • <strong>Continuous Bag of Words (CBOW): </strong>O Continuous Bag of Words (CBOW) é um modelo de rede neural para o aprendizado de embeddings de palavras. O CBOW prevê uma palavra-alvo considerando as palavras do contexto em uma frase.
