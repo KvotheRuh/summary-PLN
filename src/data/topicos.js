@@ -52,8 +52,8 @@ const topicos = [
     id: 1,
     provaId: 1,
     titulo: "Conceitos Básicos",
-    conteudo: `   • <strong>Linguagem natural:</strong> linguagens que são utilizadas para comunicação do dia a dia por humanos (português brasileiro, português europeu,
-    inglês, …).
+    conteudo:
+    `• <strong>Linguagem natural:</strong> linguagens que são utilizadas para comunicação do dia a dia por humanos (português brasileiro, português europeu, inglês, …).
     • <strong>Processamento de Linguagem Natural (PLN):</strong> qualquer manipulação computacional de linguagens naturais. De contagem de palavras à compreensão semântica.
     • <strong>Linguística Computacional:</strong> associada à PLN, estuda os fenômenos linguísticos para apoiar o computador na interpretação e geração da linguagem natural.
     • <strong>Corpus:</strong> conjunto de textos, normalmente normalizados e rotulados.
