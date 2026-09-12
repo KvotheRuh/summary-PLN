@@ -187,7 +187,7 @@ Exemplos:
         - Digramas = {pa, ar, ra, an, na, ae, en, ns, se}
         - Únicos = {pa, ar, ra, an, na, ae, en, ns, se}
       - Compartilhados: {pa, ar, ra, an, na}
-      - S = 2 * 5 (5 + 9) = 0,71
+      - S = 2 * 5 / (5 + 9) = 0,71
 
     <hr>
     - P1 = carro, P2 = avião
@@ -198,7 +198,7 @@ Exemplos:
         - Digramas: {av, vi, ia, ao}
         - Únicos: {av, vi, ia, ao}
       - Compartilhados: {}
-      - S = 2 * 0 (4 + 4) = 0
+      - S = 2 * 0 / (4 + 4) = 0
 
        Leia mais sobre outras aplicações do n-gram no PLN:
        <a href="http://text-analytics101.rxnlp.com/2014/11/what-are-n-grams.html?m=1" target="_blank" rel="noopener noreferrer">What Are N-Grams? - Text Analytics 101</a>`,
@@ -237,7 +237,7 @@ São elas:
 <strong>Exemplo:</strong>
   • “Entre a direita para pegar a rua XV de Novembro”
     Tokens: 10
-    Tipos: 9 (duas ocorrências de ‘a’)
+    Tipos (quantas palavras diferentes tem): 9 (duas ocorrências de ‘a’)
   • O número de tokens é maior que o número de tipos:
   • Exemplo: Google n-gram: 1 Tri de tokens (mas apenas 13 milhões de tipos)
   <a href=" https://books.google.com/ngrams" target="_blank" rel="noopener noreferrer">Google Ngram Viewer</a>`,
@@ -295,9 +295,9 @@ São elas:
 
 <strong>Exemplos:</strong>
   • copiar, copiando, copiado: copi
-  • abóbora: abób
-  • Maça: maç
-  • Curitiba: curitib
+  • "Correndo", "Correu", "Correram": corr.
+  • "Cachorros", "Cachorrinho", "Cachorra": cachorr.
+  • "Engenharia", "Engenheiro": engenh.
 
 • Alguns pacotes disponíveis
     <a href="Snowball (https://textprocessing.org/open-source-text-processing-project-snowball)" target="_blank" rel="noopener noreferrer">Snowball</a>
@@ -313,15 +313,14 @@ São elas:
 • pato, pata, patos, patas,...: pato
 • livro, livros, livrinho, ...: livro
 
-• Assim como a operação de stemming, pode ser útil na redução de
-dimensionalidade.
+• Assim como a operação de stemming, pode ser útil na redução de dimensionalidade.
 • Voltaremos a esta questão no futuro.`,
   },
   {
     id: 15,
     provaId: 1,
     titulo: "Lista de Palavras Frequentes (stopwords)",
-    conteudo: ` As stopwords são palavras que normalmente são retiradas do texto em processamento pois pouco contribuem para o processo de identificação/classificação.
+    conteudo: `As stopwords são palavras que normalmente são retiradas do texto em processamento pois pouco contribuem para o processo de identificação/classificação.
 • O objetivo é reduzir a dimensionalidade.
 • Normalmente incluem artigos, preposições, dentre outros.
 • Existem diferentes listas disponíveis: <a href="Stopwords português (https://www.linguateca.pt/chave/stopwords)" target="_blank" rel="noopener noreferrer">Stopwords português</a>`,
