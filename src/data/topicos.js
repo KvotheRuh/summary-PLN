@@ -70,15 +70,15 @@ const topicos = [
     • <strong>N-grama: </strong>Um n-gram pode ser definido como um conjunto de “gramas” consecutivos, cada letra ou palavra é uma “grama”.
     • <strong>Tokenização: </strong>separar o texto em tokens. A tokenização pode ter o objetivo de separar um texto em frases ou uma frase em tokens.
     • <strong>Normalização: </strong>transformar um texto bruto em uma forma canônica.
-    • <strong>Stemming: </strong>etirar o sufixo que “flexiona” palavras. Foi criado por Martin Porter em 1980. Baseado em regras.
-    • <strong>Lematização: </strong>levar uma palavra ao seu infinitivo, para verbos, ou na sua forma masculino singular ser for substantivo ou adjetivo.
-    • <strong>Token: </strong>com algum significado semântico. Os tokens podem ter tipos, que são classes de tokens que tem os mesmos caracteres
-    • <strong>Stopwords: </strong>ão palavras que normalmente são retiradas do texto em processamento pois pouco contribuem para o processo de identificação/classificação.
+    • <strong>Stemming: </strong>retirar o sufixo que “flexiona” palavras. Foi criado por Martin Porter em 1980. Baseado em regras.
+    • <strong>Lematização: </strong>levar uma palavra ao seu infinitivo, para verbos, ou na sua forma masculina singular ser for substantivo ou adjetivo.
+    • <strong>Token: </strong>sequência de caracteres com algum significado semântico. Os tokens podem ter tipos, que são classes de tokens que tem os mesmos caracteres
+    • <strong>Stopwords: </strong>são palavras que normalmente são retiradas do texto em processamento pois pouco contribuem para o processo de identificação/classificação.
     • <strong>Expressões regulares: </strong>Linguagem formal para especificar cadeias de caracteres (strings). É uma das formas mais básicas de processar um texto.
     • <strong>Representação Vetorial de Textos: </strong>trata-se de conversão da representação textual (strings) de um corpus para uma representação numérica
     • <strong>Bag-of-Words (BoW): </strong>Propõe uma maneira de representar as características textuais de documentos em vetores numéricos.
     • <strong>TF-IDF: </strong>A evolução do BoW pode ser obtida utilizado o TF-IDF. O TF-IDF (term frequency–inverse document frequency) é usado para medir a importância de um termo em um documento presente em uma coleção de documentos. O valor TF-IDF de uma palavra aumenta proporcionalmente à medida que aumenta o número de ocorrências dela em um documento. Porém, este valor é relativizado pela frequência da palavra no corpus.
-    • <strong>Ontologia Léxica: </strong>• Uma ontologia é, em geral, uma representação formal do conhecimento consensual de um determinado domínio, útil para permitir o compartilhamento deste conhecimento entre diferentes sistemas. Em uma ontologia léxica (as vezes chamada de ontologia linguística), as entradas (ou conceitos) são interligadas através de ligações semânticas, úteis para processar textos em linguagem natural. A WordNet deve ser a mais conhecida e utilizada ontologia léxica.
+    • <strong>Ontologia Léxica: </strong>Uma ontologia é, em geral, uma representação formal do conhecimento consensual de um determinado domínio, útil para permitir o compartilhamento deste conhecimento entre diferentes sistemas. Em uma ontologia léxica (as vezes chamada de ontologia linguística), as entradas (ou conceitos) são interligadas através de ligações semânticas, úteis para processar textos em linguagem natural. A WordNet deve ser a mais conhecida e utilizada ontologia léxica.
     • <strong>Lema: </strong>é o resultado do processo de lematização, que consiste em levar uma palavra ao seu infinitivo, para verbos, ou na sua forma masculino singular ser for substantivo ou adjetivo. Lemas podem ter vários significados. Exemplo: casado, casando, casados, ...: casar
     • <strong>Homonímia: </strong>Relação entre dois ou mais lemas que, com significados diferentes, têm a mesma forma gráfica e fônica ou apenas fônica.
     • <strong>Homofonia: </strong>Relação entre duas ou mais palavras que, sendo diversas no significado e na grafia, se pronunciam de modo idêntico.
