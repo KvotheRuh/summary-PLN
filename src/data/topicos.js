@@ -35,6 +35,11 @@ import pln_34 from "../images/pln_34.png"
 import pln_35 from "../images/pln_35.png"
 import pln_36 from "../images/pln_36.png"
 import pln_37 from "../images/pln_37.png"
+import pln_38 from "../images/pln_38.png"
+import pln_39 from "../images/pln_39.png"
+import pln_40 from "../images/pln_40.png"
+import pln_41 from "../images/pln_41.png"
+import pln_42 from "../images/pln_42.png"
 
 const topicos = [
   {
@@ -382,7 +387,7 @@ Normalmente utilizamos três operações básicas na construção de uma ER:
 • Uso dos metacaracteres de conjunto ‘{’ e ‘}’: {min, max}.
 • Em conjunto, os {} representam também repetição.
 • Por exemplo:
-    “[0-9]{4}” faz o matching de uma série de quatro dígitos consecutivos (como o     ano de nascimento de alguém).
+    “[0-9]{4}” faz o matching de uma série de quatro dígitos consecutivos (como o ano de nascimento de alguém).
 
 <strong>Quantificação</strong>
 • Quantificadores
@@ -417,22 +422,31 @@ Avaliar [^a-zA-Z][pP]ara[^a-zA-Z]
 Links interessantes:
 <a href="Aurelio Regex (http://aurelio.net/regex/)" target="_blank" rel="noopener noreferrer">Aurelio Regex</a>
 <a href="Stanford (http://web.stanford.edu/~jurafsky/slp3/2.pdf)" target="_blank" rel="noopener noreferrer">Stanford</a>
+<a href="REGEX (https://docs.google.com/spreadsheets/d/1k9Bag4APM8_R5kXoc_aF9K2no3CeoYX5zW_y_H4KTEI/edit?usp=sharing)" target="_blank" rel="noopener noreferrer">Planlha Resumo Regex</a>
 
 <strong>Exemplos de ERs</strong>
 • Verificar a presença do http:// ou https://
-^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$
+ <img src="${pln_40}"/>
+
 <strong>Exemplo em Python</strong>
 <img src="${pln_12}"/>
 
 <strong>Exercícios</strong>
 1) Escreva uma RegEx para identificar as ocorrências de letras minúsculas em início de linha.
+
+R: ^[a-z]
+
 2) Dado o texto a seguir, identifique todas as ocorrências derivadas de “gol”:
     Olha o gol!
     Goooooool, do Brasil!
     E que belo gol.
+
+R: [gG]o*l
+
 3) Dado o trecho de código html a seguir, crie uma expressão regular para identificar a presença dos marcadores da linguagem, <></>
-    Bom dia! <a href="/sol">Sol</a>
-    <a>Vamos estudar as RegEx?</a>
+<img src="${pln_41}"/>
+R: <[^>]+>
+
 4) Escreva uma RegEx para validar um horário no formato hh:mm, onde a hora pode variar de 0 a 23. Veja alguns exemplos para você avaliar:
     10:10
     02:35
@@ -441,18 +455,66 @@ Links interessantes:
     2:10
     24:00
     23:59
+
+R: ^([01]?[0-9]|2[0-3]):[0-5][0-9]$
+
 5) Crie uma RegEx para validar uma data no formato DD/MM/AAAA.
 Você pode utilizar o seguinte texto de teste:
     Data de Nascimento: 10/03/1980
-    Dica: para que o caractere ‘/’ utilizado para separar dia de mês e mês de ano seja identificado, acrescente o metacaractere ‘\’ imediatamente antes. Assim, a
-    RegEx final terá como parte de sua forma a sequência “\/” (aparecerá duas vezes).
 
-• Número telefone celular com código de área:
-(0?[1-9]{2})*\D*(9?)\D?(\d{4})+\D?(\d{4})\b
-• Data:
-((0[1-9])|(1[0-9])|(2[0-9])|(3[0-1]))\/((0[1-9])|(1[0-2]))\/[0-9]{4}
-• CEP:
-• Email:`,
+R: ^(0[1-9]|[12][0-9]|3[01])\\/(0[1-9]|1[0-2])\\/[0-9]{4}$
+
+6) Essa é uma Regex do que?
+<img src="${pln_38}"/>
+
+R: Número telefone celular com código de área.
+
+A análise detalhada de cada parte do código revela sua lógica estrutural:
+
+• (0?[1-9]{2})* (O DDD): Valida o código de área. O 0? aceita um zero opcional na frente (como o prefixo de operadora 041), seguido por dois dígitos estritamente de 1 a 9 ([1-9]{2}). O asterisco * no final do grupo torna todo o bloco do DDD opcional ou repetível.
+
+• \\D* (Separadores flexíveis): O metacaractere \\D significa "qualquer caractere que não seja um dígito numérico" (espaços, parênteses, hífens). O asterisco * permite que haja zero ou vários desses caracteres decorativos entre o DDD e o número.
+
+• (9?) (O Nono Dígito): Captura o característico 9 inicial dos telefones celulares do Brasil. O sinal de interrogação ? torna esse 9 opcional, permitindo validar tanto números modernos quanto formatos mais antigos que não o utilizavam.
+
+• \\D? (Separador): Permite opcionalmente um caractere não numérico (como um espaço ou hífen) logo após o dígito 9.
+
+• (\\d{4})+ (Primeira parte do número): Exige um bloco de exatamente 4 dígitos numéricos (\\d{4}). O sinal de mais + permite que esse bloco ocorra uma ou mais vezes.
+
+• \\D? (Separador final): Permite opcionalmente um caractere separador (geralmente o hífen -) entre os blocos do número.
+
+• (\\d{4}) (Segunda parte do número): O bloco final obrigatório de 4 dígitos numéricos que completa o número de telefone.
+
+• \\b (Fronteira de palavra): Uma âncora invisível que garante que a string numérica termine exatamente ali, impedindo que o motor capture números grudados a sequências maiores de dígitos.
+
+OBS: Como o metacaractere \\D significa literalmente "qualquer coisa que não seja um número", ele acaba aceitando letras, símbolos aleatórios, emojis ou qualquer caractere alfabético se eles aparecerem no lugar dos separadores.
+
+O problema prático: Se alguém digitar um número de telefone com um erro de digitação contendo letras (por exemplo: 41-a-98888-7777), essa ER vai dar match, aceitando a letra a como se fosse um separador válido.
+
+Por que os professores usam \\D então? Em exercícios acadêmicos introdutórios, o \\D é usado como um atalho "preguiçoso" para não precisar digitar manualmente todos os separadores possíveis (espaço, hífen e parênteses).
+
+Como seria a forma correta e rigorosa? Para evitar que letras entrem como "separadores", o ideal seria substituir o \\D por uma classe de caracteres explícita que aceite apenas os símbolos permitidos, como um espaço, hífen ou parênteses: <img src="${pln_42}"/>
+
+7) Essa Regex é do que?
+<img src="${pln_39}"/>
+
+R: Data
+
+8) Escreva uma Regex para CEP.
+
+R: ^[0-9]{5}-?[0-9]{3}$
+
+9) Escreva uma Regex para email
+
+R: ^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$
+
+Análise detalhada de cada bloco:
+^[a-zA-Z0-9._%+-]+ (Parte Local / Usuário): O + garante que haja uma ou mais ocorrências de letras maiúsculas/minúsculas, números ou símbolos comuns em e-mails (., _, %, +, -).
+• @ (O Separador): O caractere literal obrigatório que divide o usuário do servidor.
+• [a-zA-Z0-9.-]+ (O Domínio): O nome do servidor (ex: gmail, hotmail, pucpr), permitindo letras, números, pontos e hífens.
+• \\. (O Ponto do Domínio): O ponto literal escapado com a barra invertida para separar o servidor da extensão.
+• [a-zA-Z]{2,}$ (A Extensão / TLD): A terminação do e-mail (como .com, .br, .edu), exigindo no mínimo 2 letras e travando o fim da linha com o $ para evitar lixo no final.
+`,
   },
   {
     id: 18,
