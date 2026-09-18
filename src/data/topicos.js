@@ -1038,7 +1038,7 @@ de cosseno.
   {
     id: 37,
     provaId: 1,
-    titulo: "Sumarização Automática de Textos",
+    titulo: "[Aula 6] Sumarização Automática de Textos",
     conteudo: `• A sumarização de um texto pode ser definida como a tarefa de produzir um novo texto, mais conciso, preservando as principais informações e significado do texto original.
 
     • Condensar informações relevantes de um (ou múltiplos) textos, ocupando “menos espaço” que o(s) documento(s) original(is).
