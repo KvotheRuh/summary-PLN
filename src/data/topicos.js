@@ -50,6 +50,8 @@ import pln_49 from "../images/pln_49.png"
 import pln_50 from "../images/pln_50.png"
 import pln_51 from "../images/pln_51.png"
 import pln_52 from "../images/pln_52.png"
+import pln_53 from "../images/pln_53.png"
+import pln_54 from "../images/pln_54.png"
 
 const topicos = [
   {
