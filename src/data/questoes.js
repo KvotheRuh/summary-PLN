@@ -156,6 +156,81 @@ const questoes = [
     ],
     correct: 2,
     explanation: "Stopwords (como artigos, preposições e conjunções) aparecem com altíssima frequência, mas carregam pouca ou nenhuma informação semântica diferencial que ajude a classificar ou identificar o tema central do texto."
+  },
+  {
+    id: 11,
+    topicoId: 1,
+    provaId: 1,
+    question: "Qual a principal diferença entre a sumarização abstrativa e a sumarização extrativa?",
+    options: [
+      "A sumarização abstrativa seleciona as sentenças mais longas do texto, enquanto a extrativa seleciona as mais curtas.",
+      "A sumarização extrativa ranqueia e seleciona as sentenças originais do texto, enquanto a abstrativa compreende o contexto e cria um novo texto parafraseado.",
+      "A sumarização abstrativa funciona apenas de forma supervisionada, enquanto a extrativa não utiliza corpora anotado.",
+      "A sumarização extrativa depende da criação de novos templates de texto, enquanto a abstrativa recorta palavras isoladas.",
+      "Ambas realizam paráfrase, mas a abstrativa foca apenas nos bigramas e trigramas."
+    ],
+    correct: 1,
+    explanation: "A sumarização extrativa seleciona sentenças do próprio texto original baseando-se em ranqueamento, enquanto a sumarização abstrativa tenta compreender a semântica e gerar um novo texto através de paráfrases."
+  },
+  {
+    id: 12,
+    topicoId: 1,
+    provaId: 1,
+    question: "Na avaliação de sumários automáticos, o que a métrica ROUGE-2 analisa especificamente?",
+    options: [
+      "A velocidade de processamento do algoritmo de sumarização.",
+      "A quantidade de palavras presentes no sumário gerado em comparação ao texto original.",
+      "A taxa de compressão exata alcançada pelo modelo extrativo.",
+      "A similaridade através da comparação de bigramas entre o sumário gerado automaticamente e um sumário de referência (humano).",
+      "O número de tópicos latentes identificados em cada sentença do sumário."
+    ],
+    correct: 3,
+    explanation: "A métrica ROUGE-2 utiliza bigramas (pares de palavras consecutivas) para comparar o texto do resumo gerado automaticamente com o resumo de referência gerado por um humano."
+  },
+  {
+    id: 13,
+    topicoId: 1,
+    provaId: 1,
+    question: "No contexto do algoritmo LDA (Latent Dirichlet Allocation), qual é o papel do parâmetro 'Número de tópicos (K)'?",
+    options: [
+      "Definir a quantidade máxima de palavras que cada tópico pode conter.",
+      "Controlar a distribuição de tópicos por documento (Alpha).",
+      "Definir a priori quantos assuntos (tópicos) o modelo deve tentar encontrar no corpus.",
+      "Avaliar a interpretabilidade humana do modelo gerado.",
+      "Reduzir a dimensionalidade removendo os tópicos menos frequentes."
+    ],
+    correct: 2,
+    explanation: "O número de tópicos (K) deve ser definido a priori como um parâmetro na geração do modelo e indica quantos assuntos distintos o modelo deve procurar agrupar."
+  },
+  {
+    id: 14,
+    topicoId: 1,
+    provaId: 1,
+    question: "Para que serve a métrica de 'Coerência' na avaliação de modelos de Tópicos Latentes?",
+    options: [
+      "Para garantir que todas as palavras do vocabulário sejam incluídas em ao menos um tópico.",
+      "Para calcular o tempo de execução e uso de memória do algoritmo LDA.",
+      "Para substituir a métrica ROUGE na avaliação de sumários abstrativos.",
+      "Para definir automaticamente o parâmetro Beta, controlando a distribuição de palavras.",
+      "Para calcular a similaridade semântica entre os termos de um dado tópico, indicando quão interpretável ele é para humanos."
+    ],
+    correct: 4,
+    explanation: "A coerência avalia a similaridade semântica entre os termos de um tópico (ex: médico, hospital, cirurgia). Uma alta coerência indica que as palavras aparecem juntas com frequência e o tópico faz sentido para um humano."
+  },
+  {
+    id: 15,
+    topicoId: 1,
+    provaId: 1,
+    question: "Na etapa de 'Representação Intermediária' da sumarização, qual estratégia transforma as sentenças convertendo-as em uma lista de features como tamanho, posição e flags?",
+    options: [
+      "Representação em Tópicos.",
+      "Representação em Indicadores.",
+      "Topic-word.",
+      "Modelos de tópicos Bayesianos.",
+      "Reformulação Baseada em Templates."
+    ],
+    correct: 1,
+    explanation: "A representação em indicadores converte cada sentença em uma lista de indicadores de importância (features), diferentemente da representação em tópicos que se baseia em frequência, TF-IDF ou LSA."
   }
 ];
 

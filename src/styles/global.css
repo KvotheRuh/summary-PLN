@@ -137,7 +137,7 @@ button:disabled { cursor: default; }
 /* ── Fixed-size content card ──────────────────────────────── */
 .content-card {
   width: 100%;
-  max-width: 680px;
+  max-width: 900px;
   height: var(--card-height);
   background: var(--branco);
   border-radius: var(--radius-xl);

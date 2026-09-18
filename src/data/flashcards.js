@@ -1,6 +1,5 @@
 // Each flashcard belongs to a topic (topicoId)
 const flashcards = [
-  // Tópico 1 – Prova 1
   { id: 1, topicoId: 1, provaId: 1, frente: "O dado textual também é conhecido como:", verso: "Dado não estruturado." },
   { id: 2, topicoId: 2, provaId: 1, frente: "O código-fonte escrito em Python é um dado textual?", verso: "Verdadeiro." },
   { id: 3, topicoId: 2, provaId: 1, frente: "O nome completo de uma pessoa, gravado em um banco de dados relacional, não é um dado textual?", verso: "Falso." },
@@ -32,7 +31,77 @@ const flashcards = [
   { id: 29, topicoId: 2, provaId: 1, frente: "O que é a WordNet?", verso: "Um grande banco de dados léxico do inglês onde palavras são agrupadas em conjuntos de sinônimos cognitivos (synsets) interligados por relações semânticas." },
   { id: 30, topicoId: 2, provaId: 1, frente: "Para que serve a tarefa de Similaridade Semântica?", verso: "Mede o grau de equivalência semântica entre dois textos, capturando a noção de que alguns textos são mais similares que outros. Usado em sumarização, por exemplo." },
   { id: 31, topicoId: 2, provaId: 1, frente: "O que são Word Embeddings (Vetores Numéricos)?", verso: "São vetores de números reais que representam palavras em um espaço n-dimensional, aprendidos e construídos a partir de corpora não rotulado." },
-  { id: 32, topicoId: 2, provaId: 1, frente: "Como funciona o Continuous Bag of Words (CBOW)?", verso: "É um modelo de rede neural para aprendizado de embeddings que tenta prever uma palavra-alvo considerando as palavras de contexto ao redor dela em uma frase." }
+  { id: 32, topicoId: 2, provaId: 1, frente: "Como funciona o Continuous Bag of Words (CBOW)?", verso: "É um modelo de rede neural para aprendizado de embeddings que tenta prever uma palavra-alvo considerando as palavras de contexto ao redor dela em uma frase." },
+  {
+    id: 33,
+    topicoId: 2,
+    provaId: 1,
+    frente: "O que é Sumarização Abstrativa?",
+    verso: "É o tipo de sumarização que compreende o contexto e a semântica do documento original para criar um novo sumário, muitas vezes utilizando paráfrases e reescrita de sentenças."
+  },
+  {
+    id: 34,
+    topicoId: 2,
+    provaId: 1,
+    frente: "O que é Sumarização Extrativa?",
+    verso: "É o tipo de sumarização que calcula a similaridade entre as sentenças do texto de entrada, realiza o ranqueamento e seleciona as sentenças originais com maior pontuação."
+  },
+  {
+    id: 35,
+    topicoId: 2,
+    provaId: 1,
+    frente: "Na avaliação de sumários, o que é a métrica ROUGE-2?",
+    verso: "É uma métrica que compara o resumo gerado automaticamente com um resumo de referência (humano) utilizando bigramas (pares de palavras) para medir a sobreposição."
+  },
+  {
+    id: 36,
+    topicoId: 2,
+    provaId: 1,
+    frente: "Na sumarização, qual a diferença entre Representação em Tópicos e Representação em Indicadores?",
+    verso: "A representação em tópicos usa frequências e algoritmos como TF-IDF ou LSA, enquanto a representação em indicadores converte sentenças em features como tamanho e posição (ex: LexRank)."
+  },
+  {
+    id: 37,
+    topicoId: 2,
+    provaId: 1,
+    frente: "O que é Modelagem de Tópicos (Topic Modeling)?",
+    verso: "É uma técnica de aprendizado não supervisionado que identifica padrões e agrupa palavras similares em um corpus com o objetivo de extrair tópicos latentes (assuntos)."
+  },
+  {
+    id: 38,
+    topicoId: 2,
+    provaId: 1,
+    frente: "Qual a premissa de funcionamento do algoritmo LDA (Latent Dirichlet Allocation)?",
+    verso: "Ele mapeia documentos em tópicos assumindo que cada documento é uma mistura de diferentes tópicos e que cada tópico é uma mistura de diferentes palavras."
+  },
+  {
+    id: 39,
+    topicoId: 2,
+    provaId: 1,
+    frente: "No algoritmo LDA, o que o parâmetro 'Número de tópicos (K)' define?",
+    verso: "É um parâmetro definido a priori (empiricamente) que indica exatamente quantos assuntos distintos o modelo deve tentar encontrar e extrair do corpus."
+  },
+  {
+    id: 40,
+    topicoId: 2,
+    provaId: 1,
+    frente: "Para que serve o cálculo de 'Coerência' na Avaliação de Tópicos Latentes?",
+    verso: "Ele calcula a similaridade semântica entre os termos de um tópico (variando de 0 a 1). Uma alta coerência indica que as palavras agrupadas fazem sentido juntas e são interpretáveis por humanos."
+  },
+  {
+    id: 41,
+    topicoId: 2,
+    provaId: 1,
+    frente: "No algoritmo LDA, qual a função dos parâmetros Alpha (α) e Beta (β)?",
+    verso: "Alpha controla a distribuição de tópicos por documento (valores altos = mais tópicos por documento). Beta controla a distribuição de palavras por tópico (valores altos = mais palavras diferentes por tópico)."
+  },
+  {
+    id: 42,
+    topicoId: 2,
+    provaId: 1,
+    frente: "Quais são as quatro principais etapas do processo de sumarização de textos?",
+    verso: "1. Representação intermediária; 2. Pontuação das sentenças; 3. Seleção das sentenças; 4. Reformulação de sentenças (esta última apenas para sumarização abstrativa)."
+  }
 ];
 
 export default flashcards;
