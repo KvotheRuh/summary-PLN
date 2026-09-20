@@ -1059,10 +1059,13 @@ de cosseno.
     • Disponibilidade de Corpora
 
     <strong>Corpus de Entrada</strong>
-    <img src="${pln_43}"/>
-
-    <strong>Tipos de Sumarização</strong>
-    • Abstrativa
+    <img src="${pln_43}"/>`
+  },
+  {
+    id: 38,
+    provaId: 1,
+    titulo: "Tipos de Sumarização",
+    conteudo: `• Abstrativa
     • Extrativa
     • Observação: O tamanho final do sumário depende da taxa de compressão ou threshold pré-estabelecido.
 
@@ -1072,20 +1075,26 @@ de cosseno.
 
     <strong>Extrativa</strong>
     • Documento de entrada → similaridade entre sentenças → ranqueamento das sentenças → seleção das sentenças com maior ranqueamento.
-    <img src="${pln_45}"/>
-
-    <strong>Propósito da Sumarização</strong>
-    <img src="${pln_46}"/>
+    <img src="${pln_45}"/>`
+  },
+  {
+    id: 39,
+    provaId: 1,
+    titulo: "Propósito da Sumarização",
+    conteudo: `<img src="${pln_46}"/>
 
     <strong>Conteúdo Guia</strong>
     <img src="${pln_47}"/>
 
     <strong>Disponibilidade de Corpora</strong>
     • Corpora anotado é raro. Geralmente anotação binária de sentenças.
-    • Há abordagens não supervisionadas: baseadas em frequência ou centralidade.
-
-    <strong>Etapas do Processo</strong>
-    1. Representação intermediária.
+    • Há abordagens não supervisionadas: baseadas em frequência ou centralidade.`
+  },
+  {
+    id: 40,
+    provaId: 1,
+    titulo: "Etapas do Processo",
+    conteudo: `1. Representação intermediária.
     2. Pontuação de sentenças.
     3. Seleção de sentenças.
     4. Reformulação de sentenças (abstrativa).
@@ -1108,25 +1117,28 @@ de cosseno.
 
     <strong>Pontuação das Sentenças</strong>
     • Atribuição de uma pontuação de importância para cada sentença.
-        • Para Representação em tópicos
+        • Para representação em tópicos
             • Quão bem a sentença representa os tópicos mais importantes?
             • Quão bem a sentença combina informações de diferentes tópicos?
-        • Para Representação em indicadores
+        • Para representação em indicadores
             • A pontuação de cada sentença é calculada ao combinar diferentes indicadores (geralmente usando Aprendizagem de Máquina).
 
     <strong>Seleção de Sentenças</strong>
     • Top N sentenças mais importantes selecionadas – até atingir o tamanho desejado.
-    • Sentenças similares as sentenças previamente selecionadas são preteridas.
+    • Sentenças similares às sentenças previamente selecionadas são preteridas.
 
     <strong>Reformulação de Sentenças</strong>
     • Para a sumarização abstrativa é necessário parafrasear a saída de dados:
         • Baseado em regras
         • Baseado em templates
         • Algoritmos de paráfrase (operações morfossintáticas, redes neurais)
-        • Algoritmo de fusão de sentenças
-
-    <strong>Avaliação do Sumário</strong>
-    • Existem diferentes técnicas para avaliar o sumário gerado.
+        • Algoritmo de fusão de sentenças`
+  },
+  {
+    id: 41,
+    provaId: 1,
+    titulo: "Avaliação do Sumário",
+    conteudo: `• Existem diferentes técnicas para avaliar o sumário gerado.
     • Uma das mais utilizadas e mais simples é a técnica ROUGE:
         • Recall-Oriented Understudy for Gisting Evaluation.
     • Há diferentes implementações, mas uma delas é conhecida como ROUGE-2, pois utiliza bigramas para comparar o texto gerado com o texto original.
@@ -1139,9 +1151,13 @@ de cosseno.
     proteger”]
     • Bigramas do sumário referência:
     [“o coronavírus”, “coronavírus é”, “é perigoso”, “perigoso e”, “e mata”]
-    <img src="${pln_49}"/>
-
-    <strong>Exemplo</strong>
+    <img src="${pln_49}"/>`
+    },
+    {
+      id: 42,
+      provaId: 1,
+      titulo: "Exemplo e exercícios",
+      conteudo: `<strong>Exemplo</strong>
     • Sumarização baseada em frequência: sumarizacao_freq.ipynb
 
     <strong>Exercício para Entrega</strong>
@@ -1155,10 +1171,13 @@ de cosseno.
         • “Com as eleições se aproximando, um partido político lhe contratou para que desenvolva um algoritmo que automaticamente leia as notícias de um grande portal de notícias e apresente as temáticas principais associadas a cada notícia.
         • A ideia é que o usuário possa informar uma palavra-chave. O seu algoritmo deve trazer todas notícias que contenham essa palavra no título, e então apresente um sumário da notícia e as principais palavras associadas a mesma.”
     • Você pode partir do notebook sumarização_freq.ipynb.
-    • Usa a biblioteca BeautifulSoup.
-
-    <strong>Modelagem de Tópicos</strong>
-    • Definição:
+    • Usa a biblioteca BeautifulSoup.`
+    },
+    {
+      id: 43,
+      provaId: 1,
+      titulo: "Modelagem de Tópicos",
+      conteudo: `• Definição:
         • A modelagem de tópicos (topic modelling), de forma não supervisionada, identifica palavras e padrões em um corpus, agrupando-os em grupos contendo palavras “similares” no contexto do corpus.
         • Tem o objetivo de extrair tópicos latentes de um corpus. Entende-se como um tópico latente (ou escondido), um conjunto de termos ou palavras que permita caracterizar um conjunto de documentos como semelhantes, assim como possibilite distingui-los dos demais documentos de um corpus.
 
@@ -1192,7 +1211,6 @@ de cosseno.
         • BERT;
         • dentre outros.
 
-  <strong>Algoritmos para a Tarefa</strong>
   • Algoritmo proposto por Blei, Ng e Jordan em 2003 (https://www.jmlr.org/papers/volume3/blei03a/blei03a.pdf).
   • Os documentos são processados como coleções de palavras e BoW.
   • Em termos práticos, o objetivo do LDA é mapear documentos em tópicos, de modo que tokens (palavras) em cada documento sejam agrupadas nestes tópicos.
@@ -1220,10 +1238,13 @@ de cosseno.
   • O ajuste do valor de k pode ser feito com ajuda do cálculo da coerência.
   • Modelos com alta coerência tendem a ser facilmente interpretáveis aos humanos.
   • Se um tópico tem as palavras: médico, hospital, paciente, cirurgia, a coerência será alta se essas palavras aparecerem juntas com frequência nos mesmos documentos.
-  <img src="${pln_54}"/>
-
-  <strong>Exemplos</strong>
-  • Notebook geral:
+  <img src="${pln_54}"/>`
+    },
+    {
+      id: 44,
+      provaId: 1,
+      titulo: "Exemplos",
+      conteudo: `• Notebook geral:
       • exemploLDA.ipynb
   • Notebook Twitter:
       • tweetsLDA.ipynb
@@ -1232,7 +1253,7 @@ de cosseno.
   • Avalie também trabalhar com bigramas e trigramas.`,
   },
   {
-    id: 38,
+    id: 45,
     provaId: 1,
     titulo: "Python para PLN",
     conteudo: `• Principais pacotes:
