@@ -52,6 +52,30 @@ import pln_51 from "../images/pln_51.png"
 import pln_52 from "../images/pln_52.png"
 import pln_53 from "../images/pln_53.png"
 import pln_54 from "../images/pln_54.png"
+import pln_55 from "../images/pln_55.png"
+import pln_56 from '../images/pln_56.png'
+import pln_57 from '../images/pln_57.png'
+import pln_58 from '../images/pln_58.png'
+import pln_59 from '../images/pln_59.png'
+import pln_60 from '../images/pln_60.png'
+import pln_61 from '../images/pln_61.png'
+import pln_62 from '../images/pln_62.png'
+import pln_63 from '../images/pln_63.png'
+import pln_64 from '../images/pln_64.png'
+import pln_65 from '../images/pln_65.png'
+import pln_66 from '../images/pln_66.png'
+import pln_67 from '../images/pln_67.png'
+import pln_68 from '../images/pln_68.png'
+import pln_69 from '../images/pln_69.png'
+import pln_70 from '../images/pln_70.png'
+import pln_71 from '../images/pln_71.png'
+import pln_72 from '../images/pln_72.png'
+import pln_73 from '../images/pln_73.png'
+import pln_74 from '../images/pln_74.png'
+import pln_75 from '../images/pln_75.png'
+import pln_76 from '../images/pln_76.png'
+import pln_77 from '../images/pln_77.png'
+import pln_78 from '../images/pln_78.png'
 
 const topicos = [
   {
@@ -1305,8 +1329,327 @@ de cosseno.
     <img src="${pln_36}"/>
 
     <img src="${pln_37}"/>`,
-  }
+  },
   // ── PROVA 2 ───────────────────────────────────────────────
+
+  {
+  id: 46,
+  provaId: 2,
+  titulo: "Transformer",
+  conteudo: `A arquitetura Transformer lida muito melhor com dependências em sequências longas e permite um processamento de dados altamente paralelo porque analisa as informações todas de uma vez, superando a lentidão das arquiteturas recorrentes. Dentro do mundo das arquiteturas recorrentes — que processam as informações passo a passo, como uma esteira — temos as RNNs (Redes Neurais Recorrentes), que servem para entender dados em sequência (como texto ou áudio), mas sofrem de "amnésia" e esquecem o início de frases muito longas. Para consertar esse problema, foram criadas as LSTMs (Long Short-Term Memory), que são uma evolução das RNNs com um mecanismo interno de "memória de longo prazo", servindo perfeitamente para reter contextos importantes por muito mais tempo durante o processamento. 
+  • <strong>RNNs (Redes Neurais Recorrentes – Recurrent Neural Networks):</strong> São redes neurais desenvolvidas para trabalhar com dados sequenciais, como textos, áudios e séries temporais. Seu funcionamento consiste em processar um elemento da sequência por vez, mantendo uma memória interna chamada de estado oculto (hidden state), que armazena informações dos elementos anteriores e as utiliza no processamento do próximo elemento. Dessa forma, a rede consegue considerar o contexto da sequência para produzir uma resposta. Entretanto, as RNNs tradicionais apresentam dificuldades para aprender dependências de longo prazo, pois podem perder informações importantes ao longo do processamento, devido a problemas como o desaparecimento do gradiente (vanishing gradient). 
+  • <strong>LSTMs (Long Short-Term Memory – Memória de Longo e Curto Prazo):</strong> São uma evolução das RNNs, desenvolvidas para solucionar principalmente o problema de dificuldade em aprender dependências de longo prazo. Diferentemente das RNNs tradicionais, as LSTMs possuem mecanismos chamados de portões (gates), que controlam quais informações devem ser armazenadas, descartadas ou utilizadas durante o processamento. Esses mecanismos permitem que a rede mantenha informações relevantes por períodos maiores, reduzindo o problema do desaparecimento do gradiente. São utilizadas principalmente em tarefas que envolvem sequências, como previsão de séries temporais, reconhecimento de fala e processamento de linguagem natural. 
+
+Exemplos:
+
+• <strong>Transformer:</strong> Pense na tradução de um artigo inteiro no Google Tradutor. Em vez de ler palavra por palavra como a RNN e a LSTM, o Transformer carrega o artigo inteiro de uma vez na GPU. Ele usa um mecanismo de "Atenção" (Self-Attention) para calcular matematicamente a relação entre todas as palavras simultaneamente, descobrindo que o pronome "ele" no final do texto se refere ao "diretor" mencionado no título. Isso o torna infinitamente mais rápido para treinar e muito mais preciso em contextos gigantescos (como o ChatGPT). 
+
+• <strong>RNNs:</strong> Imagine um sistema básico de análise de sensores em uma máquina industrial. Ele recebe dados de temperatura a cada segundo para prever uma falha no próximo    minuto. Como a RNN processa passo a passo de forma dependente, ela funciona bem para prever o impacto dos últimos 5 segundos. Porém, se a falha for resultado de um superaquecimento que começou 2 horas atrás, a RNN já terá "diluído" essa informação inicial e não conseguirá fazer a correlação. 
+
+• <strong>LSTMs:</strong> Ao analisar a frase "João nasceu no Brasil e, depois de muitos anos, mudou-se para Portugal. Ele fala português", uma LSTM consegue preservar informações relevantes sobre João e o contexto apresentado anteriormente, mesmo que exista uma distância considerável entre as palavras relacionadas
+
+Comparação:
+
+A principal diferença entre as três arquiteturas está na forma como processam e armazenam informações. As RNNs processam os dados sequencialmente, um elemento por vez, mas apresentam dificuldades para preservar informações em sequências longas. As LSTMs também realizam o processamento sequencial, porém possuem mecanismos que permitem armazenar e descartar informações de maneira controlada, melhorando a capacidade de aprender dependências de longo prazo. Já os Transformers utilizam o mecanismo de atenção (Self-Attention), permitindo identificar relações entre diferentes elementos de uma sequência e realizar o processamento de forma paralela, tornando-os mais eficientes para trabalhar com grandes volumes de dados. 
+
+<img src="${pln_68}"/>
+
+<strong><span style="color: red;">É possível juntar as três: </span></strong> Sim, é possível. Nessa abordagem, usamos a RNN ou a LSTM na linha de frente para processar os dados sequencialmente, garantindo a captura da ordem exata e contínua dos eventos mais recentes (como a acústica de uma fala ou sensores minuto a minuto), e então entregamos esses blocos de informações "resumidas" para o Transformer cruzar o panorama histórico de uma só vez, economizando muita memória ao evitar que ele leia os dados crus do zero. Em contrapartida, a perda inevitável dessa união é a velocidade bruta e a simplicidade; ao colocar as redes recorrentes no início do fluxo, nós reintroduzimos propositalmente o gargalo do processamento passo a passo, sacrificando a grande vantagem de paralelismo total do Transformer e criando um sistema absurdamente complexo, pesado de treinar e muito mais difícil de dar manutenção no mundo real. `,
+},
+{
+id: 47,
+  provaId: 2,
+  titulo: "Arquitetura de um transformer",
+  conteudo: `<img src="${pln_62}"/>
+
+• <strong>Entrada:</strong> Primeiro, o texto passa pelo processo de tokenização, que consiste em dividir a frase em unidades menores chamadas tokens (palavras, partes de palavras ou caracteres). Em seguida, cada token é transformado em um embedding, ou seja, uma representação numérica que permite ao modelo trabalhar com o texto. Como o Transformer não processa os tokens necessariamente em ordem, é adicionada uma informação de posição (Positional Encoding), que indica a posição de cada token na sequência. Essa informação é importante para que o modelo consiga compreender a ordem das palavras e interpretar corretamente o contexto da frase. 
+
+Exemplo: Na frase: "O cachorro mordeu o homem". O modelo divide essa frase em tokens e associa uma posição a cada um: "O" (1), "cachorro" (2), "mordeu" (3), "o" (4) e "homem" (5). Essa informação permite que o modelo entenda que foi o cachorro quem realizou a ação de morder, e não o contrário. 
+
+• <strong>Enconder:</strong> É responsável por processar os embeddings de entrada e transformá-los em representações contextuais, ou seja, representações numéricas que carregam informações sobre o significado de cada token considerando sua relação com os demais elementos da sequência. Isso acontece por meio de mecanismos de atenção (Self-Attention) e redes neurais, que permitem identificar quais palavras são mais relevantes para interpretar cada parte do texto. Essas representações são utilizadas para que o modelo compreenda melhor o contexto da entrada antes de produzir uma resposta. 
+
+<span style="color: red;">Representação contextual:</span> A representação contextual é o processo onde o Transformer deixa de enxergar palavras isoladas e passa a compreender o cenário completo, transformando o texto inicial em pacotes matemáticos inteligentes que captam a relação entre todos os elementos da sua frase. Usando o mecanismo de "Autoatenção" (Self-Attention) em conjunto com as redes neurais, ele cria uma espécie de teia invisível que calcula matematicamente o peso e a influência que cada palavra exerce sobre as outras vizinhas, permitindo que a inteligência artificial capte perfeitamente a intenção real, a ambiguidade e a profundidade do seu texto antes de tentar produzir qualquer resposta. 
+
+Exemplo: Na frase "O banco estava cheio de pessoas esperando para sacar dinheiro". Ao analisar a palavra "banco", o encoder considera as demais palavras da frase, como "sacar dinheiro" e "pessoas", para identificar que ela se refere a uma instituição financeira, e não a um assento. Assim, a representação contextual de "banco" incorpora informações que ajudam a determinar seu significado naquela frase. 
+
+•<strong> Decoder:</strong> É responsável por utilizar as informações disponíveis para gerar a resposta, produzindo um token por vez. A cada etapa, considera os tokens já gerados e, dependendo da arquitetura, as representações produzidas pelo encoder. Dessa forma, cada novo token é gerado levando em consideração o contexto da resposta construída até aquele momento. 
+
+Exemplo: Imagine que você perguntou ao modelo "Qual é a capital do Brasil?". O decoder começa a construir a resposta gerando o primeiro token: "A". Em seguida, utiliza esse token como contexto para gerar "capital". Depois, gera "do", "Brasil" e assim por diante. Dessa forma, a resposta é construída progressivamente, um token por vez. 
+
+•<strong>Saida:</strong> transforma a representação produzida pelo decoder em uma distribuição de probabilidades sobre os possíveis tokens do vocabulário, indicando a probabilidade de cada token ser o próximo elemento da sequência. Com base nessa distribuição, o modelo seleciona um token, que é adicionado à resposta. Esse processo se repete até que a resposta seja concluída. 
+
+Exemplo: É como o teclado preditivo do seu celular, mas com matemática avançada. Se a frase até agora é "O rato roeu a...", a saída varre as milhares de palavras do idioma e gera um placar: "roupa" (98%), "maçã" (1.5%), "carro" (0.5%). Ele escolhe a palavra com a maior probabilidade ("roupa") e a cospe na tela como o próximo token. `,
+},
+{
+id: 48,
+provaId: 2,
+titulo: "Entrada - Do texto ao Token",
+conteudo: `<strong>Sequencia geral:</strong>
+Texto de Entrada → Tokens → Embeddings → Contexto → Atenção → Transformer → Representação
+
+Ao receber um texto como entrada, o modelo realiza a tokenização, dividindo o texto em unidades menores chamadas tokens. Em seguida, cada token recebe um ID numérico que permite identificá-lo dentro do vocabulário do tokenizador. Esse ID é definido durante a construção do tokenizador, que possui uma tabela relacionando cada token ao seu identificador numérico. Portanto, quando o modelo recebe um texto, ele consulta essa tabela para identificar os tokens e seus respectivos IDs. Depois, esses IDs são utilizados para buscar seus respectivos embeddings, que são vetores numéricos que representam cada token. Junto aos embeddings, é adicionada a informação de posição (Positional Encoding), que indica a ordem em que os tokens aparecem na sequência. Com essas informações, o encoder processa a entrada e cria representações contextuais, considerando as relações entre os tokens. Por fim, o decoder utiliza essas representações para gerar a saída token a token, repetindo o processo até concluir a resposta.
+
+<strong>Como são gerados os IDs dos tokens?</strong>
+Os IDs são atribuídos durante a construção do vocabulário do tokenizador. Cada token recebe um número inteiro único, que funciona como um identificador. Essa associação não é feita aleatoriamente a cada frase: ela já está definida e armazenada no tokenizador antes de o modelo receber o texto. Existem diferentes algoritmos de tokenização, como BPE (Byte Pair Encoding), WordPiece e Unigram, que determinam como o texto será dividido e quais unidades farão parte do vocabulário.
+
+<span style="color: red;">Uma diferença importante:</span> o ID não representa o significado da palavra. Por exemplo, o ID 15 não significa que determinado token é mais importante que o ID 42. Ele funciona apenas como um identificador para localizar o vetor correspondente na matriz de embeddings. 
+
+• Token: Unidade básica de texto utilizada pelo modelo para representar e processar uma sequência linguística.
+• Tokenização: é a conversão de um texto em uma sequência de unidade menores - os token - que podem ser representados numericamente e processadas pelo modelo
+• Vocabulário: é o conjunto de todos os tokens que o tokenizador é capaz de reconhecer e representar diretamente. É um conjunto finito de tokens, onde cada token possui um ID numérico.
+• ID (Identificador): Número inteiro associado a um token no vocabulário. Serve para identificar o token e permitir que o modelo encontre seu respectivo embedding. 
+• Embedding: Vetor numérico associado a cada ID, utilizado para representar o token matematicamente. Diferentemente do ID, que apenas identifica o token, o embedding carrega informações que permitem ao modelo aprender relações entre palavras e seus significados. 
+
+<img src="${pln_58}"/>`
+},
+
+{
+id: 49,
+provaId: 2,
+titulo: "Tokenização por subpalavras",
+conteudo: `Essa abordagem consiste em dividir algumas palavras em unidades menores, chamadas de subpalavras, permitindo que o modelo represente um vocabulário muito grande utilizando um conjunto menor de tokens. Isso é importante porque evita a necessidade de armazenar todas as palavras possíveis no vocabulário, inclusive palavras raras, termos técnicos e palavras que o modelo nunca encontrou anteriormente. Em vez disso, o tokenizador consegue combinar unidades menores para representar essas palavras.
+Os algoritmos mais utilizados são:
+
+• BPE (Byte Pair Encoding): Constrói o vocabulário de subpalavras combinando iterativamente os pares de símbolos que aparecem com maior frequência no conjunto de treinamento. Inicialmente, as palavras são divididas em unidades menores e, a cada etapa, os pares mais frequentes são unidos para formar novos tokens. Esse processo continua até atingir o tamanho de vocabulário desejado.
+
+Exemplo: Imagine que o conjunto de treinamento contenha frequentemente as palavras "casa", "casamento" e "casar". O algoritmo pode identificar que a sequência "cas" aparece frequentemente e combiná-la em um único token. Posteriormente, outras combinações podem ser realizadas para formar unidades maiores.
+
+<img src="${pln_57}"/>
+
+• WordPiece: É um algoritmo de tokenização por subpalavras que constrói seu vocabulário identificando combinações de caracteres que são mais úteis para representar as palavras do conjunto de treinamento. Diferentemente do BPE, que prioriza a frequência dos pares, o WordPiece seleciona combinações considerando o quanto elas aumentam a probabilidade dos dados de treinamento. Durante a tokenização, o algoritmo procura dividir uma palavra em subpalavras que existam no vocabulário, geralmente escolhendo a maior unidade possível a cada etapa. 
+	
+Exemplo: Imagine que o vocabulário do modelo contenha as subpalavras "jogar" (ID 120) e "##ndo" (ID 35). Ao receber a palavra "jogando", o WordPiece pode dividi-la nessas duas unidades, utilizando o ID 120 para "jogar" e o ID 35 para "##ndo". O símbolo ## indica que aquela subpalavra é uma continuação da unidade anterior. Dessa forma, o modelo consegue representar a palavra "jogando" sem precisar armazená-la inteira como um token independente. 
+
+• Unigram Language Model: O Unigram Language Model é um algoritmo de tokenização por subpalavras que utiliza probabilidades estatísticas para construir seu vocabulário. Diferentemente do BPE e do WordPiece, ele começa com um conjunto maior de possíveis tokens e, durante o treinamento, remove aqueles que causam menor impacto na capacidade de representar os textos. Dessa forma, procura manter as unidades que representam os dados de maneira mais eficiente, considerando a probabilidade de ocorrência de cada sequência de tokens. É importante entender que o tokenizador não busca necessariamente dividir as palavras de acordo com regras gramaticais ou morfológicas, mas sim encontrar divisões estatisticamente úteis. Por isso, algumas palavras podem ser divididas em partes que não fazem sentido do ponto de vista linguístico.
+
+Exemplo: Imagine a palavra "computador". Um tokenizador Unigram pode dividi-la em "compu" + "tador", em vez de utilizar uma divisão linguisticamente mais intuitiva. Isso acontece porque o algoritmo prioriza a eficiência estatística da representação, e não a formação de partes que tenham significado isoladamente.
+
+<span style="color: red;">Atenção: O tokenizador procura unidades estatisticamente úteis e eficientes para representar os textos utilizados no treinamento. Isso pode ocasionar em tokens “estranhos” no sentido morfológico. Isso quer dizer que o tokenizador não irá tentar dividir a palavra em partes linguisticamente corretas.</span>`
+},
+{
+id: 50,
+provaId: 2,
+titulo: "Vetores Numéricos (Word Embedding)",
+conteudo: `Os Word Embeddings são representações numéricas de palavras ou tokens por meio de vetores de números reais, organizados em um espaço de várias dimensões. Esses vetores são aprendidos durante o treinamento de modelos utilizando grandes conjuntos de textos (corpora), geralmente sem a necessidade de dados previamente rotulados. O objetivo é fazer com que palavras que aparecem em contextos semelhantes desenvolvam representações vetoriais com características próximas. Dessa forma, o modelo consegue trabalhar matematicamente com relações entre palavras, identificando semelhanças e diferenças entre seus contextos de utilização. 
+É necessário entender dois conceitos:
+
+• Representação vetorial de um texto: Consiste em transformar palavras ou tokens em vetores numéricos para que o modelo consiga realizar operações matemáticas com eles. Cada palavra possui uma representação formada por vários números, que indicam características aprendidas durante o treinamento. Quando temos uma frase, seus tokens são representados por seus respectivos vetores, formando uma sequência de representações numéricas que será utilizada pelas camadas do Transformer. 
+
+• Significado das palavras: Os embeddings permitem representar relações semânticas entre palavras, ou seja, relações relacionadas aos seus significados e contextos de utilização. Durante o treinamento, o modelo aprende a aproximar vetores de palavras que aparecem em contextos semelhantes e a diferenciar aqueles que possuem utilizações distintas. Assim, palavras com significados relacionados tendem a apresentar representações vetoriais próximas, permitindo que o modelo identifique relações entre elas.
+
+
+
+<strong>Criação de um Embedding</strong>
+
+• Embedding estático: O Embedding estático é uma técnica de representação numérica em que cada palavra possui um único vetor, independentemente do contexto em que aparece na frase. Durante o treinamento, os vetores são ajustados com base nos contextos em que as palavras aparecem nos textos, fazendo com que palavras utilizadas em situações semelhantes desenvolvam representações vetoriais próximas. Dessa forma, palavras com significados ou aplicações semelhantes tendem a apresentar vetores similares. Entretanto, essa abordagem possui uma limitação: não consegue diferenciar palavras que possuem mais de um significado, pois utiliza a mesma representação para todos os contextos.
+
+Exemplo: A palavra "banco" possui o mesmo vetor nas frases "Sentei no banco da praça" e "Fui ao banco sacar dinheiro". Mesmo que o significado seja diferente, o embedding estático utiliza a mesma representação numérica para as duas situações.
+
+<img src="${pln_70}"/>
+
+<img src="${pln_69}"/>
+
+• Embeddings Contextual: Os Embeddings Contextuais são representações numéricas em que uma mesma palavra pode receber vetores diferentes dependendo do contexto em que aparece na frase. Diferentemente dos embeddings estáticos, que atribuem um único vetor para cada palavra, essa abordagem permite que o modelo considere as palavras ao redor para compreender o significado de cada token. Essa técnica é utilizada em modelos baseados em Transformer, como o BERT e os LLMs modernos. Inicialmente, cada token recebe um embedding que representa suas características básicas, mas esse vetor ainda não possui o significado específico que a palavra terá naquela frase. Em seguida, o modelo adiciona a informação de posição (Positional Encoding), permitindo identificar a ordem dos tokens na sequência. Depois, a sequência passa pelas camadas do Transformer, nas quais o mecanismo de atenção própria (Self-Attention) permite que cada token analise sua relação com os demais tokens da frase, identificando quais são mais relevantes para compreender seu significado. A cada camada, as representações são atualizadas com essas informações contextuais, fazendo com que o vetor inicial seja transformado em uma representação contextualizada.
+
+Exemplo: Considere a frase "O banco aprovou o empréstimo". Após a tokenização, cada palavra recebe seu respectivo ID e, em seguida, um embedding inicial. Nesse primeiro momento, o vetor de "banco" ainda não diferencia se a palavra se refere a uma instituição financeira ou a um assento. Em seguida, é adicionada a informação de posição, permitindo que o modelo identifique a ordem dos tokens. A sequência então entra nas camadas do Transformer, onde o mecanismo de Self-Attention permite que o token "banco" considere os demais elementos da frase, como "aprovou" e "empréstimo". Como essas palavras estão relacionadas ao contexto financeiro, o modelo consegue construir uma representação de "banco" associada a uma instituição financeira.
+
+
+
+<strong>O que é Self-A<strong>ttention (Atenção Própria)?</strong>
+
+O Self-Attention é um mecanismo que permite ao modelo identificar o quanto cada token de uma sequência deve considerar os demais tokens para compreender o contexto. Para isso, cada token é comparado com os outros por meio de cálculos matemáticos que geram pesos de atenção (Attention Weights). Esses pesos indicam o grau de relevância de cada token em relação aos outros. Com base neles, o modelo combina as informações dos tokens, atualizando suas representações contextuais. Dessa forma, uma palavra consegue utilizar informações de outras partes da frase para ajudar a determinar seu significado.
+
+Exemplo: Na frase "O banco aprovou o empréstimo", quando o modelo analisa o token "banco", o mecanismo de Self-Attention pode atribuir maior peso de atenção às palavras "aprovou" e "empréstimo", pois elas fornecem informações importantes para identificar o significado de "banco". Já na frase "Sentei no banco da praça", a atenção pode destacar as palavras "sentei" e "praça", indicando que "banco" se refere a um assento. Assim, o modelo consegue diferenciar os significados de uma mesma palavra de acordo com o contexto.`
+},
+{
+id: 51,
+provaId: 2,
+titulo: "Bloco Encoder",
+conteudo: `O Encoder é responsável por processar a sequência de entrada e gerar representações contextuais dos tokens. Ele não gera textos diretamente, pois seu objetivo é transformar os embeddings iniciais em representações mais completas, que incorporem informações sobre o significado dos tokens e suas relações com os demais elementos da sequência. Para realizar esse processamento, o Encoder utiliza principalmente dois mecanismos: o Self-Attention, que permite identificar quais tokens são mais relevantes para compreender cada elemento da sequência, e as redes Feed-Forward, que realizam transformações matemáticas nas representações de cada token, permitindo extrair e combinar características mais complexas. Esses mecanismos trabalham em conjunto e são repetidos em diferentes camadas, refinando progressivamente as representações contextuais produzidas pelo Encoder.
+
+Exemplo: Imagine a frase "O banco aprovou o empréstimo". O Encoder recebe os embeddings dos tokens e utiliza o Self-Attention para identificar relações entre palavras, como "banco", "aprovou" e "empréstimo". Em seguida, as redes Feed-Forward processam essas informações e transformam as representações de cada token. Ao final, o token "banco" terá uma representação contextual que incorpora informações relacionadas a uma instituição financeira, em vez de simplesmente representar a palavra isoladamente.`,
+},
+{
+id: 52,
+provaId: 2,
+titulo: "Atenção(Self-Attention)",
+conteudo: `O Self-Attention é um mecanismo que permite que cada token de uma sequência avalie a relevância dos demais tokens para construir sua representação contextual. Para isso, o Transformer realiza cálculos matemáticos que comparam os tokens entre si e atribuem pesos de atenção (Attention Weights), indicando o grau de importância de cada token para a interpretação dos outros. Dessa forma, cada token consegue incorporar informações de diferentes partes da sequência, mesmo que estejam distantes umas das outras.
+
+Exemplo: Na frase "O banco aprovou o empréstimo", quando o Transformer processa o token "banco", ele não analisa apenas essa palavra isoladamente. O mecanismo de Self-Attention compara "banco" com os demais tokens da frase, identificando quais possuem maior relevância para compreender seu significado. Nesse caso, palavras como "aprovou" e "empréstimo" podem receber pesos de atenção maiores, pois fornecem informações importantes para identificar que "banco" se refere a uma instituição financeira. Assim, o modelo consegue construir uma representação contextual considerando as relações entre as palavras da frase.
+
+<img src="${pln_78}"/>`,
+},
+{
+id: 53,
+provaId: 2,
+titulo: "Rede Feed-Forward (FNN)",
+conteudo: `Após a etapa de atenção (Self-Attention), a rede Feed-Forward transforma e refina, de maneira não linear, a representação contextual de cada token. Enquanto o Self-Attention permite que os tokens incorporem informações uns dos outros, a FNN trabalha individualmente com a representação de cada token, aplicando operações matemáticas para identificar e combinar características mais complexas. Dessa forma, os dois mecanismos possuem funções complementares: a atenção identifica de quais outros tokens incorporar informações, enquanto a FNN determina como transformar e processar as informações recebidas.
+
+Exemplo: Na frase "O banco aprovou o empréstimo", o Self-Attention permite que o token "banco" incorpore informações de palavras como "aprovou" e "empréstimo". Em seguida, a FNN transforma essa representação contextual, ajudando o modelo a desenvolver características que permitam identificar o significado de "banco" naquele contexto.
+
+De forma simplificada:
+• Self-Attention: mistura informações entre os tokens.
+• FNN: transforma e refina a representação de cada token.`,
+},
+{
+id: 54,
+provaId: 2,
+titulo: "Bloco Decoder",
+conteudo: `O Decoder é responsável por gerar a sequência de saída, produzindo um token por vez. Enquanto o Encoder processa a entrada e constrói representações contextuais dos tokens, o Decoder utiliza os tokens já gerados e, nas arquiteturas que possuem Encoder e Decoder, também utiliza as representações produzidas pelo Encoder para prever qual será o próximo token. Esse processo acontece de maneira iterativa: após gerar um token, ele é adicionado à sequência e utilizado como contexto para prever o próximo, repetindo esse ciclo até que a resposta seja concluída.
+
+Exemplo: Imagine que o usuário pergunte "Qual é a capital do Brasil?". O Decoder começa a gerar a resposta utilizando as informações disponíveis e produz o primeiro token: "A". Em seguida, considera o token gerado e prevê o próximo, que pode ser "capital". Esse processo continua até formar a resposta "A capital do Brasil é Brasília".
+
+<img src="${pln_64}"/>`,
+},
+{
+id: 55,
+provaId: 2,
+titulo: "Bloco Saida",
+conteudo: `A representação produzida pelo Decoder é convertida em uma previsão sobre qual deve ser o próximo token da sequência. Para isso, o modelo utiliza duas etapas principais: a camada Linear e a função Softmax. A camada Linear recebe o vetor produzido pelo Decoder e realiza uma transformação matemática, gerando um novo vetor com uma posição para cada token existente no vocabulário. Por exemplo, se o vocabulário possuir 50 mil tokens, a saída dessa camada terá 50 mil valores, chamados de logits. Esses valores representam as pontuações atribuídas pelo modelo a cada token, indicando o quanto cada um é considerado adequado para continuar a sequência. Entretanto, os logits ainda não são probabilidades. Por isso, é aplicada a função Softmax, que transforma essas pontuações em uma distribuição de probabilidades, na qual todos os valores ficam entre 0 e 1 e a soma deles é igual a 1. Com essa distribuição, o modelo seleciona o próximo token e o adiciona à sequência, repetindo o processo até concluir a resposta.
+A partir dessa distribuição, o modelo escolhe o próximo token. A escolha pode ser o token de maior probabilidade ou pode envolver estratégias de amostragem, como Temperatura, top-k e top-p.
+
+<img src="${pln_75}"/>`,
+},
+{
+id: 56,
+provaId: 2,
+titulo: "Arquiteturas derivadas do Transformer",
+conteudo: `<img src="${pln_59}"/>
+
+<strong>Encoder-Only: </strong> No Encoder-Only, é utilizada apenas a parte do Encoder do Transformer. Sua principal função é processar o texto de entrada e gerar representações vetoriais contextuais para cada token, permitindo que o modelo compreenda o significado das palavras considerando o contexto em que aparecem. Esses modelos são particularmente adequados para tarefas em que o objetivo principal é compreender, classificar ou representar um texto, e não gerar uma continuação longa. São aplicados em tarefas de NLU (Natural Language Understanding), como reconhecimento de entidades nomeadas (NER), análise de sentimento e classificação de textos. Um exemplo clássico dessa arquitetura é o BERT.
+
+Exemplo: Ao receber a frase "A empresa Apple lançou um novo celular", o modelo pode identificar que "Apple" representa uma organização, e não uma fruta. Isso acontece porque o Encoder considera o contexto das palavras para interpretar seu significado.
+
+<strong>Decoder-Only:</strong> No Decoder-Only, é utilizada apenas a pilha de blocos Decoder do Transformer, sem a presença de um Encoder separado. Nessa arquitetura, o próprio Decoder processa os tokens de entrada, constrói suas representações contextuais e utiliza essas informações para prever o próximo token da sequência. Diferentemente do Encoder-Only, essa arquitetura é naturalmente adequada à geração autoregressiva, na qual o modelo produz uma sequência de saída token por token, utilizando os tokens anteriores como contexto. Por esse motivo, é predominante em LLMs generativos, que recebem prompts como entrada e geram respostas por meio de uma tarefa conhecida como Next Token Prediction (previsão do próximo token). São especialmente utilizados em tarefas de NLG (Natural Language Generation), como chatbots conversacionais, geração de textos e criação de código. Exemplos incluem os modelos da família GPT, como os utilizados pelo ChatGPT.
+
+Exemplo: Ao receber o prompt "Explique o que é inteligência artificial", o modelo começa a prever os tokens que formarão a resposta. Cada novo token gerado é utilizado como contexto para prever o próximo, permitindo construir uma explicação completa.
+
+<strong>Encoder-Decoder:</strong> O Encoder-Decoder utiliza as duas partes do Transformer, seguindo o fluxo: Entrada → Encoder → Representações contextuais → Decoder → Saída. O Encoder processa a sequência de entrada e produz representações contextuais dos seus tokens. O Decoder utiliza essas representações para gerar uma nova sequência, token por token, por meio de um mecanismo chamado Cross-Attention, que permite consultar as informações produzidas pelo Encoder durante a geração. Essa arquitetura é especialmente adequada para tarefas que recebem uma sequência de entrada e precisam produzir outra sequência como resposta, como tradução automática, sumarização e reformulação de textos. 
+Exemplos de modelos que utilizam essa arquitetura são T5 e BART.
+
+Exemplo: Imagine que o modelo receba a frase em inglês "The weather is beautiful today" e precise traduzi-la para português. O Encoder processa a frase original e gera representações contextuais. Em seguida, o Decoder utiliza essas representações para produzir a tradução "O tempo está bonito hoje", gerando um token por vez.
+
+<img src="${pln_77}"/>
+
+<img src="${pln_55}"/>>`,
+},
+{
+id: 57,
+provaId: 2,
+titulo: "Bidirectional Encoder Representations for Transformers (BERT)",
+conteudo: `O BERT é uma rede neural profunda, pré-treinada, baseada na arquitetura Encoder-Only do Transformer. Seu principal objetivo é compreender o contexto de um texto por meio da análise bidirecional, ou seja, considera tanto as palavras que aparecem antes quanto as que aparecem depois de um determinado token para construir suas representações contextuais. O BERT pode ser adaptado para diferentes tarefas por meio de um processo chamado Fine-Tuning, no qual o modelo recebe treinamento adicional para uma finalidade específica, geralmente com a adição de uma camada de saída responsável pela tarefa desejada. Dessa forma, pode ser utilizado em aplicações como análise de sentimentos, classificação de textos, reconhecimento de entidades nomeadas e sistemas de perguntas e respostas.
+Exemplo: Ao receber a frase "O banco aprovou o empréstimo", o BERT considera tanto as palavras anteriores quanto as posteriores ao token "banco" para identificar que ele se refere a uma instituição financeira. Essa capacidade de analisar o contexto nas duas direções é uma de suas principais características.
+
+<strong>Características do BERT</strong>
+Artigo original de 2018: https://arxiv.org/abs/1810.04805 
+
+• Arquitetura: Utiliza apenas o Encoder do Transformer, permitindo construir representações contextuais dos tokens.
+• Variações: Existem diferentes versões e adaptações do BERT, como RoBERTa, DistilBERT e ALBERT, que apresentam modificações na arquitetura ou no processo de treinamento.
+• Fine-Tuning: Permite adaptar o modelo para tarefas específicas, acrescentando ou ajustando camadas responsáveis por produzir a saída desejada.
+• Tamanho da entrada: Suporta sequências de até 512 tokens em suas configurações originais.
+Dados de treinamento: O BERT original foi treinado utilizando grandes conjuntos de textos, incluindo a Wikipedia em inglês e o BookCorpus.
+
+• Treinado em duas variações:
+        • BERT-Base: 12 pilhas (Transformers) (110M de parâmetros)
+        • BERT-Large: 24 pilhas (Transformers) (340M de parâmetros)
+
+• Manipula grandes entradas (512 tokens)
+• Treinado com a Wikipedia, BookCorpus, etc.
+• Há versões em português como o BERTimbau
+        • (https://huggingface.co/neuralmind/bert-base-portuguese-cased)
+
+• Treinado em duas tarefas distintas:
+<div style="padding-left: 20px; text-indent: -20px;">
+• Masked Language Modeling: Consiste em esconder aleatoriamente alguns tokens de uma frase, substituindo-os por um marcador especial [MASK]. O objetivo do modelo é analisar o contexto disponível, considerando as palavras anteriores e posteriores, para prever qual token foi escondido. Essa tarefa permite que o BERT aprenda relações entre as palavras e desenvolva representações contextuais.
+    
+Exemplo: Imagine que o modelo receba a frase "O banco aprovou o [MASK]". Utilizando o contexto, ele precisa prever qual palavra foi escondida. Nesse caso, uma resposta provável seria "empréstimo".
+
+<img src="${pln_74}"/>
+</div>
+
+<div style="padding-left: 20px; text-indent: -20px;">
+• Next Sentence: Consiste em apresentar ao modelo dois trechos de texto e treiná-lo para identificar se o segundo trecho realmente aparece depois do primeiro no texto original. O objetivo é ensinar o modelo a reconhecer relações entre sentenças e compreender a continuidade de um texto. 
+Exemplo: O modelo recebe duas sentenças:
+    • Sentença A: "Maria foi ao supermercado."
+    • Sentença B: "Ela comprou frutas e verduras."
+Nesse caso, as sentenças apresentam uma relação de continuidade, portanto, o modelo deve classificá-las como sentenças consecutivas. Se a segunda sentença fosse "O computador está sobre a mesa", por exemplo, o modelo deveria identificar que ela não corresponde à continuação original da primeira. 
+
+<img src="${pln_65}"/>
+</div>
+`,
+
+
+},
+{
+id: 58,
+provaId: 2,
+titulo: "Principais Tokens Especiais do BERT",
+conteudo: `Os tokens especiais são identificadores utilizados pelo BERT para indicar funções específicas durante o processamento do texto. Diferentemente dos tokens comuns, que representam palavras ou partes de palavras, eles possuem finalidades específicas, como indicar o início de uma sequência, separar sentenças, sinalizar palavras que devem ser previstas ou completar sequências de tamanhos diferentes. Esses tokens ajudam o modelo a organizar e interpretar corretamente as informações recebidas.
+
+• [CLS] (Classification): É colocado no início da sequência de entrada. Sua representação contextual final pode ser utilizada para tarefas que exigem a classificação do texto inteiro, como análise de sentimentos e classificação de notícias.
+
+Exemplo: Na frase "O filme foi excelente", o BERT adiciona o token [CLS] no início. Após o processamento, sua representação final pode ser utilizada para classificar o sentimento da frase como positivo ou negativo.
+
+• [SEP] (Separator): É utilizado para separar duas sentenças ou segmentos de texto. Também pode indicar o final de uma sequência ou segmento, dependendo da tarefa.
+
+Exemplo: Em uma tarefa de comparação entre duas frases, o modelo pode receber: [CLS] O céu está azul [SEP] Hoje está ensolarado [SEP]. Dessa forma, consegue identificar onde termina a primeira sentença e começa a segunda.
+
+• [MASK] (Mask): É utilizado durante o treinamento de Masked Language Modeling (MLM) para substituir tokens que o modelo deverá tentar prever. Assim, o BERT aprende a identificar palavras considerando o contexto apresentado na sequência.
+
+Exemplo: Ao receber a frase "O cachorro gosta de [MASK]", o modelo deve analisar as palavras disponíveis para prever qual token foi ocultado, como "brincar".
+
+• [PAD] (Padding): É utilizado para completar sequências menores até que todas tenham o mesmo comprimento dentro de um lote de processamento (batch). Isso permite que diferentes sequências sejam processadas em conjunto, mantendo uma estrutura uniforme.
+
+Exemplo: Imagine que o modelo precise processar três frases com diferentes quantidades de tokens. Para que todas tenham o mesmo tamanho, são adicionados tokens [PAD] ao final das sequências menores.
+
+• [UNK] (Unknown): É utilizado para representar um token desconhecido, ou seja, uma unidade de texto que não pode ser representada adequadamente pelo vocabulário do tokenizador. Sua utilização depende do tokenizador, pois alguns modelos conseguem dividir palavras desconhecidas em subpalavras, evitando a necessidade de utilizar [UNK].
+
+Exemplo: Imagine que o tokenizador receba uma palavra que não consegue reconhecer nem dividir em unidades conhecidas. Nesse caso, poderá substituí-la pelo token [UNK], indicando que aquela unidade não foi identificada.
+
+<img src="${pln_76}"/>
+
+Aplicações:
+• Topic Modeling with BERT
+    • https://towardsdatascience.com/topic-modeling-with-bert-779f7db187e6
+
+• BERT e Análise de Sentimentos
+    • https://www.tensorflow.org/text/tutorials/classify_text_with_bert?hl=pt-br
+
+Limitações:
+• Dependência da qualidade dos dados: se o BERT for treinado com dados de baixa qualidade, em quantidade insuficiente ou enviesados, poderá aprender padrões inadequados e gerar representações e resultados pouco confiáveis, reproduzindo também os vieses presentes nos dados.
+• Ausência de RLHF no treinamento original: o BERT original não utilizou Reinforcement Learning from Human Feedback (RLHF). Entretanto, é importante destacar que o RLHF não é uma etapa obrigatória para o treinamento de modelos BERT, pois sua arquitetura é voltada principalmente à compreensão e representação de textos, e não à geração de respostas conversacionais como os modelos GPT.`,
+},
+{
+id: 59,
+provaId: 2,
+titulo: "BERTScore: Evaluating Text Generation with BERT",
+conteudo: `O BERTScore é uma métrica moderna e muito inteligente usada para dar uma "nota" à qualidade de um texto gerado por Inteligência Artificial, avaliando o significado real da frase em vez de apenas procurar palavras idênticas. Na prática, ele pega o texto que o seu sistema gerou (a sentença candidata) e compara com o texto perfeito que você esperava (a sentença de referência), transformando cada palavra de ambos os textos em vetores matemáticos riquíssimos (as representações contextuais pré-treinadas); em seguida, ele cruza todos esses vetores usando uma geometria chamada "similaridade do cosseno", que mede o ângulo e a distância exata entre eles no espaço virtual, permitindo que o modelo pontue positivamente a sua IA quando ela usa palavras escritas de forma totalmente diferente, mas que possuem exatamente a mesma intenção. 
+
+Exemplo:
+• Referência: O aluno estudou para a prova.
+• Hipótese: O estudante se preparou para o exame.
+Embora as palavras sejam diferentes, o BERTScore pode identificar a semelhança de significado entre elas.
+
+Principais componentes:
+
+• Precision: verifica se os tokens da hipótese encontram correspondências na referência.
+• Recall: verifica se os tokens da referência encontram correspondências na hipótese.
+• F1-score: combina Precision e Recall em uma única pontuação.
+
+Artigo disponível em: https://arxiv.org/abs/1904.09675
+
+<img src="${pln_71}"/>
+
+<img src="${pln_66}"/>
+
+<img src="${pln_63}"/>
+
+<img src="${pln_60}"/>
+
+<img src="${pln_73}"/>
+
+<img src="${pln_72}"/>`,
+},
 ];
 
 export const provas = [
