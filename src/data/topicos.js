@@ -76,6 +76,22 @@ import pln_75 from '../images/pln_75.png'
 import pln_76 from '../images/pln_76.png'
 import pln_77 from '../images/pln_77.png'
 import pln_78 from '../images/pln_78.png'
+import pln_79 from '../images/pln_79.png'
+import pln_80 from '../images/pln_80.png'
+import pln_81 from '../images/pln_81.png'
+import pln_82 from '../images/pln_82.png'
+import pln_83 from '../images/pln_83.png'
+import pln_84 from '../images/pln_84.png'
+import pln_85 from '../images/pln_85.png'
+import pln_86 from '../images/pln_86.png'
+import pln_87 from '../images/pln_87.png'
+import pln_88 from '../images/pln_88.png'
+import pln_89 from '../images/pln_89.png'
+import pln_90 from '../images/pln_90.png'
+import pln_91 from '../images/pln_91.png'
+import pln_92 from '../images/pln_92.png'
+import pln_93 from '../images/pln_93.png'
+import pln_94 from '../images/pln_94.png'
 
 const topicos = [
   {
@@ -1650,6 +1666,469 @@ Artigo disponível em: https://arxiv.org/abs/1904.09675
 
 <img src="${pln_72}"/>`,
 },
+{
+id: 60,
+provaId: 2,
+titulo: "Grandes Modelos de Linguagem",
+conteudo: `É um modelo de linguagem de grande escala, treinado com enormes quantidades de dados textuais para aprender padrões, relações e estruturas da linguagem. É utilizado para gerar textos e outros conteúdos, além de realizar diversas tarefas de Processamento de Linguagem Natural (PLN), como tradução, resumo, classificação e resposta a perguntas. Os LLMs são baseados em arquiteturas de Deep Learning, principalmente Transformers, e podem ser treinados com bilhões de parâmetros. Durante seu funcionamento, atribuem probabilidades aos possíveis próximos tokens, utilizando o contexto anterior para prever qual token deve ser gerado em seguida.
+
+<span style="color: red;">Importante:</span> A quantidade de tokens que um LLM consegue processar depende de sua janela de contexto, que varia conforme o modelo.
+
+<img src="${pln_91}"/>`,
+},
+{
+id: 61,
+provaId: 2,
+titulo: "Generative Pre-trained Transformers (GPT)",
+conteudo: `É uma família de LLMs que utiliza técnicas de Deep Learning e a arquitetura Transformer para gerar textos semelhantes aos escritos por humanos. Seus modelos são treinados previamente (Pre-trained) com grandes conjuntos de dados que contêm textos, códigos e outros conteúdos, permitindo aprender padrões e relações da linguagem. Durante seu funcionamento, utilizam o contexto fornecido pelo usuário para prever e gerar os próximos tokens, produzindo respostas coerentes, contextualizadas e relevantes.
+
+Exemplo: Ao receber a pergunta "Explique o que é inteligência artificial", o GPT analisa o contexto da solicitação e gera uma resposta progressivamente, prevendo cada próximo token com base nos anteriores, até construir uma explicação completa.
+
+Artigos GPT:
+Improving Language Understanding by Generative Pre-Training (GPT1): https://cdn.openai.com/research-covers/languageunsupervised/language_understanding_paper.pdf 
+
+Language Models are Unsupervised Multitask Learners (GPT2) https://cdn.openai.com/better-languagemodels/language_models_are_unsupervised_multitask_learners.pdf
+
+Language Models are Few-Shot Learners (GPT3)
+https://arxiv.org/abs/2005.14165 
+
+Os primeiros modelos foram treinados com aproximadamente 300 bilhões de palavras. Foram utilizadas bases com Common Crawl, WebText, Wikipedia, ….
+
+GPT2-BioPT - a Language Model for Portuguese Biomedical Text Generation: https://huggingface.co/pucpr/gpt2-bio-pt 
+Código: https://github.com/HAILab-PUCPR/gpt2-bio-pt/ 
+
+<strong>Ajuste ChatGPT com Feedback Humano</strong>
+Link para visualizar a imagem melhor: https://openai.com/pt-BR/index/chatgpt/
+
+<img src="${pln_84}"/>
+
+<strong>Número de parametros de um modelo</strong>
+Indica a quantidade de valores numéricos internos ajustáveis que um modelo possui e que são aprendidos durante o treinamento. Em termos simples, os parâmetros são os pesos da rede neural, responsáveis por armazenar os padrões aprendidos a partir dos dados de treinamento, como relações entre palavras, estruturas sintáticas e associações semânticas. Quando um modelo possui 7B parâmetros, significa que ele tem aproximadamente 7 bilhões de valores numéricos internos. 
+
+Em geral, modelos com mais parâmetros tendem a ter maior capacidade, mas o desempenho depende de vários fatores: 
+• qualidade e quantidade dos dados de treinamento; 
+• arquitetura do modelo; 
+• processo de alinhamento;
+• tamanho da janela de contexto; 
+• uso de ferramentas externas; 
+• eficiência do treinamento; 
+• especialização para uma tarefa.
+
+Exemplo: Um modelo com 70 bilhões de parâmetros (70B) pode apresentar resultados melhores que um modelo de 7 bilhões (7B) em diversas tarefas complexas. Entretanto, também tende a exigir mais memória, capacidade computacional e recursos financeiros para ser executado.`,
+},
+{
+id: 62,
+provaId: 2,
+titulo: "LMMs Generativos",
+conteudo: `Os modelos de linguagem generativos produzem textos prevendo repetidamente qual é o próximo token mais provável ou adequado, considerando o contexto disponível. Esse processo é chamado de geração autorregressiva, pois cada novo token gerado é utilizado como parte do contexto para prever o próximo. 
+O prompt é o texto ou a instrução fornecida a um modelo de linguagem para orientar sua resposta. Ele funciona como uma pergunta, comando ou até mesmo o início de uma frase que direciona a geração do modelo. 
+Todo prompt é um texto de entrada, mas nem todo texto de entrada é necessariamente um prompt. 
+
+É necessario diferenciar:
+• Entrada: quando estiver tratando de arquitetura, encoder, embeddings ou atenção
+• Prompt: quando estiver tratando de geração em modelos decoder-only
+
+Sendo assim:
+• “O banco aprovou o empréstimo” é uma entrada
+• “A inteligência artificial pode” é um prompt (apesar de não ter uma instrução explícita)
+• “Traduza a palavra inteligência para o francês” é um prompt
+
+<img src="${pln_89}"/>`,
+},
+{
+id: 63,
+provaId: 2,
+titulo: "Seleção do Próximo Token",
+conteudo: `O token escolhido durante a geração de texto não precisa ser necessariamente aquele que possui a maior probabilidade. Sua seleção depende da estratégia de geração utilizada e de parâmetros que controlam o comportamento do modelo, como: 
+
+• Temperatura: controla o nível de aleatoriedade da distribuição de probabilidades. Valores baixos favorecem tokens mais prováveis, enquanto valores altos aumentam a diversidade das respostas. 
+• Top-k:limita a seleção aos k tokens com maior probabilidade. 
+• Top-p: seleciona tokens cuja soma acumulada das probabilidades atinge determinado limite, considerando apenas esse conjunto de candidatos. 
+• Max_new_tokens: define a quantidade máxima de novos tokens que o modelo poderá gerar. 
+
+<strong>Estratégia de Geração</strong>
+Define como escolher um token a partir dessa distribuição
+• Greedy decoring: sempre escolhe o token de maior probabilidade. É determinístico, ou seja, nas mesmas condições, tende a produzir a mesma resposta. Entretanto, pode gerar textos previsíveis, repetitivos ou pouco criativos. 
+• Amostragem: sorteia o próximo token considerando as probabilidades de cada candidato. Isso aumenta a diversidade e a variabilidade das respostas
+
+Dois modelos com os mesmos pesos e o mesmo prompt podem produzir respostas diferentes apenas porque usam estratégias de geração diferentes.
+
+<strong>Temperatura</strong>
+É um parâmetro que controla o nível de aleatoriedade na seleção dos próximos tokens, modificando a distribuição de probabilidades antes da escolha. Isso é feito ajustando os logits (valores calculados pelo modelo antes da aplicação do Softmax), tornando a distribuição mais concentrada ou mais dispersa. 
+Formula:
+
+<img src="${pln_88}"/>
+
+• Temperatura baixa (T < 1): aumenta a diferença dos logits. Os token mais provaveis ficam mais dominantes. A geração tende a ser mais previsível e conservadora.
+• Temperatura = 1: mantém aproximadamente a distribuição original do modelo
+• Temperatura alta (T > 1): reduz as diferenças entre os logits. Tokens menos prováveis ganham mais chance. A geração tende a ficar mais diversa e menos previsível
+
+Exemplo: Imagine que o modelo precisa completar a frase "O céu está...". Com temperatura baixa, tende a escolher palavras mais prováveis, como "azul". Com temperatura alta, pode selecionar alternativas menos previsíveis, como "alaranjado" ou "nublado", dependendo da distribuição original. 
+
+Importante: A temperatura não altera o conhecimento ou os pesos do modelo. Ela modifica apenas a distribuição utilizada durante a seleção dos próximos tokens. 
+
+<img src="${pln_93}"/>
+
+<strong>Top-k</strong>
+É uma estratégia de geração que limita quais tokens podem ser escolhidos na próxima etapa, considerando apenas os k tokens com maior probabilidade. Todos os demais tokens são descartados temporariamente antes da amostragem, e a escolha é realizada entre os candidatos restantes, de acordo com suas probabilidades. O valor de k determina quantas opções estarão disponíveis para o modelo. 
+
+Com k = 2 só permanecem os dois tokens com maiores probabilidades.
+
+<img src="${pln_83}"/>
+
+Importante: Quanto menor o valor de k, mais restritas são as opções de geração. Quanto maior o valor, maior a diversidade de tokens que podem ser selecionados
+
+<strong>Top-p</strong>
+
+É uma estratégia de geração que restringe os tokens que podem ser escolhidos na próxima etapa. Também é chamada de Nucleus Sampling e seleciona o menor conjunto de tokens cuja soma acumulada das probabilidades atinge ou ultrapassa um limite definido por p. Diferentemente do Top-k, que utiliza uma quantidade fixa de tokens, o Top-p utiliza um limite de probabilidade, fazendo com que a quantidade de candidatos possa variar a cada etapa da geração. 
+
+Exemplo: Imagine que o modelo calculou as seguintes probabilidades para o próximo token:
+• Transformar: 0,40
+• Ajudar: 0,31
+• Substituir: 0,17
+• Modificar: 0,08
+• Excluir: 0,04
+
+Com Top-p = 0,75, o modelo acumula as probabilidades dos tokens em ordem decrescente:
+• Transformar: 0,40
+• Transformar + Ajudar: 0,71
+• Transformar + Ajudar + Substituir: 0,88
+
+Como 0,88 ultrapassa o limite de 0,75, os três primeiros tokens formam o conjunto de candidatos para a amostragem.
+Importante: O Top-p não determina qual token será escolhido, mas restringe as opções disponíveis para a seleção.
+
+
+
+<strong>max_new_tokens</strong>
+É um parâmetro que define a quantidade máxima de novos tokens que o modelo pode gerar além do texto de entrada (prompt). Ele funciona como um limite para o tamanho da resposta, mas não obriga o modelo a utilizar todos os tokens disponíveis: a geração pode terminar antes, por exemplo, quando o modelo produz um token de encerramento.
+
+Exemplo: Se o prompt for "Explique o que é inteligência artificial" e o parâmetro max_new_tokens estiver definido como 100, o modelo poderá gerar até 100 novos tokens para responder à solicitação. Ele pode, entretanto, encerrar a resposta após gerar apenas 60 tokens.
+
+Observações:
+• O limite pode variar conforme o modelo e a configuração utilizada.
+• Esse parâmetro pode ser alterado de uma requisição para outra.
+• Modelos com limites maiores permitem respostas mais extensas, desde que também haja espaço disponível na janela de contexto.
+
+Observação Importante 
+• Janela de contexto: quantidade máxima de tokens que o modelo consegue considerar em uma requisição, incluindo o conteúdo de entrada e os tokens gerados. 
+• Máximo de saída: quantidade máxima de novos tokens que o modelo pode produzir em uma resposta. 
+• Nos GPT-5.6 atuais, por exemplo, a documentação informa uma janela de contexto de aproximadamente 1,05 milhão de tokens, mas um máximo de saída de 128 mil tokens. 
+
+Exemplo: Imagine um modelo com janela de contexto de 100.000 tokens e limite máximo de saída de 10.000 tokens. Se uma requisição utilizar 20.000 tokens de entrada, o modelo poderá gerar até 10.000 tokens, respeitando tanto o limite de saída quanto o espaço disponível na janela de contexto. `,
+},
+{
+id: 64,
+provaId: 2,
+titulo: "Contexto",
+conteudo: `É o conjunto de informações disponíveis para o modelo durante uma inferência, ou seja, tudo aquilo que ele pode utilizar para produzir a próxima saída. Em modelos conversacionais, o contexto pode incluir instruções do sistema, mensagens anteriores, o prompt atual, documentos fornecidos pelo usuário e os próprios tokens que o modelo já gerou durante a resposta. 
+
+Exemplo: Imagine uma conversa em que o usuário pergunta: "O que é inteligência artificial?". Depois, pergunta: "Quais são suas aplicações?". Ao responder à segunda pergunta, o modelo pode utilizar a pergunta anterior e sua resposta como parte do contexto, permitindo compreender a que o usuário está se referindo. 
+
+Em um assistente, o contexto pode incluir: 
+• instruções do sistema; 
+• mensagens anteriores da conversa; 
+• o prompt atual; 
+• documentos inseridos na interação;
+• tokens que o próprio modelo já gerou.
+
+Ou seja: Contexto é tudo aquilo que o modelo consegue considerar durante aquela geração, desde que esteja disponível na entrada da inferência. 
+
+<strong>Janela de contexto</strong>
+É o limite máximo de tokens que um modelo consegue considerar em uma única requisição. Esse limite contempla os tokens de entrada e, conforme a arquitetura e a implementação, os tokens gerados na saída. 
+
+Exemplo: Se um modelo possui uma janela de contexto de 34 mil tokens, a soma dos tokens utilizados na entrada e na geração precisa respeitar esse limite. Isso inclui o prompt, o histórico da conversa, os documentos fornecidos e a resposta produzida 
+
+Prompt + historico + documentos + respostas  < = janela de contexto
+
+Importante: O contexto não é uma memória permanente. Ele representa as informações disponíveis ao modelo naquela inferência. Quando uma nova requisição é realizada, o sistema precisa fornecer novamente as informações anteriores que deseja manter disponíveis, geralmente por meio do histórico da conversa. 
+Isso ajuda a evitar a ideia equivocada de que um LLM lembra automaticamente de tudo o que foi dito anteriormente. 
+
+Quanto maior o contexto: 
+• Mais informações pode ser considerada
+• Maior tende a ser o custo computacional
+• Maior o consumo de memoria
+• Pode aumentar a latencia
+• Cresce a dificuldade de selecionar o que realmente é relevante
+
+
+Mais contexto não significa necessariamente uma resposta melhor. Um contexto muito grande pode conter ruídos, redundâncias e informações contraditórias. 
+
+A capacidade de um modelo depende de diversos fatores, e não apenas do tamanho de sua janela de contexto: 
+• Numero de parámetros
+• Arquitetura
+• Dados de treinamento
+• Qualidade do treinamento
+• Janela de contexto
+• Tecnicas de ps-treinamento
+
+Portanto, um modelo com uma janela de contexto maior não é automaticamente mais inteligente ou mais capaz que outro com uma janela menor
+
+<strong>Custo computacional do contexto</strong>
+Em Transformers clássicos, o mecanismo de Self-Attention apresenta custo computacional que cresce aproximadamente de forma quadrática em relação à quantidade de tokens (O(n2)). Isso acontece porque cada token precisa calcular sua relação de atenção com os demais tokens da sequência. 
+
+Exemplo: Se uma sequência passa de 1.000 para 2.000 tokens, a quantidade de relações de atenção pode passar de aproximadamente 1 milhão para 4 milhões. Portanto, dobrar o tamanho da sequência pode quadruplicar o custo dessa operação, considerando o mecanismo clássico de atenção. 
+
+Observação: Existem arquiteturas e técnicas modernas de atenção que reduzem ou modificam esse custo, portanto, essa relação não se aplica igualmente a todos os modelos. 
+
+Por isso, dobrar o tamanho do contexto pode aumentar bastante o custo de atenção
+Contextos longos são computacionalmente caros porque cada token pode precisar comparar-se com muitos outros tokens  
+
+É importante distinguir:
+• Contexto disponível: todas as informações que estão presentes e podem ser consideradas pelo modelo dentro da janela de contexto. 
+• Contexto relevante: informações que realmente contribuem para a realização da tarefa solicitada. 
+`,
+},
+{
+id: 65,
+provaId: 2,
+titulo: "Quantização",
+conteudo: `A Quantização é uma técnica de compressão essencial que permite rodar inteligências artificiais gigantes em computadores comuns, funcionando através da redução da precisão numérica (ou seja, usando menos "bits" de espaço) necessária para armazenar os parâmetros e pesos matemáticos do modelo. Na prática, em vez de salvar cada número com o máximo de detalhes usando o formato original com casas decimais super longas de 32 bits (FP32 - Floating Point), o sistema "arredonda" esses valores e os espreme para formatos menores, descendo para 16 bits (FP16 ou BF16), 8 bits inteiros (INT8) ou até os compactos 4 bits. O trade-off (o preço que se paga) dessa técnica é matemático: ao usar menos precisão, você conquista um consumo de memória drasticamente menor e muito mais velocidade, mas assume o risco de uma possível perda de qualidade e raciocínio nas respostas, já que a máquina esqueceu os detalhes minuciosos dos números originais. 
+
+Exemplo: Imagine que você quer baixar um modelo de Inteligência Artificial que possui 7 bilhões de parâmetros (um tamanho médio hoje em dia). Se olharmos apenas para o espaço que esses "pesos" ocupam no disco (lembrando que a execução exige uma memória adicional),  com a quantização fica assim:
+• FP32 (32 bits original): O arquivo pesaria cerca de 28 GB (exigiria computadores de grandes servidores). 
+• FP16 (16 bits): O arquivo cai pela metade, pesando 14 GB. 
+• INT8 (8 bits): A compressão derruba o tamanho para 7 GB (já roda em uma boa placa de vídeo de PC comum). 
+• 4 bits: O arquivo fica com incríveis 3,5 GB (permitindo rodar o modelo até em celulares mais potentes ou notebooks normais, sacrificando um pouco da genialidade da IA para caber no aparelho). 
+`,
+},
+
+{
+id: 66,
+provaId: 2,
+titulo: "Fine-Tuning",
+conteudo: `É uma técnica que consiste em continuar o treinamento de um modelo já pré-treinado (modelo-base), utilizando um conjunto de dados mais específico para adaptá-lo a determinadas tarefas ou domínios. Durante esse processo, o modelo compara suas previsões com as respostas esperadas e ajusta seus parâmetros treináveis para aprender os padrões desejados. Dessa forma, é possível modificar seu comportamento sem precisar realizar todo o treinamento desde o início. 
+modelo-base + exemplos específicos → treinamento adicional → modelo adaptado 
+
+Exemplo: Imagine um modelo de linguagem que foi treinado com textos de diferentes áreas do conhecimento. Uma empresa deseja utilizá-lo para responder perguntas sobre legislação trabalhista. Para isso, pode realizar o Fine-Tuning utilizando exemplos de perguntas e respostas relacionadas ao direito trabalhista, adaptando o modelo para utilizar terminologias específicas e responder melhor nesse domínio. 
+
+Não significa simplesmente adicionar novos documentos ou informações à memória do modelo. É um processo que modifica os pesos ou outros parâmetros treináveis da rede neural, alterando os padrões que ela aprendeu. 
+
+Após o Fine-Tuning, o modelo pode:
+• Executar melhor uma tarefa específica.
+• Utilizar terminologias próprias de determinado domínio.
+• Seguir instruções de maneira mais consistente.
+• Adaptar seu estilo de escrita e formato de resposta.
+
+<img src="${pln_90}"/>
+
+<img src="${pln_80}"/>`,
+},
+{
+id: 67,
+provaId: 2,
+titulo: "Supervised Fine-Tuning (SFT) ",
+conteudo: `É uma técnica de ajuste fino supervisionado na qual o modelo é treinado utilizando exemplos compostos por uma entrada e uma saída esperada. Durante o treinamento, o modelo recebe diversos pares desse tipo e ajusta seus parâmetros para aumentar a probabilidade de produzir respostas semelhantes às respostas de referência. 
+Exemplo:
+• Entrada: Qual é a capital do Brasil?
+• Saída esperada: A capital do Brasil é Brasília.
+
+O modelo recebe diversos exemplos semelhantes e aprende a produzir respostas adequadas para cada tipo de entrada. 
+`,
+},
+{
+id: 68,
+provaId: 2,
+titulo: "Instruction Tuning ",
+conteudo: `É uma aplicação do SFT que utiliza exemplos estruturados para ensinar o modelo a seguir instruções em linguagem natural. Os exemplos geralmente possuem o seguinte formato: 
+• Instrução: o que o modelo deve fazer.
+• Contexto: informações adicionais que ajudam a executar a instrução (opcional).
+• Resposta: resultado esperado.
+
+Exemplo:
+• Instrução: Resuma o texto apresentado em até duas frases.
+• Contexto: A inteligência artificial está transformando a educação, permitindo a personalização do ensino e oferecendo novas ferramentas de aprendizagem. Entretanto, seu uso inadequado pode prejudicar o desenvolvimento do pensamento crítico dos estudantes.
+• Resposta: A inteligência artificial oferece novas possibilidades para a educação e a personalização do ensino. Entretanto, seu uso inadequado pode prejudicar o pensamento crítico dos estudantes.
+
+O objeto é ensinar o modelo a reconhecer: “isso é uma instrução e devo executá-la”
+
+<img src="${pln_92}"/>
+`,
+},
+{
+id: 69,
+provaId: 2,
+titulo: "Fine-tuning X RLHF ",
+conteudo: `• Instruction Fine-Tuning (normalmente feito via SupervisedFine-Tuning): 
+    • Modelo aprende a partir de exemplos com uma resposta-alvo explícita.
+• RLHF — Reinforcement Learning from Human Feedback: 
+    • Modelo não recebe apenas uma resposta correta para copiar. Humanos avaliam ou comparam as respostas do modelo. 
+• Pipeline clássico é: 
+    • Pré-treinamento → Instruction Fine-Tuning → RLHF → modelo alinhado 
+• No RLHF clássico, há ainda uma etapa intermediária: 
+    • Preferências humanas treinam um modelo de recompensa (reward model), que aprende a atribuir uma pontuação às respostas 
+    • Depois, um algoritmo de aprendizado por reforço (reinforcement learning), como PPO, ajusta o LLM para produzir respostas com maior recompensa. 
+
+Instruction tuning ensina o modelo a seguir instruções a partir de exemplos. RLHF refina esse comportamento com base nas preferências humanas sobre quais respostas são melhores. 
+
+Alguns Textos Complementares 
+• Ajuste de LLMs e modelos de IA 
+    • https://cloud.google.com/use-cases/fine-tuning-ai-models 
+• Transfer Learning of Tabular Data by Finetuning Large Language Models
+    • https://arxiv.org/html/2501.06863v1 
+`,
+},
+{
+id: 70,
+provaId: 2,
+titulo: "Dataset para Fine-tuning",
+conteudo: `É um conjunto de exemplos que representa o comportamento que queremos ensinar ou reforçar em um modelo. Esses exemplos são utilizados durante o treinamento para que o modelo compare suas previsões com as respostas esperadas e ajuste seus parâmetros, aprendendo os padrões desejados. 
+
+Exemplo: Uma empresa deseja adaptar um LLM para responder dúvidas sobre atendimento ao cliente. Para isso, pode criar um dataset com perguntas frequentes e suas respectivas respostas, ensinando o modelo a utilizar uma linguagem adequada, seguir um padrão de atendimento e fornecer informações de maneira consistente. 
+
+Não é RAG: O Fine-Tuning utiliza os exemplos para modificar os parâmetros treináveis do modelo. Já o RAG (Retrieval-Augmented Generation) recupera informações de fontes externas e fornece esses conteúdos ao modelo durante a geração, sem precisar alterar seus pesos. 
+O fine-tuning é realizado de forma offline. Isso significa que o treinamento adicional acontece em uma etapa separada da utilização normal do modelo. Primeiro, o dataset é preparado e utilizado para treinar o modelo-base, produzindo uma versão adaptada. Depois, essa versão é disponibilizada para uso, sem precisar realizar novamente o treinamento a cada pergunta recebida. 
+
+<strong>Formato do Dataset</strong>
+O formato mais apropriado é o formato de chat, não de tabela tradicional
+Isso acontece porque o intuito é que o modelo aprenda o padrão de interação
+
+<img src="${pln_87}"/>
+
+O dataset contém muitos exemplos desse tipo. O modelo aprende não apenas a identificar o sentimento, mas também a obedecer ao formato exato de saída, por exemplo, responder apenas com uma das três classes.
+
+<strong>Tamanho do dataset</strong>
+A quantidade de exemplos necessária para realizar o Fine-Tuning depende de diversos fatores, como a complexidade da tarefa, a diversidade dos exemplos, a qualidade do dataset e o conhecimento que o modelo-base já possui sobre o assunto. Tarefas mais específicas podem exigir menos exemplos, enquanto tarefas complexas ou que envolvem diferentes situações podem precisar de conjuntos de dados maiores e mais diversificados. 
+
+<img src="${pln_94}"/>
+
+Fine-tuning não corrige dados ruins, apenas aprende os padrões presentes neles. `,
+},
+{
+id: 71,
+provaId: 2,
+titulo: "Configuração do Treinamento ",
+conteudo: `• Existem hiperparâmetros do algoritmo de treinamento a serem ajustados.
+• Hiperparâmetros são configurações definidas antes ou durante o treinamento que controlam como o modelo aprende, mas não são aprendidas diretamente pelo modelo.
+
+Exemplos: Epochs, Batch size, Learning rate, Max sequence length 
+Há também a função de perda (loss), usada para monitorar o treinamento. 
+
+<img src="${pln_85}"/>
+`,
+},
+{
+id: 72,
+provaId: 2,
+titulo: "Epoch",
+conteudo: `Corresponde a uma passagem completa por todo o dataset de treinamento. Durante uma época, o modelo processa todos os exemplos disponíveis no conjunto de dados. 
+• Poucas épocas: podem causar underfitting, quando o modelo ainda não aprendeu suficientemente os padrões dos dados. 
+• Muitas épocas: podem causar overfitting, quando o modelo se adapta excessivamente aos exemplos de treinamento e perde capacidade de generalização para novos dados 
+`,
+},
+{
+id: 73,
+provaId: 2,
+titulo: "Batch_size",
+conteudo: `Define quantos exemplos são processados antes de uma atualização dos parâmetros
+Exemplo:
+• Batch_size = 8
+    • O modelo processa 8 exemplos 
+    • Calcula a loss media
+    • Atualiza os parâmetros
+• Batch maior: 
+    • Mais memoria
+    • Gradiente mais estável
+• Batch menor 
+    • Menor memoria
+    • Maior variabilidade nas atualizações
+`,
+},
+{
+id: 74,
+provaId: 2,
+titulo: "Learining_rate ",
+conteudo: `Controla o tamanho das alterações nos parâmetros
+• Analogia
+    • É o tamanho do passo dado na direção da redução do erro
+• Muito alto
+    • Pode alterar demais o modelo e tornar o treinamento instável
+• Muito baixo
+    • O treinamento pode ser muito lento ou quase não adaptar o modelo
+	
+No fine-tuning de LLMs, normalmente utilizam-se valores relativamente pequenos, pois o modelo já chega pre-treinado
+`,
+},
+{
+id: 75,
+provaId: 2,
+titulo: "Comprimento das Sequências ",
+conteudo: `Max_seq_length é o numero maximo de tokens que cada exemplo de treinamento pode ter.
+• Textos maiores significam
+    • Mais tokens
+    • Mais memoria
+    • Maior custo computacional
+`,
+},
+{
+id: 76,
+provaId: 2,
+titulo: "Função de Perda (loss)",
+conteudo: `A Loss (função de perda) é utilizada durante o treinamento para medir o quanto as previsões do modelo se distanciam dos resultados esperados. Ela fornece um valor numérico que orienta o processo de atualização dos parâmetros por meio do cálculo dos gradientes. 
+
+Durante o treinamento, esperamos algo como
+• loss alta → loss menor → estabilização 
+• Loss alta: o modelo está produzindo previsões muito diferentes das respostas esperadas.
+• Loss diminuindo: o modelo está ajustando seus parâmetros e aprendendo os padrões dos dados.
+• Loss estabilizada: as alterações passam a produzir melhorias menores, indicando que o treinamento pode estar próximo de uma convergência.
+
+Loss é uma medida numérica do erro do modelo em relação à saída esperada: quanto menor, melhor o ajuste no conjunto de dados 
+
+Entendendo a Função de Perda 
+Alguns exemplos comuns de funções de loss usadas em fine-tuning são:
+• Cross-Entropy Loss: a mais comum em modelos de linguagem e classificação. Mede o quanto a distribuição prevista pelo modelo difere da classe ou token correto. 
+• Binary Cross-Entropy: usada em classificação binária ou multi-label. 
+• Mean Squared Error (MSE): usada quando a saída é contínua, como em regressão.
+• Contrastive Loss / Triplet Loss: usada em tarefas de embeddings, quando queremos aproximar representações semelhantes e afastar diferentes.
+No caso de um LLM generativo, o exemplo mais importante é a CrossEntropy. 
+
+Exemplo:
+Suponha que o token correto seja positivo e o modelo produz:
+
+<img src="${pln_79}"/>
+
+A loss será relativamente baixa, porque o modelo atribuiu alta probabilidade ao token correto. 
+
+Fine-tuning não significa obter a menor training loss possível. Significa melhorar o desempenho em exemplos que o modelo ainda não viu. 
+`,
+},
+{
+id: 77,
+provaId: 2,
+titulo: "Problema do Fine-tuning Completo ",
+conteudo: `O problema do Fine-tuning Completo (Full Fine-tuning) é que ele tenta atualizar absolutamente todos os bilhões de parâmetros de uma inteligência artificial de uma só vez, o que consome uma quantidade absurda de memória, tempo e dinheiro, além de exigir que você salve uma cópia gigantesca do modelo inteiro para cada nova tarefa ensinada. `,
+},
+{
+id: 78,
+provaId: 2,
+titulo: "Parameter-Efficient Fine-Tuning (PEFT) ",
+conteudo: `É um conjunto de técnicas inteligentes que congela a maior parte do "cérebro" original do modelo e treina apenas uma minúscula fração de novos parâmetros, economizando recursos computacionais de forma drástica. 
+• PEFT: Em vez de reimprimir tudo, você plastifica (congela) as páginas do manual original para garantir que elas não sejam alteradas, e passa a inserir as novas regras colando pequenos post-its transparentes apenas nas partes específicas que precisam mudar.  
+• LoRA: Atua travando as matrizes de pesos originais gigantes e aprendendo apenas a pequena alteração necessária para a nova tarefa; porém, em vez de registrar essa mudança em uma nova matriz do tamanho original, 
+
+<strong>Low-Rank Adaptation (LoRA)</strong>
+
+<img src="${pln_82}"/>
+
+<img src="${pln_81}"/>
+
+<strong>Intuição do low-rank</strong>
+
+Para adaptar um modelo a uma nova tarefa, não é necessário alterar todas as conexões matemáticas da matriz original de pesos. A hipótese do low-rank é que podemos aprender uma alteração muito mais simples e focada (de baixa dimensionalidade). O LoRA não reescreve a matriz inteira; ele apenas a congela e aprende uma pequena correção cirúrgica que é aplicada sobre ela.
+
+<strong>O Parâmetro r </strong>
+
+Este parâmetro funciona como a "válvula" que controla a capacidade e o tamanho dessa adaptação matemática. Um "r" pequeno (como 4 ou 8) significa menos parâmetros criados, garantindo um custo computacional extremamente baixo; já um "r" maior (como 16 ou 32) dá ao modelo maior capacidade de adaptação para tarefas complexas, mas custa mais caro na memória. Não existe um valor universal perfeito, tudo depende da dificuldade da nova tarefa. 
+
+<strong>Vantagem Operacional</strong> 
+
+Como o LoRA altera apenas uma fração minúscula dos parâmetros, você não precisa mais salvar cópias gigantescas da inteligência artificial. É possível manter apenas um único modelo-base pesado e estático armazenado no servidor, criando pequenos "adaptadores" modulares para cada área da empresa (um LoRA jurídico, um LoRA de educação, um LoRA de classificação). 
+
+<strong>Quantized Low-Rank Adaptation (QLoRA)</strong> 
+
+O QLoRA é o ápice da eficiência no treinamento de Inteligências Artificiais, pois ele resolve o problema da falta de memória unindo o melhor de duas tecnologias: a Quantização (compressão do espaço) e o LoRA (adaptação cirúrgica). Na prática, essa técnica pega o modelo-base gigantesco e o quantiza, "espremendo" seus parâmetros para um formato de baixíssima precisão (como 4 bits) e congelando-o para que caiba facilmente na memória da placa de vídeo. Com a base comprimida e travada, o sistema acopla e treina apenas os minúsculos adaptadores LoRA. Essa união revolucionária permite fazer o fine-tuning de modelos colossais usando placas de vídeo de computadores comuns, algo que antigamente exigiria supercomputadores milionários.
+
+<img src="${pln_86}"/>`,
+},
 ];
 
 export const provas = [
@@ -1662,7 +2141,7 @@ export const provas = [
   {
     id: 2,
     titulo: "Prova 2",
-    descricao: "lelele",
+    descricao: "PLN RA2",
     emoji: "📗",
   },
 ];
