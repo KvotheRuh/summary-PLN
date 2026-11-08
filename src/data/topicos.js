@@ -1370,7 +1370,10 @@ A principal diferença entre as três arquiteturas está na forma como processam
 
 <img src="${pln_68}"/>
 
-<strong><span style="color: red;">É possível juntar as três: </span></strong> Sim, é possível. Nessa abordagem, usamos a RNN ou a LSTM na linha de frente para processar os dados sequencialmente, garantindo a captura da ordem exata e contínua dos eventos mais recentes (como a acústica de uma fala ou sensores minuto a minuto), e então entregamos esses blocos de informações "resumidas" para o Transformer cruzar o panorama histórico de uma só vez, economizando muita memória ao evitar que ele leia os dados crus do zero. Em contrapartida, a perda inevitável dessa união é a velocidade bruta e a simplicidade; ao colocar as redes recorrentes no início do fluxo, nós reintroduzimos propositalmente o gargalo do processamento passo a passo, sacrificando a grande vantagem de paralelismo total do Transformer e criando um sistema absurdamente complexo, pesado de treinar e muito mais difícil de dar manutenção no mundo real. `,
+<strong><span style="color: red;">É possível juntar as três: </span></strong> Sim, é possível. Nessa abordagem, usamos a RNN ou a LSTM na linha de frente para processar os dados sequencialmente, garantindo a captura da ordem exata e contínua dos eventos mais recentes (como a acústica de uma fala ou sensores minuto a minuto), e então entregamos esses blocos de informações "resumidas" para o Transformer cruzar o panorama histórico de uma só vez, economizando muita memória ao evitar que ele leia os dados crus do zero. Em contrapartida, a perda inevitável dessa união é a velocidade bruta e a simplicidade; ao colocar as redes recorrentes no início do fluxo, nós reintroduzimos propositalmente o gargalo do processamento passo a passo, sacrificando a grande vantagem de paralelismo total do Transformer e criando um sistema absurdamente complexo, pesado de treinar e muito mais difícil de dar manutenção no mundo real. 
+
+Visualização do funcionamento: https://poloclub.github.io/transformer-explainer/
+Artigo: https://research.google/pubs/attention-is-all-you-need/`,
 },
 {
 id: 47,
