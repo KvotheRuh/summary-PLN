@@ -26,6 +26,14 @@ export default function QuizEngine({
     setAnswers((a) => [...a, { correct }]);
   }
 
+  function handleShowSolution() {
+    if (selected !== null) return;
+    setSelected("aberto");
+    // Consideramos como acerto para não prejudicar a nota de quem está apenas estudando/revisando
+    setScore((s) => s + 1);
+    setAnswers((a) => [...a, { correct: true }]);
+  }
+
   function handleNext() {
     if (currentQ + 1 >= questions.length) {
       onFinished?.(questions.map((q) => q.id));
@@ -102,33 +110,36 @@ export default function QuizEngine({
           </div>
         )}
 
-        <div className="quiz-engine__options">
-          {question.options.map((opt, idx) => (
-            <button
-              key={idx}
-              className={`quiz-engine__option ${
-                selected === null
-                  ? ""
-                  : idx === question.correct
-                  ? "quiz-engine__option--correct"
-                  : idx === selected
-                  ? "quiz-engine__option--wrong"
-                  : ""
-              }`}
-              onClick={() => handleSelect(idx)}
-              disabled={selected !== null}
-            >
-              <span className="quiz-engine__option-dot" />
-              <span
-                className="quiz-engine__option-text"
-                dangerouslySetInnerHTML={{ __html: opt }}
-              />
-            </button>
-          ))}
-        </div>
+        {/* Alternativas (Apenas Múltipla Escolha) */}
+        {!question.isAberto && (
+          <div className="quiz-engine__options">
+            {question.options.map((opt, idx) => (
+              <button
+                key={idx}
+                className={`quiz-engine__option ${
+                  selected === null
+                    ? ""
+                    : idx === question.correct
+                    ? "quiz-engine__option--correct"
+                    : idx === selected
+                    ? "quiz-engine__option--wrong"
+                    : ""
+                }`}
+                onClick={() => handleSelect(idx)}
+                disabled={selected !== null}
+              >
+                <span className="quiz-engine__option-dot" />
+                <span
+                  className="quiz-engine__option-text"
+                  dangerouslySetInnerHTML={{ __html: opt }}
+                />
+              </button>
+            ))}
+          </div>
+        )}
 
-        {/* Explicação + imagem da explicação */}
-        {selected !== null && (
+        {/* Explicação + imagem da explicação (Apenas Múltipla Escolha) */}
+        {selected !== null && !question.isAberto && (
           <div className="quiz-engine__explanation">
             <p
               className="quiz-engine__explanation-text"
@@ -143,13 +154,32 @@ export default function QuizEngine({
             )}
           </div>
         )}
+
+        {/* Sugestão de Solução (Apenas Questões Abertas) */}
+        {selected !== null && question.isAberto && (
+          <div className="quiz-engine__explanation">
+            <div style={{ fontSize: "11px", fontWeight: "bold", marginBottom: "8px", color: "var(--rosa)" }}>
+              SUGESTÃO DE SOLUÇÃO
+            </div>
+            <p
+              className="quiz-engine__explanation-text"
+              style={{ whiteSpace: "pre-line" }}
+              dangerouslySetInnerHTML={{ __html: question.suggestedSolution }}
+            />
+          </div>
+        )}
       </div>
 
-      {selected !== null && (
+      {/* Botões de Ação no Rodapé (Garante alinhamento e cores idênticas) */}
+      {question.isAberto && selected === null ? (
+        <button className="quiz-engine__next-btn" onClick={handleShowSolution}>
+          Mostrar solução ↓
+        </button>
+      ) : selected !== null ? (
         <button className="quiz-engine__next-btn" onClick={handleNext}>
           {currentQ + 1 >= questions.length ? "Finalizar" : "Próxima →"}
         </button>
-      )}
+      ) : null}
     </div>
   );
 }

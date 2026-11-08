@@ -101,6 +101,132 @@ const flashcards = [
     provaId: 1,
     frente: "Quais são as quatro principais etapas do processo de sumarização de textos?",
     verso: "1. Representação intermediária; 2. Pontuação das sentenças; 3. Seleção das sentenças; 4. Reformulação de sentenças (esta última apenas para sumarização abstrativa)."
+  },
+  { 
+    id: 43, 
+    topicoId: 46, 
+    provaId: 2, 
+    frente: "Qual é o principal problema das Redes Neurais Recorrentes (RNNs) no processamento de textos?", 
+    verso: "As RNNs processam as informações de forma sequencial (passo a passo) e sofrem de 'amnésia', tendo grande dificuldade em reter contextos ou dependências de longo prazo na frase." 
+  },
+  { 
+    id: 44, 
+    topicoId: 46, 
+    provaId: 2, 
+    frente: "Como a arquitetura Transformer superou a lentidão das redes recorrentes tradicionais?", 
+    verso: "O Transformer analisa e carrega as informações (como um artigo inteiro) todas de uma vez de forma amplamente paralela, utilizando o mecanismo de Self-Attention." 
+  },
+  { 
+    id: 45, 
+    topicoId: 51, 
+    provaId: 2, 
+    frente: "No bloco Encoder do Transformer, quais mecanismos trabalham em conjunto para criar representações contextuais?", 
+    verso: "O Self-Attention (Atenção Própria), que identifica relações entre diferentes palavras, e as redes Feed-Forward (FNN), que transformam e refinam matematicamente a representação de cada token." 
+  },
+  { 
+    id: 46, 
+    topicoId: 56, 
+    provaId: 2, 
+    frente: "Na geração autoregressiva, qual é a principal diferença entre os modelos Encoder-Only e Decoder-Only?", 
+    verso: "Modelos Encoder-only (como o BERT) são voltados para a compreensão e classificação de texto, enquanto modelos Decoder-only (como o GPT) são generativos e preveem o próximo token para gerar respostas textuais." 
+  },
+  { 
+    id: 47, 
+    topicoId: 48, 
+    provaId: 2, 
+    frente: "Qual a diferença entre a representação por ID e um Embedding?", 
+    verso: "O ID é apenas um número inteiro único que serve de índice no vocabulário; já o Embedding é um vetor numérico complexo que capta o significado semântico e a relação matemática daquela palavra." 
+  },
+  { 
+    id: 48, 
+    topicoId: 50, 
+    provaId: 2, 
+    frente: "Por que os Embeddings Contextuais são mais poderosos que os Estáticos (como o Word2Vec)?", 
+    verso: "Porque os Embeddings Contextuais permitem que uma mesma palavra (ex: 'banco') receba vetores matemáticos diferentes dependendo da frase inteira, compreendendo se é um assento ou uma instituição." 
+  },
+  { 
+    id: 49, 
+    topicoId: 49, 
+    provaId: 2, 
+    frente: "O que o algoritmo de tokenização BPE (Byte Pair Encoding) prioriza na construção do seu vocabulário?", 
+    verso: "Ele constrói um vocabulário compacto combinando iterativamente os pares de símbolos que aparecem com maior frequência no conjunto de treinamento." 
+  },
+  { 
+    id: 50, 
+    topicoId: 47, 
+    provaId: 2, 
+    frente: "Para que serve a informação de Positional Encoding (Codificação de Posição) nos Transformers?", 
+    verso: "Como o Transformer processa todos os tokens de uma vez e não ordenadamente, o Positional Encoding é injetado para indicar a posição de cada token, garantindo que o modelo entenda a ordem gramatical correta." 
+  },
+  { 
+    id: 51, 
+    topicoId: 63, 
+    provaId: 2, 
+    frente: "No processo de geração (Next Token Prediction), o que acontece se aumentarmos o valor do parâmetro 'Temperatura'?", 
+    verso: "Aumentar a temperatura torna a distribuição das probabilidades menos rígida, dando mais chance para a IA selecionar palavras menos prováveis e tornando a resposta mais diversa, imprevisível e 'criativa'." 
+  },
+  { 
+    id: 52, 
+    topicoId: 78, 
+    provaId: 2, 
+    frente: "O que a técnica Parameter-Efficient Fine-Tuning (PEFT), como o método LoRA, faz para economizar recursos computacionais?", 
+    verso: "O LoRA congela a maior parte das gigantescas matrizes de pesos originais da IA e treina apenas matrizes de adaptação minúsculas anexadas a elas, cortando o uso de memória." 
+  },
+  { 
+    id: 53, 
+    topicoId: 63, 
+    provaId: 2, 
+    frente: "Qual a diferença entre a estratégia de restrição Top-k e a Top-p na geração de um LLM?", 
+    verso: "O Top-k limita as opções para uma quantidade fixa 'K' dos tokens mais prováveis; já o Top-p (Nucleus Sampling) cria um corte dinâmico somando as probabilidades até alcançar o percentual 'P' estipulado." 
+  },
+  { 
+    id: 54, 
+    topicoId: 72, 
+    provaId: 2, 
+    frente: "O que é 'Epoch' no processo de Fine-Tuning e o que ocorre se forem utilizadas em excesso?", 
+    verso: "Epoch é uma passagem completa do algoritmo por todo o dataset de treino. Se usada em excesso, causa 'Overfitting', onde o modelo memoriza o treino, mas perde a inteligência de lidar com dados novos e reais." 
+  },
+  {
+    id: 55,
+    topicoId: 63, 
+    provaId: 2,
+    frente: "Como funciona a estratégia de geração Top-p (Nucleus Sampling)?",
+    verso: "Ela seleciona o menor conjunto de tokens cuja soma acumulada das probabilidades atinge ou ultrapassa um limite 'p', variando a quantidade de candidatos a cada etapa."
+  },
+  {
+    id: 56,
+    topicoId: 63, 
+    provaId: 2,
+    frente: "Qual a diferença prática entre Top-k e Top-p na restrição de tokens?",
+    verso: "O Top-k restringe a seleção a uma quantidade exata e fixa de palavras (ex: os 5 mais prováveis). O Top-p usa um limite de probabilidade, fazendo com que o número de opções varie dinamicamente a cada palavra gerada."
+  },
+  {
+    id: 57,
+    topicoId: 66,
+    provaId: 2,
+    frente: "O que caracteriza o processo de Fine-Tuning em um modelo de linguagem?",
+    verso: "É o treinamento adicional de um modelo pré-treinado usando dados específicos. Ele modifica fisicamente os pesos e parâmetros treináveis da rede neural para adaptá-la a um novo domínio ou tarefa."
+  },
+  {
+    id: 58,
+    topicoId: 70, 
+    provaId: 2,
+    frente: "Qual é a diferença fundamental entre adaptar um modelo via Fine-Tuning e via RAG?",
+    verso: "O Fine-Tuning altera os parâmetros (pesos) do modelo de forma definitiva e offline. O RAG recupera textos externos na hora da pergunta e apenas os cola no contexto, sem alterar o cérebro matemático da IA."
+  },
+  {
+    id: 59,
+    topicoId: 67,
+    provaId: 2,
+    frente: "O que é Supervised Fine-Tuning (SFT)?",
+    verso: "É o ajuste fino onde o modelo aprende a partir de pares estruturados contendo uma entrada e a saída exata esperada (gabarito), ajustando seus parâmetros para imitar as respostas de referência."
+  },
+  {
+    id: 60,
+    topicoId: 76,
+    provaId: 2,
+    frente: "Durante as epochs de Fine-Tuning, o que significa quando a função de perda (Loss) se estabiliza?",
+    verso: "Significa que as alterações nos pesos do modelo passaram a produzir melhorias muito pequenas, indicando que o treinamento alcançou convergência e o modelo aprendeu o padrão dos dados."
   }
 ];
 
